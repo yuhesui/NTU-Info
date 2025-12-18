@@ -240,12 +240,12 @@
                   High-resolution floor plans for every NTU hall. Perfect for planning furniture
                   and luggage before arrival.
                 </p>
-                <a class="resource-btn" href="/v1/Room%20Layout.pptx" download>
-                  <span>Download (2 MB)</span><i data-lucide="arrow-down"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+                            <a class="resource-btn" href="/v1/Room%20Layout.pptx" download>
+                              <span>Download (2 MB)</span><i data-lucide="arrow-down"></i>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
         </section>
 
         <!-- Quick Access Section -->
@@ -340,7 +340,9 @@
     <!-- Scripts -->
     <script>
         // Initialize Lucide icons
-        lucide.createIcons();
+        if (window.lucide) {
+            lucide.createIcons();
+        }
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

@@ -292,6 +292,7 @@ h1, h2, h3, h4, h5, h6 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     gap: var(--spacing-2xl);
+    justify-items: center;
 }
 
 .tool-card {
@@ -303,6 +304,8 @@ h1, h2, h3, h4, h5, h6 {
     border: 2px solid transparent;
     position: relative;
     overflow: hidden;
+    max-width: 520px;
+    width: 100%;
 }
 
 .tool-card::before {
