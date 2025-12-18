@@ -3,6 +3,11 @@ const gradePoints = {
   'C+': 2.5, 'C': 2.0, 'D+': 1.5, 'D': 1.0, 'F': 0.0
 };
 
+function uuid() {
+  if (window.crypto?.randomUUID) return window.crypto.randomUUID();
+  return `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
 let allData = { semesters: [] };
 
 const semestersContainer = document.getElementById('semesters-container');
@@ -59,7 +64,7 @@ function loadFromLocalStorage() {
 
 function addSemester() {
   allData.semesters.push({
-    id: crypto.randomUUID(),
+    id: uuid(),
     courses: []
   });
   saveToLocalStorage();
@@ -70,7 +75,7 @@ function addCourse(semesterId) {
   const semester = allData.semesters.find(s => s.id === semesterId);
   if (!semester) return;
   semester.courses.push({
-    id: crypto.randomUUID(),
+    id: uuid(),
     code: '',
     name: '',
     credits: '',
@@ -280,8 +285,8 @@ function setupTargetCalculator() {
     const currentCredits = allData.semesters.reduce((sum, sem) => sum + sem.courses.filter(c => !c.isSU && gradePoints[c.grade] !== undefined).reduce((cSum, c) => cSum + Number(c.credits || 0), 0), 0);
     const currentCgpa = calculateCumulativeCGPA(allData.semesters);
 
-    if (Number.isNaN(desired) || Number.isNaN(remaining) || desired <= 0 || remaining <= 0) {
-      targetResultEl.textContent = 'Please enter valid desired CGPA and remaining credits.';
+    if (Number.isNaN(desired) || Number.isNaN(remaining) || desired <= 0 || desired > 5 || remaining <= 0) {
+      targetResultEl.textContent = 'Please enter valid desired CGPA (0-5) and remaining credits.';
       return;
     }
 

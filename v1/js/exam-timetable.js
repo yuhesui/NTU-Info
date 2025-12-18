@@ -1,3 +1,8 @@
+function uuid() {
+  if (window.crypto?.randomUUID) return window.crypto.randomUUID();
+  return `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
 let exams = [];
 const examsContainer = document.getElementById('exams-container');
 const timetableBody = document.getElementById('timetable-body');
@@ -22,7 +27,7 @@ function sortExams() {
 
 function addExam(examData = {}) {
   exams.push({
-    id: crypto.randomUUID(),
+    id: uuid(),
     courseCode: examData.courseCode || '',
     courseName: examData.courseName || '',
     date: examData.date || '',
@@ -233,7 +238,11 @@ function exportICS() {
   }).filter(Boolean);
 
   createEvents(events, (error, value) => {
-    if (error) return console.error(error);
+    if (error) {
+      console.error(error);
+      alert('Failed to generate calendar. Please check your inputs and try again.');
+      return;
+    }
     const blob = new Blob([value], { type: 'text/calendar' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -275,6 +284,7 @@ function exportTimetablePDF() {
 function parseTextInput(text) {
   const lines = text.split('\n');
   const parsed = [];
+  // pattern: CODE DD/MM/YYYY HH:MM Xhrs VENUE
   const pattern1 = /([A-Za-z0-9]+)\s+(\d{2}\/\d{2}\/\d{4})\s+(\d{2}:\d{2})\s+(\d+\.?\d*)hrs?\s+([A-Za-z0-9-]+)/i;
   lines.forEach(line => {
     const trimmed = line.trim();
