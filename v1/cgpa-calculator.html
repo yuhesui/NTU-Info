@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NTU student portal CGPA calculator with NTU grading scale and academic planning tools">
+  <meta name="keywords" content="NTU, CGPA calculator, GPA, NTU grading scale, academic tools">
+  <meta name="author" content="QRS@NTU">
+  <meta property="og:title" content="CGPA Calculator | NTU Info">
+  <meta property="og:description" content="Track your NTU grades and calculate CGPA with the official 5-point scale">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ntuinfo.com/cgpa-calculator.html">
+  <title>CGPA Calculator | NTU Info</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="main-style.css">
+  <link rel="stylesheet" href="css/tools.css">
+  <link rel="stylesheet" href="css/qrs-integration.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container nav-container">
+      <div class="logo-section">
+        <h1 class="logo-title">NTU Info</h1>
+        <p class="logo-subtitle">Academic Tools</p>
+      </div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Academic Tools ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="cgpa-calculator.html" aria-current="page">CGPA Calculator</a></li>
+              <li><a href="exam-timetable.html">Exam Timetable</a></li>
+              <li><a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener">📚 Math Notes &amp; Past Papers ↗</a></li>
+            </ul>
+          </li>
+          <li><a href="ntu-clubs/index.html">Campus Life</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="breadcrumb">Home &gt; Academic Tools &gt; CGPA Calculator</div>
+    <h1 class="page-title">CGPA Calculator</h1>
+
+    <div class="info-banner qrs-banner" role="complementary" aria-label="QRS Math notes">
+      <div class="banner-icon" aria-hidden="true">📖</div>
+      <div class="banner-text">
+        <strong>Need help with Math courses?</strong>
+        <p>Check out curated revision notes and past papers for NTU Math modules</p>
+      </div>
+      <a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener noreferrer" class="banner-cta">View Math Notes →</a>
+    </div>
+
+    <section class="card">
+      <div class="card-header">
+        <div>
+          <p class="card-kicker">Plan by semester</p>
+          <h2>Semester Breakdown</h2>
+        </div>
+        <button id="add-semester" class="btn primary" aria-label="Add semester">Add Semester</button>
+      </div>
+      <div id="semesters-container" class="semesters"></div>
+    </section>
+
+    <section class="card summary-card">
+      <h2>Cumulative Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-tile">
+          <p class="label">Total Credits</p>
+          <p class="value" id="total-credits">0 AUs</p>
+        </div>
+        <div class="summary-tile">
+          <p class="label">Graded Credits</p>
+          <p class="value" id="graded-credits">0 AUs</p>
+        </div>
+        <div class="summary-tile">
+          <p class="label">Cumulative CGPA</p>
+          <p class="gpa-display" id="cumulative-cgpa">0.00</p>
+        </div>
+        <div class="summary-tile classification">
+          <p class="label">Degree Classification</p>
+          <span id="degree-classification" class="badge">Pass</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <div>
+          <p class="card-kicker">Plan ahead</p>
+          <h2>Target GPA Calculator</h2>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="desired-cgpa">Desired CGPA</label>
+          <input type="number" id="desired-cgpa" min="0" max="5" step="0.01" placeholder="4.20">
+        </div>
+        <div class="form-field">
+          <label for="remaining-credits">Remaining Credits</label>
+          <input type="number" id="remaining-credits" min="0" step="1" placeholder="2">
+        </div>
+        <div class="form-actions">
+          <button id="calc-target" class="btn secondary" aria-label="Calculate target GPA">Calculate</button>
+        </div>
+      </div>
+      <p id="target-result" class="muted"></p>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Export &amp; Data</h2>
+      </div>
+      <div class="actions">
+        <button id="export-pdf" class="btn secondary">Export to PDF</button>
+        <button id="export-csv" class="btn secondary">Export to CSV</button>
+        <button id="clear-data" class="btn danger">Clear All Data</button>
+      </div>
+    </section>
+
+    <section class="card faq-card">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <h3>What is the S/U option?</h3>
+        <p>NTU allows you to mark certain courses as Satisfactory/Unsatisfactory. S grades don't affect your GPA but count toward graduation credits.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is CGPA calculated?</h3>
+        <p>CGPA = Sum of (Grade Points × Credits) / Total Graded Credits (excluding S/U courses).</p>
+      </div>
+      <div class="faq-item">
+        <h3>When should I use the target GPA calculator?</h3>
+        <p>Use it to plan what grades you need in remaining courses to achieve your desired CGPA for honours classification or exchange programs.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is my data saved?</h3>
+        <p>Yes, all data is saved locally in your browser. No information is sent to servers. Use Export to create backups.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-branding">
+        <h3>NTU Info</h3>
+        <p class="tagline">Built by students, for students</p>
+        <p class="copyright">© 2025 NTU Info | Developed by <a href="https://qrsntu.org" target="_blank" rel="noopener">QRS@NTU</a></p>
+        <p class="organization">Quantitative Research Society @ Nanyang Technological University</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="cgpa-calculator.html">CGPA Calculator</a></li>
+            <li><a href="exam-timetable.html">Exam Timetable</a></li>
+            <li><a href="ntu-clubs/index.html">Clubs Explorer</a></li>
+          </ul>
+        </div>
+        <div class="footer-column featured-links">
+          <h4>Study Resources</h4>
+          <ul>
+            <li><a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener" class="featured-link">📚 <strong>Math Notes &amp; Past Papers</strong> ↗</a></li>
+            <li><a href="https://qrsntu.org/about" target="_blank" rel="noopener">About QRS ↗</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>More</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="https://github.com/yuhesui/NTU-Info" target="_blank" rel="noopener">GitHub Repository ↗</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p><small>This is a student-led initiative and is not officially affiliated with Nanyang Technological University administration.</small></p>
+    </div>
+  </footer>
+
+  <script src="js/cgpa-calculator.js"></script>
+</body>
+</html>
