@@ -3,6 +3,8 @@ const gradePoints = {
   'C+': 2.5, 'C': 2.0, 'D+': 1.5, 'D': 1.0, 'F': 0.0
 };
 
+const MAX_CGPA = 5.0;
+
 function uuid() {
   if (window.crypto?.randomUUID) return window.crypto.randomUUID();
   return `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
@@ -293,7 +295,7 @@ function setupTargetCalculator() {
     const currentCredits = calculateGradedCredits();
     const currentCgpa = calculateCumulativeCGPA(allData.semesters);
 
-    if (Number.isNaN(desired) || Number.isNaN(remaining) || desired <= 0 || desired > 5 || remaining <= 0) {
+    if (Number.isNaN(desired) || Number.isNaN(remaining) || desired <= 0 || desired > MAX_CGPA || remaining <= 0) {
       targetResultEl.textContent = 'Please enter valid desired CGPA (0-5) and remaining credits.';
       return;
     }

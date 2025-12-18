@@ -352,8 +352,14 @@
                 }
             });
         });
-        
-        // Back to top functionality
+
+        // Add aria-labels to external links for accessibility
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            if (!link.getAttribute('aria-label')) {
+                const text = link.textContent.trim() || 'External link';
+                link.setAttribute('aria-label', `${text} (opens in new tab)`);
+            }
+        });
     </script>
 </body>
 </html>

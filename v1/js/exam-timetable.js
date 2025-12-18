@@ -1,4 +1,5 @@
 const MS_PER_DAY = 86400000;
+const MINUTES_PER_HOUR = 60;
 
 function uuid() {
   if (window.crypto?.randomUUID) return window.crypto.randomUUID();
@@ -221,6 +222,10 @@ function render() {
 }
 
 function exportICS() {
+  if (!window.ics) {
+    alert('Calendar export library not loaded. Please refresh and try again.');
+    return;
+  }
   if (!exams.length) return;
   const { createEvents } = window.ics;
   const events = exams.map(exam => {
@@ -287,7 +292,7 @@ function parseTextInput(text) {
   const lines = text.split('\n');
   const parsed = [];
   // pattern: CODE DD/MM/YYYY HH:MM Xhrs VENUE
-  const pattern1 = /([A-Za-z0-9]+)\s+(\d{2}\/\d{2}\/\d{4})\s+(\d{2}:\d{2})\s+(\d+\.?\d*)hrs?\s+([A-Za-z0-9-]+)/i;
+  const pattern1 = /([A-Za-z0-9]+)\s+(\d{2}\/\d{2}\/\d{4})\s+(\d{2}:\d{2})\s+(\d+\.?\d*)hrs?\s+([A-Za-z0-9 ._-]+)/i;
   lines.forEach(line => {
     const trimmed = line.trim();
     if (!trimmed) return;
@@ -300,7 +305,7 @@ function parseTextInput(text) {
         courseName: '',
         date: isoDate,
         startTime: time,
-        duration: Number(duration) * 60,
+        duration: Number(duration) * MINUTES_PER_HOUR,
         venue
       });
     }

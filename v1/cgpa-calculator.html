@@ -184,5 +184,13 @@
   </footer>
 
   <script src="js/cgpa-calculator.js"></script>
+  <script>
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      if (!link.getAttribute('aria-label')) {
+        const text = link.textContent.trim() || 'External link';
+        link.setAttribute('aria-label', `${text} (opens in new tab)`);
+      }
+    });
+  </script>
 </body>
 </html>
