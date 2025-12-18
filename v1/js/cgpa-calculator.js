@@ -37,6 +37,14 @@ function calculateCumulativeCGPA(semesters) {
   return Number((totalPoints / totalCredits).toFixed(2));
 }
 
+function calculateTotalCredits() {
+  return allData.semesters.reduce((sum, sem) => sum + sem.courses.reduce((cSum, c) => cSum + Number(c.credits || 0), 0), 0);
+}
+
+function calculateGradedCredits() {
+  return allData.semesters.reduce((sum, sem) => sum + sem.courses.filter(c => !c.isSU && gradePoints[c.grade] !== undefined).reduce((cSum, c) => cSum + Number(c.credits || 0), 0), 0);
+}
+
 function calculateTargetGPA(currentCGPA, currentCredits, desiredCGPA, remainingCredits) {
   const totalCredits = currentCredits + remainingCredits;
   if (!remainingCredits) return 0;
@@ -202,8 +210,8 @@ function renderSemesters() {
 }
 
 function updateSummary() {
-  const totalCredits = allData.semesters.reduce((sum, sem) => sum + sem.courses.reduce((cSum, c) => cSum + Number(c.credits || 0), 0), 0);
-  const gradedCredits = allData.semesters.reduce((sum, sem) => sum + sem.courses.filter(c => !c.isSU && gradePoints[c.grade] !== undefined).reduce((cSum, c) => cSum + Number(c.credits || 0), 0), 0);
+  const totalCredits = calculateTotalCredits();
+  const gradedCredits = calculateGradedCredits();
   const cgpa = calculateCumulativeCGPA(allData.semesters);
 
   totalCreditsEl.textContent = `${totalCredits} AUs`;
@@ -282,7 +290,7 @@ function setupTargetCalculator() {
   document.getElementById('calc-target').addEventListener('click', () => {
     const desired = Number(desiredCgpaInput.value);
     const remaining = Number(remainingCreditsInput.value);
-    const currentCredits = allData.semesters.reduce((sum, sem) => sum + sem.courses.filter(c => !c.isSU && gradePoints[c.grade] !== undefined).reduce((cSum, c) => cSum + Number(c.credits || 0), 0), 0);
+    const currentCredits = calculateGradedCredits();
     const currentCgpa = calculateCumulativeCGPA(allData.semesters);
 
     if (Number.isNaN(desired) || Number.isNaN(remaining) || desired <= 0 || desired > 5 || remaining <= 0) {

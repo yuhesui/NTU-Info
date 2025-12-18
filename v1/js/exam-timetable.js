@@ -1,3 +1,5 @@
+const MS_PER_DAY = 86400000;
+
 function uuid() {
   if (window.crypto?.randomUUID) return window.crypto.randomUUID();
   return `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
@@ -202,7 +204,7 @@ function getBusiestWeek() {
     if (!exam.date) return;
     const date = new Date(exam.date);
     const onejan = new Date(date.getFullYear(), 0, 1);
-    const week = Math.ceil((((date - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+    const week = Math.ceil((((date - onejan) / MS_PER_DAY) + onejan.getDay() + 1) / 7);
     weeks[week] = (weeks[week] || 0) + 1;
   });
   const entries = Object.entries(weeks);
