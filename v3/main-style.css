@@ -97,17 +97,21 @@ h1, h2, h3, h4, h5, h6 {
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: var(--spacing-lg) 0;
+    padding: var(--spacing-md) 0;
 }
 
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
 }
 
 .logo-section {
-    text-align: center;
+    text-align: left;
 }
 
 .logo-title {

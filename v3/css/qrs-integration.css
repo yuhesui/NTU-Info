@@ -149,7 +149,8 @@ a[target="_blank"]::after {
   box-shadow: 0 8px 16px rgba(0,0,0,0.08);
 }
 
-.dropdown:hover .dropdown-menu { display: block; }
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu { display: block; }
 .dropdown-menu li a { display: block; padding: 8px 14px; }
 .dropdown-menu li a:hover { background: #f8fafc; }
 
