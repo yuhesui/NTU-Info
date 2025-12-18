@@ -6,12 +6,14 @@
     <title>新加坡樟宜机场入境攻略 | Singapore Arrival Guide</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .nav-actions{margin-left:auto;display:flex;gap:12px;align-items:center;}
+      .lang-toggle-btn{background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:8px 12px;font-weight:600;cursor:pointer;}
+      .lang-toggle-btn:focus{outline:2px solid #0ea5e9;outline-offset:2px;}
+    </style>
     <script defer src="script.js"></script>
 </head>
 <body>
-<!-- 顶部横幅 -->
-
-<!-- 主导航 -->
 <header class="header">
     <div class="header-container">
         <div class="logo-section">
@@ -22,6 +24,12 @@
                     <p class="logo-subtitle">Singapore Changi Airport Guide</p>
                 </div>
             </div>
+        </div>
+
+        <div class="nav-actions">
+            <button onclick="toggleLanguage()" class="lang-toggle-btn">
+              <span id="lang-indicator">🌐 中文 | English</span>
+            </button>
         </div>
 
         <nav class="nav-menu">
@@ -43,6 +51,7 @@
 
 <!-- 主要内容 -->
 <main class="main-content">
+    <div id="zh-content">
     <!-- 英雄区域 -->
     <section class="hero-section">
         <div class="hero-container">
@@ -1011,6 +1020,129 @@
             </div>
         </div>
     </section>
+</div>
+
+    <div id="en-content" style="display:none;">
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">Quick Start</div>
+                    <h1 class="hero-title">
+                        Changi Airport<br>
+                        <span class="gradient-text">Arrival Guide</span>
+                    </h1>
+                    <p class="hero-description">
+                        English walkthrough for NTU students—from prep to transport—so you can exit faster and get to campus smoothly.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#prep-en" class="btn-primary">See Checklist</a>
+                        <a href="#transfer-en" class="btn-secondary">
+                            <span>Transport to NTU</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="image-placeholder">
+                        <span class="placeholder-text">🏢 Changi Terminals</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prep-en" class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-badge">Step 1</div>
+                    <h2 class="section-title">Pre-arrival checklist</h2>
+                    <p class="section-description">Finish these within 3 days of arrival.</p>
+                </div>
+                <div class="prep-grid">
+                    <div class="prep-card">
+                        <div class="card-icon">🛂</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Documents</h3>
+                            <p class="card-subtitle">SG Arrival Card, passport validity 6+ months, IPA if applicable.</p>
+                        </div>
+                    </div>
+                    <div class="prep-card featured-card">
+                        <div class="card-icon">📱</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Connectivity</h3>
+                            <p class="card-subtitle">Plan SIM/eSIM; top up EZ-Link or tap Visa/MC for MRT/bus.</p>
+                        </div>
+                    </div>
+                    <div class="prep-card">
+                        <div class="card-icon">🏠</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Address ready</h3>
+                            <p class="card-subtitle">Hostel/accommodation address for forms and taxi/Grab.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="arrival-en" class="section alternate-bg">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-badge">Step 2</div>
+                    <h2 class="section-title">At Changi</h2>
+                    <p class="section-description">Follow “Arrivals/Immigration”; e-gates allowed for most passports.</p>
+                </div>
+                <div class="prep-grid">
+                    <div class="prep-card">
+                        <div class="card-icon">🛄</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Immigration & Customs</h3>
+                            <p class="card-subtitle">Use e-gates if eligible; declare controlled food/meds if needed.</p>
+                        </div>
+                    </div>
+                    <div class="prep-card">
+                        <div class="card-icon">💳</div>
+                        <div class="card-content">
+                            <h3 class="card-title">SIM & Transport</h3>
+                            <p class="card-subtitle">Telco counters/7-Eleven for SIM; MRT tap with card or EZ-Link.</p>
+                        </div>
+                    </div>
+                    <div class="prep-card">
+                        <div class="card-icon">🍜</div>
+                        <div class="card-content">
+                            <h3 class="card-title">Quick essentials</h3>
+                            <p class="card-subtitle">Grab water/snacks; all terminals connect to MRT and taxi queues.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="transfer-en" class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-badge">Step 3</div>
+                    <h2 class="section-title">Getting to NTU</h2>
+                    <p class="section-description">Choose based on luggage, time, and budget.</p>
+                </div>
+                <div class="timeline-grid">
+                    <div class="timeline-card">
+                        <div class="timeline-icon">🚇</div>
+                        <h3>MRT</h3>
+                        <p>Changi Airport → Expo (Downtown Line) → Boon Lay, then bus 179/179A to campus.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-icon">🚕</div>
+                        <h3>Taxi / Grab</h3>
+                        <p>Fastest with luggage; set destination “Nanyang Technological University”.</p>
+                    </div>
+                    <div class="timeline-card">
+                        <div class="timeline-icon">🚌</div>
+                        <h3>Shuttle</h3>
+                        <p>Check airport counters; availability varies by time of day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
 
 <!-- 页脚 -->
@@ -1101,5 +1233,40 @@
 
     </div>
 </footer>
+
+<script>
+  function toggleLanguage() {
+    const zh = document.getElementById('zh-content');
+    const en = document.getElementById('en-content');
+    const indicator = document.getElementById('lang-indicator');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    const showingZh = zh.style.display !== 'none';
+    if (showingZh) {
+      zh.style.display = 'none';
+      en.style.display = 'block';
+      indicator.textContent = '🌐 English | 中文';
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          if (href.includes('prep')) link.setAttribute('href', '#prep-en');
+          if (href.includes('arrival')) link.setAttribute('href', '#arrival-en');
+          if (href.includes('transfer')) link.setAttribute('href', '#transfer-en');
+        }
+      });
+    } else {
+      zh.style.display = 'block';
+      en.style.display = 'none';
+      indicator.textContent = '🌐 中文 | English';
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          if (href.includes('prep')) link.setAttribute('href', '#prep');
+          if (href.includes('arrival')) link.setAttribute('href', '#arrival');
+          if (href.includes('transfer')) link.setAttribute('href', '#transfer');
+        }
+      });
+    }
+  }
+</script>
 </body>
 </html>
