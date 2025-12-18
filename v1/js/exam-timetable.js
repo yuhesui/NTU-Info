@@ -204,14 +204,21 @@ function getBusiestWeek() {
   exams.forEach(exam => {
     if (!exam.date) return;
     const date = new Date(exam.date);
-    const onejan = new Date(date.getFullYear(), 0, 1);
-    const week = Math.ceil((((date - onejan) / MS_PER_DAY) + onejan.getDay() + 1) / 7);
+    const week = getISOWeekNumber(date);
     weeks[week] = (weeks[week] || 0) + 1;
   });
   const entries = Object.entries(weeks);
   if (!entries.length) return '-';
   entries.sort((a, b) => b[1] - a[1]);
   return `Week ${entries[0][0]} (${entries[0][1]} exams)`;
+}
+
+function getISOWeekNumber(date) {
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNum = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  return Math.ceil((((d - yearStart) / MS_PER_DAY) + 1) / 7);
 }
 
 function render() {
@@ -223,7 +230,7 @@ function render() {
 
 function exportICS() {
   if (!window.ics) {
-    alert('Calendar export library not loaded. Please refresh and try again.');
+    alert('Calendar export is currently unavailable. Please check your internet connection and try again.');
     return;
   }
   if (!exams.length) return;
@@ -293,10 +300,11 @@ function parseTextInput(text) {
   const parsed = [];
   // pattern: CODE DD/MM/YYYY HH:MM Xhrs VENUE
   const pattern1 = /([A-Za-z0-9]+)\s+(\d{2}\/\d{2}\/\d{4})\s+(\d{2}:\d{2})\s+(\d+\.?\d*)hrs?\s+([A-Za-z0-9 ._-]+)/i;
+  const pattern2 = /([A-Za-z0-9]+).*?(\d{2}\/\d{2}\/\d{4}).*?(\d{2}:\d{2}).*?(\d+\.?\d*)\s*(?:hrs?|hours?).*?([A-Za-z0-9 ._-]+)/i;
   lines.forEach(line => {
     const trimmed = line.trim();
     if (!trimmed) return;
-    const match = trimmed.match(pattern1);
+    const match = trimmed.match(pattern1) || trimmed.match(pattern2);
     if (match) {
       const [, code, date, time, duration, venue] = match;
       const isoDate = date.split('/').reverse().join('-');

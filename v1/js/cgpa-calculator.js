@@ -273,7 +273,7 @@ function getAllCoursesData() {
         course.code || '',
         course.name || '',
         course.credits || '',
-        course.isSU ? `${course.grade || 'S/U'} (S/U)` : (course.grade || ''),
+        course.isSU ? `${course.grade || ''} (S/U)` : (course.grade || ''),
         course.isSU ? 'Yes' : 'No'
       ]);
     });

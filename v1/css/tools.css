@@ -108,12 +108,23 @@ body {
 
 .form-field input,
 .form-field select,
-textarea {
+.form-field textarea {
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   padding: 10px;
   font-size: 0.95rem;
   background: #fff;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: flex-end;
 }
 
 .checkbox-field {
