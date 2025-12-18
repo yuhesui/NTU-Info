@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NTU exam timetable generator with conflict detection, study planner, and calendar export">
+  <meta name="keywords" content="NTU, exam timetable, calendar export, study planner">
+  <meta name="author" content="QRS@NTU">
+  <meta property="og:title" content="Exam Timetable Generator | NTU Info">
+  <meta property="og:description" content="Build your NTU exam schedule, detect conflicts, and export to calendar">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ntuinfo.com/exam-timetable.html">
+  <title>Exam Timetable Generator | NTU Info</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="main-style.css">
+  <link rel="stylesheet" href="css/tools.css">
+  <link rel="stylesheet" href="css/qrs-integration.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/ics@3.7.2/dist/ics.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container nav-container">
+      <div class="logo-section">
+        <h1 class="logo-title">NTU Info</h1>
+        <p class="logo-subtitle">Exam Timetable</p>
+      </div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Academic Tools ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="cgpa-calculator.html">CGPA Calculator</a></li>
+              <li><a href="exam-timetable.html" aria-current="page">Exam Timetable</a></li>
+              <li><a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener">📚 Math Notes &amp; Past Papers ↗</a></li>
+            </ul>
+          </li>
+          <li><a href="ntu-clubs/index.html">Campus Life</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <div class="breadcrumb">Home &gt; Academic Tools &gt; Exam Timetable</div>
+    <h1 class="page-title">Exam Timetable Generator</h1>
+
+    <div class="contextual-banner" id="qrs-study-banner">
+      <span class="banner-close" onclick="dismissBanner()" aria-label="Dismiss">×</span>
+      <p>📖 <strong>Preparing for Math/Econ/Finance exams?</strong> Access past papers and cheatsheets at <a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener">QRS@NTU Math Notes ↗</a></p>
+    </div>
+
+    <section class="card">
+      <div class="card-header">
+        <div>
+          <p class="card-kicker">Enter details</p>
+          <h2>Exam Inputs</h2>
+        </div>
+        <button id="add-exam" class="btn primary">Add Exam</button>
+      </div>
+      <div id="exams-container" class="exams-list"></div>
+      <div class="import-area">
+        <label for="import-text">Import from text</label>
+        <textarea id="import-text" rows="3" placeholder="MH1810 05/05/2025 14:00 2hrs LT1A"></textarea>
+        <button id="import-btn" class="btn secondary">Import</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Timetable View</h2>
+      </div>
+      <div class="table-wrapper">
+        <table class="timetable-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Course</th>
+              <th>Duration</th>
+              <th>Venue</th>
+              <th>Study Days</th>
+            </tr>
+          </thead>
+          <tbody id="timetable-body"></tbody>
+        </table>
+      </div>
+      <div id="conflict-container"></div>
+    </section>
+
+    <section class="card">
+      <h2>Study Planner</h2>
+      <div class="summary-grid">
+        <div class="summary-tile">
+          <p class="label">Total Exams</p>
+          <p class="value" id="total-exams">0</p>
+        </div>
+        <div class="summary-tile">
+          <p class="label">Exam Period</p>
+          <p class="value" id="exam-period">-</p>
+        </div>
+        <div class="summary-tile">
+          <p class="label">Average Study Time</p>
+          <p class="value" id="avg-study">0 days/exam</p>
+        </div>
+        <div class="summary-tile">
+          <p class="label">Busiest Week</p>
+          <p class="value" id="busiest-week">-</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="actions">
+        <button id="export-ics" class="btn secondary">Export to Calendar (.ics)</button>
+        <button id="export-exam-pdf" class="btn secondary">Export to PDF</button>
+        <button id="print-timetable" class="btn secondary">Print Timetable</button>
+        <button id="clear-exams" class="btn danger">Clear All</button>
+      </div>
+    </section>
+
+    <section class="card faq-card">
+      <h2>FAQ</h2>
+      <div class="faq-item">
+        <h3>Where do I find my official exam schedule?</h3>
+        <p>Check NTU Student Portal &gt; Academics &gt; Examination Timetable or STARS system.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I have an exam conflict?</h3>
+        <p>Exam conflicts are rare but serious. Immediately contact both course coordinators and the Exam Unit.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I share my timetable?</h3>
+        <p>Yes! Export to PDF and share, or send the .ics file for others to import to their calendars.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I import to Google Calendar?</h3>
+        <p>Click "Export to Calendar", download the .ics file, then in Google Calendar: Settings &gt; Import &amp; Export &gt; Select file.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-branding">
+        <h3>NTU Info</h3>
+        <p class="tagline">Built by students, for students</p>
+        <p class="copyright">© 2025 NTU Info | Developed by <a href="https://qrsntu.org" target="_blank" rel="noopener">QRS@NTU</a></p>
+        <p class="organization">Quantitative Research Society @ Nanyang Technological University</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="cgpa-calculator.html">CGPA Calculator</a></li>
+            <li><a href="exam-timetable.html">Exam Timetable</a></li>
+            <li><a href="ntu-clubs/index.html">Clubs Explorer</a></li>
+          </ul>
+        </div>
+        <div class="footer-column featured-links">
+          <h4>Study Resources</h4>
+          <ul>
+            <li><a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener" class="featured-link">📚 <strong>Math Notes &amp; Past Papers</strong> ↗</a></li>
+            <li><a href="https://qrsntu.org/about" target="_blank" rel="noopener">About QRS ↗</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>More</h4>
+          <ul>
+            <li><a href="about.html">Privacy Policy</a></li>
+            <li><a href="https://github.com/yuhesui/NTU-Info" target="_blank" rel="noopener">GitHub Repository ↗</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p><small>This is a student-led initiative and is not officially affiliated with Nanyang Technological University administration.</small></p>
+    </div>
+  </footer>
+
+  <script src="js/exam-timetable.js"></script>
+  <script>
+    function dismissBanner() {
+      const banner = document.getElementById('qrs-study-banner');
+      if (banner) {
+        banner.style.display = 'none';
+        localStorage.setItem('qrs_banner_dismissed', 'true');
+      }
+    }
+    if (localStorage.getItem('qrs_banner_dismissed') === 'true') {
+      const banner = document.getElementById('qrs-study-banner');
+      if (banner) banner.style.display = 'none';
+    }
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      if (!link.getAttribute('aria-label')) {
+        const text = link.textContent.trim() || 'External link';
+        link.setAttribute('aria-label', `${text} (opens in new tab)`);
+      }
+    });
+  </script>
+</body>
+</html>

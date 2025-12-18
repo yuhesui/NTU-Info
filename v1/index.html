@@ -14,7 +14,6 @@
     
     <!-- Main Styles -->
     <link rel="stylesheet" href="main-style.css">
-    <link rel="stylesheet" href="css/qrs-integration.css">
 </head>
 <body>
     <!-- Header -->
@@ -24,21 +23,6 @@
                 <h1 class="logo-title">NTU Info</h1>
                 <p class="logo-subtitle">Your comprehensive guide to university life</p>
             </div>
-            <nav class="main-nav" aria-label="Main navigation">
-              <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
-                <li class="dropdown">
-                  <a href="#" aria-haspopup="true" aria-expanded="false">Academic Tools ▾</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="cgpa-calculator.html">CGPA Calculator</a></li>
-                    <li><a href="exam-timetable.html">Exam Timetable</a></li>
-                    <li><a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener">📚 Math Notes &amp; Past Papers ↗</a></li>
-                  </ul>
-                </li>
-                <li><a href="ntu-clubs/index.html">Campus Life</a></li>
-                <li><a href="about.html">About</a></li>
-              </ul>
-            </nav>
         </div>
     </header>
 
@@ -79,34 +63,6 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <section class="featured-tools">
-          <div class="section-container">
-            <h2>Essential Student Tools</h2>
-            <div class="tool-grid">
-              <div class="tool-card">
-                <h3>🧮 CGPA Calculator</h3>
-                <p>Track your semester grades and cumulative GPA with NTU's official grading scale</p>
-                <a href="cgpa-calculator.html" class="btn btn-primary">Calculate GPA →</a>
-              </div>
-              <div class="tool-card">
-                <h3>📅 Exam Timetable</h3>
-                <p>Build your exam schedule, detect conflicts, and export to calendar</p>
-                <a href="exam-timetable.html" class="btn btn-primary">Create Timetable →</a>
-              </div>
-              <div class="tool-card featured-card">
-                <div class="badge">By QRS@NTU</div>
-                <h3>📚 Math Notes &amp; Exam Resources</h3>
-                <p>Access comprehensive revision materials for Math, Economics, and Finance courses:</p>
-                <ul class="feature-list">
-                  <li>✓ Curated study notes &amp; cheatsheets</li>
-                  <li>✓ Past year papers with solutions</li>
-                  <li>✓ Quick reference guides</li>
-                </ul>
-                <a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener noreferrer" class="btn-accent">Browse Math Notes ↗</a>
-              </div>
-            </div>
-          </div>
-        </section>
         <!-- Tools Section -->
         <section class="section">
             <div class="section-container">
@@ -297,42 +253,53 @@
     </main>
 
     <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-content">
-    <div class="footer-branding">
-      <h3>NTU Info</h3>
-      <p class="tagline">Built by students, for students</p>
-      <p class="copyright">© 2025 NTU Info | Developed by <a href="https://qrsntu.org" target="_blank" rel="noopener">QRS@NTU</a></p>
-      <p class="organization">Quantitative Research Society @ Nanyang Technological University</p>
-    </div>
-    <div class="footer-links">
-      <div class="footer-column">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="cgpa-calculator.html">CGPA Calculator</a></li>
-          <li><a href="exam-timetable.html">Exam Timetable</a></li>
-          <li><a href="ntu-clubs/index.html">Clubs Explorer</a></li>
-        </ul>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4 class="footer-title">Resources</h4>
+        <div class="footer-links">
+          <a href="ntu-clubs/index.html">Clubs & Societies</a>
+          <a href="airport-guide/index.html">Airport Guide</a>
+          <a href="Room%20Layout.pptxtx" download>Room Layout (PPT)</a>
+        </div>
       </div>
-      <div class="footer-column featured-links">
-        <h4>Study Resources</h4>
-        <ul>
-          <li><a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener" class="featured-link">📚 <strong>Math Notes &amp; Past Papers</strong> ↗</a></li>
-          <li><a href="https://qrsntu.org/about" target="_blank" rel="noopener">About QRS ↗</a></li>
-        </ul>
+
+      <div class="footer-section">
+        <h4 class="footer-title">Quick Links</h4>
+        <div class="footer-links">
+          <a href="https://www.ntu.edu.sg" target="_blank" rel="noopener noreferrer">NTU Main Website</a>
+          <a href="https://www.ntu.edu.sg/life-at-ntu/student-life" target="_blank" rel="noopener noreferrer">Student Life</a>
+          <a href="https://www.ntu.edu.sg/admissions" target="_blank" rel="noopener noreferrer">Admissions</a>
+        </div>
       </div>
-      <div class="footer-column">
-        <h4>More</h4>
-        <ul>
-            <li><a href="about.html">Privacy Policy</a></li>
-          <li><a href="https://github.com/yuhesui/NTU-Info" target="_blank" rel="noopener">GitHub Repository ↗</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+
+      <div class="footer-section">
+        <h4 class="footer-title">Disclaimer</h4>
+        <p class="footer-info">
+          This website is a student-led project and is not an official NTU publication. While every effort has been made to ensure that the information, analyses, and downloads provided here are accurate and up-to-date, they are offered “as-is” without any warranty. NTU, its departments, and the student developers assume no liability for errors, omissions, or any outcomes arising from the use of this content. Users should verify critical details with official NTU channels and exercise their own judgment before making decisions based on the materials presented.
+        </p>
       </div>
     </div>
-  </div>
-  <div class="footer-disclaimer">
-    <p><small>This is a student-led initiative and is not officially affiliated with Nanyang Technological University administration.</small></p>
+
+    <div class="footer-bottom">
+      <div class="footer-divider"></div>
+      <div class="footer-bottom-content">
+        <p>&copy; 2025 NTU Info. &nbsp;&bull;&nbsp;Built by
+          <a href="https://qrsntu.org"
+             class="text-blue-600 hover:text-blue-700 underline"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Visit QRS@NTU website">
+            QRS@NTU
+          </a>
+        </p>
+        <a href="#" class="back-to-top" aria-label="Back to top">
+          <span>Back to top</span>
+          <i data-lucide="arrow-up"></i>
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -352,13 +319,11 @@
                 }
             });
         });
-
-        // Add aria-labels to external links for accessibility
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            if (!link.getAttribute('aria-label')) {
-                const text = link.textContent.trim() || 'External link';
-                link.setAttribute('aria-label', `${text} (opens in new tab)`);
-            }
+        
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
