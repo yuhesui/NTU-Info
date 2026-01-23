@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "name": "Campus Green Loop",
+      "color": "#4A90E2",
+      "positions": [
+        [1.3480, 103.6831],
+        [1.3505, 103.6845],
+        [1.3488, 103.6865],
+        [1.3465, 103.6850],
+        [1.3480, 103.6831]
+      ]
+    },
+    {
+      "name": "North Spine Connector",
+      "color": "#e24a4a",
+      "positions": [
+        [1.3505, 103.6845],
+        [1.3520, 103.6820]
+      ]
+    }
+  ],
+  "parking": [
+    {
+      "name": "Lee Wee Nam Library Bike Park",
+      "description": "Large capacity parking located near the main library.",
+      "position": [1.3485, 103.6835]
+    },
+    {
+      "name": "South Spine Plaza Parking",
+      "description": "Covered bike parking available 24/7.",
+      "position": [1.3445, 103.6828]
+    },
+    {
+      "name": "North Spine Bike Racks",
+      "description": "Uncovered racks near The Hive.",
+      "position": [1.3522, 103.6822]
+    }
+  ],
+  "repair_stations": [
+    {
+      "name": "Campus Clubhouse Repair Station",
+      "description": "DIY repair station with basic tools and air pump.",
+      "position": [1.3500, 103.6860]
+    },
+    {
+      "name": "Hall 3 Bike Hub",
+      "description": "Student-run repair stop. Open Mon-Fri, 2pm-5pm.",
+      "position": [1.3530, 103.6880]
+    }
+  ]
+}

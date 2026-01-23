@@ -1,0 +1,244 @@
+{
+  "courses": [
+    {
+      "code": "MH1100",
+      "name": "Calculus I",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Introduction to fundamental mathematical concepts including functions, limits, continuity, derivatives and integrals. Computation of derivatives and applications to optimization problems."
+    },
+    {
+      "code": "MH1101",
+      "name": "Calculus II",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Development of definite integrals and applications to find areas and volumes. Fundamental Theorem of Calculus, integration techniques, convergence tests for sequences and series."
+    },
+    {
+      "code": "MH1200",
+      "name": "Linear Algebra I",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Introductory linear algebra covering systems of linear equations, Gaussian elimination, matrices, inverses, determinants, vectors, vector spaces, and linear independence."
+    },
+    {
+      "code": "MH1201",
+      "name": "Linear Algebra II",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Further topics in linear algebra including linear transformations, inner products, eigenvectors, eigenvalues, matrix diagonalization, and Jordan normal form."
+    },
+    {
+      "code": "MH1300",
+      "name": "Foundations of Mathematics",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Rigorous introduction to mathematical proof, set theory, logic, and foundational concepts underlying advanced mathematics."
+    },
+    {
+      "code": "CY1601",
+      "name": "Mathematics I",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Introductory mathematics for CN Yang scholars and Renaissance Engineering students. Topics include limits, differentiation, integration, inverse functions, and ordinary differential equations."
+    },
+    {
+      "code": "CY1602",
+      "name": "Mathematics II",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Second mathematics course covering systems of linear equations, matrices, vector spaces, inner products, calculus of several variables, and vector calculus."
+    },
+    {
+      "code": "MH1800",
+      "name": "Calculus I (Advanced)",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Advanced version of Calculus I for high-achieving students with deeper coverage of theoretical foundations."
+    },
+    {
+      "code": "MH1801",
+      "name": "Calculus II (Advanced)",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Advanced version of Calculus II with rigorous treatment of integration and series theory."
+    },
+    {
+      "code": "MH1802",
+      "name": "Calculus III (Advanced)",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Advanced calculus covering multivariable functions, partial derivatives, multiple integrals, and introduction to differential forms."
+    },
+    {
+      "code": "MH2100",
+      "name": "Linear Algebra III",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Advanced topics in linear algebra with applications to differential equations and numerical methods."
+    },
+    {
+      "code": "MH2200",
+      "name": "Complex Analysis",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Complex numbers, analytic functions, contour integration, and residue theorem with applications."
+    },
+    {
+      "code": "MH2300",
+      "name": "Real Analysis",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Rigorous treatment of real numbers, sequences, limits, continuity, differentiation, and integration."
+    },
+    {
+      "code": "MH2400",
+      "name": "Ordinary Differential Equations",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Solutions of ODEs, first-order and second-order equations, systems of ODEs, and applications to physical problems."
+    },
+    {
+      "code": "MH2500",
+      "name": "Partial Differential Equations",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Classification of PDEs, method of characteristics, separation of variables, and applications to heat and wave equations."
+    },
+    {
+      "code": "MH2600",
+      "name": "Numerical Analysis",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Numerical methods for solving nonlinear equations, interpolation, numerical differentiation and integration, and solving differential equations."
+    },
+    {
+      "code": "MH2800",
+      "name": "Matrix Theory",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Advanced matrix theory including canonical forms, matrix functions, and applications."
+    },
+    {
+      "code": "MH2802",
+      "name": "Computational Linear Algebra",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Computational aspects of linear algebra with focus on algorithms and numerical stability."
+    },
+    {
+      "code": "MH5301",
+      "name": "Modern Cryptography: Real-World Applications and Impact",
+      "credits": 3,
+      "school": "SPMS",
+      "category": "GER/BDE",
+      "description": "Introduction to cryptography including encryption algorithms, digital signatures, hash functions, and applications."
+    },
+    {
+      "code": "MH5401",
+      "name": "Real-World E-Commerce and DEEP Technology",
+      "credits": 3,
+      "school": "SPMS",
+      "category": "GER/BDE",
+      "description": "Mathematical and computational approaches to transforming e-commerce ideas into practical ventures."
+    },
+    {
+      "code": "SC1004",
+      "name": "Introduction to Computer Science",
+      "credits": 4,
+      "school": "SCSE",
+      "category": "Non-Math Majors",
+      "description": "Fundamentals of computer science, algorithms, and programming concepts for non-CS majors."
+    },
+    {
+      "code": "CE1104",
+      "name": "Linear Algebra for Engineers",
+      "credits": 4,
+      "school": "CEE",
+      "category": "Non-Math Majors",
+      "description": "Linear algebra fundamentals tailored for civil engineering applications."
+    },
+    {
+      "code": "CZ1104",
+      "name": "Linear Algebra for Chemistry",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Non-Math Majors",
+      "description": "Linear algebra with applications to quantum chemistry and molecular systems."
+    },
+    {
+      "code": "RE1001",
+      "name": "Mathematics I (Renaissance)",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Mathematics I for Renaissance Engineering scholars with focus on engineering applications."
+    },
+    {
+      "code": "RE1021",
+      "name": "Mathematics II (Renaissance)",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Mathematics II for Renaissance Engineering scholars covering advanced calculus and linear algebra."
+    },
+    {
+      "code": "MH3100",
+      "name": "Abstract Algebra",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Introduction to group theory, ring theory, and field theory with applications."
+    },
+    {
+      "code": "MH3200",
+      "name": "Topology",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Topological spaces, continuity, compactness, connectedness, and separation axioms."
+    },
+    {
+      "code": "MH3300",
+      "name": "Functional Analysis",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Banach spaces, Hilbert spaces, linear operators, and spectral theory with applications."
+    },
+    {
+      "code": "MH3400",
+      "name": "Combinatorics",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Counting principles, permutations, combinations, graph theory, and discrete probability."
+    },
+    {
+      "code": "MH3500",
+      "name": "Number Theory",
+      "credits": 4,
+      "school": "SPMS",
+      "category": "Ordinary",
+      "description": "Prime numbers, congruences, quadratic residues, Diophantine equations, and cryptographic applications."
+    }
+  ]
+}

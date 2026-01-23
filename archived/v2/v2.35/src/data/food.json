@@ -1,0 +1,125 @@
+{
+  "canteens": [
+    {
+      "id": "canteen_north_spine",
+      "name": "North Spine Plaza",
+      "stalls": [
+        {
+          "id": "stall_ns_1",
+          "name": "Mala Hotpot",
+          "rating": 4.5,
+          "reviews": 128,
+          "sampleReview": "Spicy and satisfying! A bit oily but worth it for the flavour punch."
+        },
+        {
+          "id": "stall_ns_2",
+          "name": "Japanese Cuisine",
+          "rating": 4.2,
+          "reviews": 210,
+          "sampleReview": "The chicken katsu don is a classic. Always crispy and delicious."
+        },
+        {
+          "id": "stall_ns_3",
+          "name": "Ayam Penyet",
+          "rating": 4.7,
+          "reviews": 189,
+          "sampleReview": "Best chili on campus, hands down. The chicken is perfectly fried."
+        },
+        {
+          "id": "stall_ns_4",
+          "name": "Subway",
+          "rating": 3.9,
+          "reviews": 95,
+          "sampleReview": "A reliable and healthy option when you're in a hurry."
+        }
+      ]
+    },
+    {
+      "id": "canteen_south_spine",
+      "name": "South Spine Canteen (Koufu)",
+      "stalls": [
+        {
+          "id": "stall_ss_1",
+          "name": "Caifan (Mixed Veg Rice)",
+          "rating": 4.1,
+          "reviews": 350,
+          "sampleReview": "Great variety of dishes, and the price is very reasonable for students."
+        },
+        {
+          "id": "stall_ss_2",
+          "name": "Yong Tau Foo",
+          "rating": 4.3,
+          "reviews": 154,
+          "sampleReview": "Love that I can pick my own ingredients. The laksa soup base is amazing."
+        },
+        {
+          "id": "stall_ss_3",
+          "name": "Indian Cuisine",
+          "rating": 4.4,
+          "reviews": 112,
+          "sampleReview": "The prata is fluffy and the curry has a deep, rich flavour. A must-try."
+        }
+      ]
+    },
+    {
+      "id": "canteen_crespion",
+      "name": "Crespion Canteen",
+      "stalls": [
+        {
+          "id": "stall_cr_1",
+          "name": "Taiwanese Delights",
+          "rating": 4.6,
+          "reviews": 98,
+          "sampleReview": "The braised pork rice (lu rou fan) feels authentic and comforting."
+        },
+        {
+          "id": "stall_cr_2",
+          "name": "Pasta Express",
+          "rating": 3.8,
+          "reviews": 76,
+          "sampleReview": "Decent pasta for the price. The carbonara is creamy and filling."
+        }
+      ]
+    },
+    {
+      "id": "canteen_north_hill",
+      "name": "North Hill Canteen (Foodgle)",
+      "stalls": [
+        {
+          "id": "stall_nh_1",
+          "name": "Korean Cuisine",
+          "rating": 4.5,
+          "reviews": 133,
+          "sampleReview": "The bibimbap is served in a hot stone bowl, making the rice crispy."
+        },
+        {
+          "id": "stall_nh_2",
+          "name": "Thai Food",
+          "rating": 4.3,
+          "reviews": 101,
+          "sampleReview": "Green curry is spicy and aromatic. Great value for the portion size."
+        }
+      ]
+    },
+    {
+      "id": "canteen_the_hive",
+      "name": "The Hive Canteen",
+      "stalls": [
+        {
+          "id": "stall_th_1",
+          "name": "Western Food",
+          "rating": 4.0,
+          "reviews": 115,
+          "sampleReview": "Classic chicken chop with mushroom sauce. Can't go wrong with it."
+        },
+        {
+          "id": "stall_th_2",
+          "name": "Noodle Bar",
+          "rating": 4.2,
+          "reviews": 99,
+          "sampleReview": "The ban mian is handmade and has a great chewy texture."
+        }
+      ]
+    }
+  ]
+}

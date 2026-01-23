@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NTU Info - Your comprehensive hub for Nanyang Technological University resources, tools, and guides for international students">
+    <meta name="keywords" content="NTU, Nanyang Technological University, student resources, Singapore, university tools">
+    <title>NTU Info - Student Resource Hub | Nanyang Technological University</title>
+
+    <!-- Performance optimization: Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Accessibility and SEO meta tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="NTU Info Team">
+    <meta property="og:title" content="NTU Info - Student Resource Hub">
+    <meta property="og:description" content="Comprehensive resources and tools for NTU international students">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ntuinfo.com">
+
+    <style>
+        /* Critical CSS inlined for performance optimization */
+
+        /* CSS Variables - Research-backed design system [80] */
+        :root {
+            /* NTU Brand Colors */
+            --ntu-blue: #003d7c;
+            --ntu-red: #c7162b;
+            --ntu-blue-light: #2a6496;
+            --ntu-blue-lighter: #e6f0ff;
+            --ntu-red-lighter: #ffebed;
+
+            /* Neutral Colors */
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+
+            /* Success/Warning/Error States */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+
+            /* Spacing Scale - Mobile-first responsive spacing [79] */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 0.75rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+
+            /* Typography Scale */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+
+            /* Shadows - Research shows subtle shadows improve perceived usability [87] */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+            /* Animation Timing */
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+            --transition-slow: 350ms ease;
+        }
+
+        /* Base Reset - Accessibility-focused [89] */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px; /* Base font size for rem calculations */
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-700);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Skip link for accessibility [89] */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--ntu-blue);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 9999;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Header - Sticky navigation with backdrop blur [39] */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            padding: var(--spacing-md) 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            text-decoration: none;
+            color: var(--ntu-blue);
+            font-weight: 700;
+            font-size: var(--text-xl);
+        }
+
+        /* Global Search - Predictive suggestions implementation [123] */
+        .global-search {
+            position: relative;
+            flex: 1;
+            max-width: 500px;
+            margin: 0 var(--spacing-xl);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: var(--spacing-sm) var(--spacing-md);
+            padding-left: 3rem;
+            border: 2px solid var(--gray-300);
+            border-radius: var(--radius-lg);
+            font-size: var(--text-base);
+            transition: all var(--transition-normal);
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--ntu-blue);
+            box-shadow: 0 0 0 3px rgba(0, 61, 124, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: var(--spacing-sm);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-400);
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Search Suggestions Dropdown [129] */
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1001;
+            display: none;
+        }
+
+        .suggestion-item {
+            padding: var(--spacing-sm) var(--spacing-md);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .suggestion-item:hover, .suggestion-item.highlighted {
+            background-color: var(--gray-100);
+        }
+
+        .suggestion-text {
+            font-size: var(--text-sm);
+        }
+
+        .suggestion-category {
+            font-size: var(--text-xs);
+            color: var(--gray-500);
+            margin-left: auto;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--text-xl);
+            color: var(--ntu-blue);
+            cursor: pointer;
+        }
+
+        /* Hero Section - Carousel implementation [130] */
+        .hero-section {
+            position: relative;
+            background: linear-gradient(135deg, var(--ntu-blue) 0%, var(--ntu-blue-light) 100%);
+            color: white;
+            padding: var(--spacing-3xl) 0;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-carousel {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: var(--radius-2xl);
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: all var(--transition-slow);
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .carousel-content h1 {
+            font-size: var(--text-4xl);
+            font-weight: 800;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
+
+        .carousel-content p {
+            font-size: var(--text-lg);
+            opacity: 0.9;
+            margin-bottom: var(--spacing-xl);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--ntu-red);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            transition: all var(--transition-normal);
+            border: none;
+            cursor: pointer;
+            font-size: var(--text-base);
+        }
+
+        .cta-button:hover {
+            background: #a61224;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Carousel Navigation */
+        .carousel-nav {
+            position: absolute;
+            bottom: var(--spacing-lg);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .carousel-dot.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        /* Stats Section - Animated counters [web:225] */
+        .stats-section {
+            background: var(--gray-50);
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .stat-card {
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--ntu-blue-lighter);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            color: var(--ntu-blue);
+            font-size: var(--text-xl);
+        }
+
+        .stat-number {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            color: var(--ntu-blue);
+            line-height: 1;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stat-label {
+            font-size: var(--text-sm);
+            color: var(--gray-600);
+            font-weight: 500;
+        }
+
+        /* Features Section - Card-based layout [web:220] */
+        .features-section {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--ntu-blue-lighter);
+            color: var(--ntu-blue);
+            border-radius: var(--radius-xl);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: var(--text-3xl);
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .section-description {
+            font-size: var(--text-lg);
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Feature Cards Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-2xl);
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: var(--radius-2xl);
+            padding: var(--spacing-2xl);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gray-300);
+        }
+
+        .feature-card.priority-1::before {
+            background: linear-gradient(90deg, var(--ntu-blue), var(--ntu-red));
+        }
+
+        .feature-card.priority-2::before {
+            background: var(--ntu-blue);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--ntu-blue-lighter);
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--ntu-blue);
+            color: white;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-xl);
+            flex-shrink: 0;
+        }
+
+        .feature-meta {
+            flex: 1;
+        }
+
+        .feature-category {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .feature-title {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-description {
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Status Badges */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-md);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge.active {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .status-badge.coming-soon {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--warning);
+        }
+
+        .status-badge.beta {
+            background: var(--ntu-blue-lighter);
+            color: var(--ntu-blue);
+        }
+
+        /* Feature Actions */
+        .feature-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: auto;
+        }
+
+        .feature-button {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all var(--transition-normal);
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: var(--text-sm);
+        }
+
+        .feature-button.primary {
+            background: var(--ntu-blue);
+            color: white;
+        }
+
+        .feature-button.primary:hover {
+            background: var(--ntu-blue-light);
+            transform: translateY(-2px);
+        }
+
+        .feature-button.secondary {
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border-color: var(--gray-300);
+        }
+
+        .feature-button.secondary:hover {
+            background: var(--gray-200);
+            border-color: var(--ntu-blue);
+            color: var(--ntu-blue);
+        }
+
+        /* Tooltips */
+        .tooltip {
+            position: relative;
+            cursor: help;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gray-900);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-md);
+            font-size: var(--text-xs);
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition-normal);
+            z-index: 1000;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+
+        /* Loading States */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 50%, var(--gray-200) 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Responsive Design - Mobile-first approach [web:183] */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                gap: var(--spacing-md);
+            }
+
+            .global-search {
+                order: 3;
+                flex-basis: 100%;
+                margin: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero-carousel {
+                height: 300px;
+            }
+
+            .carousel-content h1 {
+                font-size: var(--text-3xl);
+            }
+
+            .carousel-content p {
+                font-size: var(--text-base);
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+
+            .feature-card {
+                padding: var(--spacing-lg);
+            }
+
+            .feature-header {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+
+            .feature-actions {
+                flex-direction: column;
+            }
+        }
+
+        /* High contrast mode support [83] */
+        @media (prefers-contrast: high) {
+            :root {
+                --gray-300: #000000;
+                --gray-600: #000000;
+            }
+        }
+
+        /* Reduced motion support [89] */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .header, .carousel-nav, .mobile-menu-toggle {
+                display: none !important;
+            }
+
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+
+            .feature-card {
+                break-inside: avoid;
+                margin-bottom: var(--spacing-lg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- Skip link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- Header with Global Search -->
+<header class="header" role="banner">
+    <div class="header-container">
+        <a href="/" class="logo" aria-label="NTU Info Homepage">
+            <span>🎓</span>
+            <span>NTU Info</span>
+        </a>
+
+        <!-- Global Search with Predictive Suggestions -->
+        <div class="global-search" role="search">
+            <div style="position: relative;">
+                <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                <input
+                        type="search"
+                        class="search-input"
+                        placeholder="Search resources, guides, clubs..."
+                        aria-label="Search NTU resources"
+                        autocomplete="off"
+                        id="globalSearch"
+                >
+            </div>
+
+            <!-- Search Suggestions Dropdown -->
+            <div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="Search suggestions">
+                <!-- Dynamic suggestions will be populated here -->
+            </div>
+        </div>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span>☰</span>
+        </button>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main id="main-content">
+    <!-- Hero Section with Carousel -->
+    <section class="hero-section" aria-label="Welcome to NTU Info">
+        <div class="hero-container">
+            <div class="hero-carousel" role="region" aria-label="Featured content carousel">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active">
+                    <div class="carousel-content">
+                        <h1>Welcome to <span style="color: #fbbf24;">NTU Info</span></h1>
+                        <p>Your comprehensive hub for navigating university life at Nanyang Technological University. Access essential tools, resources, and guides designed specifically for international students.</p>
+                        <a href="#features" class="cta-button">
+                            <span>Explore Resources</span>
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <div class="carousel-content">
+                        <h1>Changi Airport <span style="color: #fbbf24;">Arrival Guide</span></h1>
+                        <p>Navigate Singapore's Changi Airport with confidence using our interactive terminal maps, transportation guides, and step-by-step arrival instructions.</p>
+                        <a href="/airport-guide" class="cta-button">
+                            <span>View Guide</span>
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <div class="carousel-content">
+                        <h1>Club Explorer <span style="color: #fbbf24;">Tool</span></h1>
+                        <p>Discover the perfect co-curricular activities from 113+ NTU clubs with our advanced filtering system. Find clubs by time commitment, difficulty, and interests.</p>
+                        <a href="/clubs-explorer" class="cta-button">
+                            <span>Find Clubs</span>
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Navigation -->
+            <div class="carousel-nav" role="tablist" aria-label="Carousel navigation">
+                <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+                <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+                <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Stats Section -->
+    <section class="stats-section" aria-label="NTU Info statistics">
+        <div class="stats-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <span>📚</span>
+                    </div>
+                    <div class="stat-number" data-target="15">0</div>
+                    <div class="stat-label">Essential Tools</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <span>🏫</span>
+                    </div>
+                    <div class="stat-number" data-target="113">0</div>
+                    <div class="stat-label">Clubs Analyzed</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <span>🌍</span>
+                    </div>
+                    <div class="stat-number" data-target="50000">0</div>
+                    <div class="stat-label">Students Helped</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <span>⭐</span>
+                    </div>
+                    <div class="stat-number" data-target="98">0</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section with Card-based Layout -->
+    <section class="features-section" id="features" aria-label="Available resources and tools">
+        <div class="features-container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>🚀</span>
+                    <span>Priority Resources</span>
+                </div>
+                <h2 class="section-title">Essential Tools for Your NTU Journey</h2>
+                <p class="section-description">Comprehensive resources designed to simplify your university experience, from arrival to graduation.</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Priority 1 Features -->
+
+                <!-- Changi Airport Arrival Guide -->
+                <article class="feature-card priority-1">
+                    <div class="feature-header">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">
+                            <span>✈️</span>
+                        </div>
+                        <div class="feature-meta">
+                            <div class="feature-category">Navigation</div>
+                            <h3 class="feature-title">Changi Airport Arrival Guide</h3>
+                            <div class="status-badge active">
+                                <span>●</span>
+                                <span>Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feature-description">Interactive step-by-step guide for international students arriving at Singapore's Changi Airport. Includes terminal maps, immigration procedures, and transportation options.</p>
+                    <div class="feature-actions">
+                        <a href="/airport-guide" class="feature-button primary">
+                            <span>Open Guide</span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- NTU Clubs & Societies Explorer -->
+                <article class="feature-card priority-1">
+                    <div class="feature-header">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);">
+                            <span>🏆</span>
+                        </div>
+                        <div class="feature-meta">
+                            <div class="feature-category">Co-curricular</div>
+                            <h3 class="feature-title">NTU Clubs & Societies Explorer</h3>
+                            <div class="status-badge active">
+                                <span>●</span>
+                                <span>Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feature-description">Advanced filtering system for 113+ NTU clubs with multi-criteria sorting by time commitment, physical demands, entry requirements, and CCA points allocation.</p>
+                    <div class="feature-actions">
+                        <a href="/clubs-explorer" class="feature-button primary">
+                            <span>Explore Clubs</span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Hall Room Layout Reference -->
+                <article class="feature-card priority-1">
+                    <div class="feature-header">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                            <span>🏠</span>
+                        </div>
+                        <div class="feature-meta">
+                            <div class="feature-category">Accommodation</div>
+                            <h3 class="feature-title">Hall Room Layout Reference</h3>
+                            <div class="status-badge active">
+                                <span>●</span>
+                                <span>Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feature-description">High-resolution floor plans for every NTU hall room type (GH1, GH2, Single Ensuite, Single Plus, Single) with 1:1 scale measurements for furniture planning.</p>
+                    <div class="feature-actions">
+                        <a href="/room-layouts.pptx" class="feature-button primary" download>
+                            <span>Download (2 MB)</span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-4-4m4 4l4-4m5-2v8a2 2 0 01-2 2H5a2 2 0 01-2-2v-8a2 2 0 012-2h2.586a1 1 0 00.707-.293l2.414-2.414A1 1 0 0111.414 6H17a2 2 0 012 2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Priority 2 Features -->
+
+                <!-- Academic Calendar Integration -->
+                <article class="feature-card priority-2">
+                    <div class="feature-header">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                            <span>📅</span>
+                        </div>
+                        <div class="feature-meta">
+                            <div class="feature-category">Academic Planning</div>
+                            <h3 class="feature-title">
+                                Academic Calendar Integration
+                                <span class="tooltip" data-tooltip="Sync important dates with your personal calendar">
+                                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <path d="M9,9h0a3,3,0,0,1,5.12,2.12A3,3,0,0,1,13,14H12a1,1,0,0,0,0,2h1.09"></path>
+                                            <circle cx="12" cy="19" r="1"></circle>
+                                        </svg>
+                                    </span>
+                            </h3>
+                            <div class="status-badge coming-soon">
+                                <span>⏳</span>
+                                <span>Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feature-description">Synchronized calendar system with NTU academic dates, exam schedules, and important deadlines. Export to Google Calendar, Outlook, or Apple Calendar.</p>
+                    <div class="feature-actions">
+                        <button class="feature-button secondary" disabled>
+                            <span>Available Q2 2025</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Course Planning Assistant -->
+                <article class="feature-card priority-2">
+                    <div class="feature-header">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
+                            <span>🎯</span>
+                        </div>
+                        <div class="feature-meta">
+                            <div class="feature-category">Academic Tools</div>
+                            <h3 class="feature-title">Course Planning Assistant</h3>
+                            <div class="status-badge beta">
+                                <span>β</span>
+                                <span>Beta</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feature-description">AI-powered course recommendation system with prerequisites tracking, graduation requirement verification, and timetable conflict detection.</p>
+                    <div class="feature-actions">
+                        <a href="/course-planner" class="feature-button primary">
+                            <span>Try Beta</span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </a>
+                        <a href="/course-planner/feedback" class="feature-button secondary">
+                            <span>Feedback</span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Campus Navigation Maps -->
+                <article class="feature-card priority-2">
+                    <div class="feature-header">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
+                            <span>🗺️</span>
+                        </div>
+                        <div class="feature-meta">
+                            <div class="feature-category">Navigation</div>
+                            <h3 class="feature-title">Campus Navigation Maps</h3>
+                            <div class="status-badge active">
+                                <span>●</span>
+                                <span>Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feature-description">Interactive campus maps with real-time navigation, building information, accessibility routes, and points of interest including dining, study spaces, and facilities.</p>
+                    <div class="feature-actions">
+                        <a href="/campus-maps" class="feature-button primary">
+                            <span>View Maps</span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Study Space Finder -->
+                <article class="feature-card priority-2">
+                    <div class="feature-header">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
+                            <span>📖</span>
+                        </div>
+                        <div class="feature-meta">
+                            <div class="feature-category">Study Resources</div>
+                            <h3 class="feature-title">Study Space Finder</h3>
+                            <div class="status-badge coming-soon">
+                                <span>⏳</span>
+                                <span>Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feature-description">Real-time availability tracking for study spaces across NTU campuses including libraries, discussion rooms, and quiet zones with booking integration.</p>
+                    <div class="feature-actions">
+                        <button class="feature-button secondary" disabled>
+                            <span>Development Phase</span>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Food & Dining Guide -->
+                <article class="feature-card priority-2">
+                    <div class="feature-header">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                            <span>🍽️</span>
+                        </div>
+                        <div class="feature-meta">
+                            <div class="feature-category">Campus Life</div>
+                            <h3 class="feature-title">Food & Dining Guide</h3>
+                            <div class="status-badge beta">
+                                <span>β</span>
+                                <span>Beta</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feature-description">Comprehensive guide to NTU dining options with menus, prices, opening hours, dietary restrictions, and student reviews for all campus food courts and cafes.</p>
+                    <div class="feature-actions">
+                        <a href="/dining-guide" class="feature-button primary">
+                            <span>Browse Food</span>
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Student Life Hub -->
+                <article class="feature-card priority-2">
+                    <div class="feature-header">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);">
+                            <span>🎭</span>
+                        </div>
+                        <div class="feature-meta">
+                            <div class="feature-category">Community</div>
+                            <h3 class="feature-title">Student Life Hub</h3>
+                            <div class="status-badge coming-soon">
+                                <span>⏳</span>
+                                <span>Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="feature-description">Centralized platform for student events, announcements, community forums, and social activities. Connect with fellow students and stay updated on campus life.</p>
+                    <div class="feature-actions">
+                        <button class="feature-button secondary" disabled>
+                            <span>Q1 2025</span>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Loading overlay for async operations -->
+<div id="loadingOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 9999; display: flex; align-items: center; justify-content: center;">
+    <div style="background: white; padding: 2rem; border-radius: 1rem; text-align: center;">
+        <div class="skeleton" style="width: 100px; height: 4px; margin: 0 auto 1rem;"></div>
+        <p>Loading...</p>
+    </div>
+</div>
+
+<script>
+    // Performance optimization: Lazy load non-critical JavaScript
+    document.addEventListener('DOMContentLoaded', function() {
+        'use strict';
+
+        // Search functionality with predictive suggestions [web:224]
+        const globalSearch = document.getElementById('globalSearch');
+        const searchSuggestions = document.getElementById('searchSuggestions');
+
+        // Sample search data - would be populated from API in production
+        const searchData = [
+            { title: 'Changi Airport Guide', category: 'Navigation', url: '/airport-guide', keywords: ['airport', 'changi', 'arrival', 'immigration', 'transport'] },
+            { title: 'NTU Clubs Explorer', category: 'Co-curricular', url: '/clubs-explorer', keywords: ['clubs', 'societies', 'cca', 'activities', 'sports'] },
+            { title: 'Hall Room Layouts', category: 'Accommodation', url: '/room-layouts', keywords: ['hall', 'room', 'accommodation', 'housing', 'floor plan'] },
+            { title: 'Course Planning Assistant', category: 'Academic', url: '/course-planner', keywords: ['course', 'planning', 'timetable', 'academic', 'schedule'] },
+            { title: 'Campus Navigation', category: 'Maps', url: '/campus-maps', keywords: ['campus', 'map', 'navigation', 'building', 'directions'] },
+            { title: 'Study Space Finder', category: 'Study', url: '/study-spaces', keywords: ['study', 'library', 'quiet', 'discussion room', 'booking'] },
+            { title: 'Dining Guide', category: 'Food', url: '/dining-guide', keywords: ['food', 'dining', 'canteen', 'cafe', 'restaurant'] }
+        ];
+
+        let searchTimeout;
+        let selectedIndex = -1;
+
+        // Search input event handler with debouncing
+        globalSearch.addEventListener('input', function(e) {
+            clearTimeout(searchTimeout);
+            const query = e.target.value.trim().toLowerCase();
+
+            if (query.length < 2) {
+                hideSuggestions();
+                return;
+            }
+
+            searchTimeout = setTimeout(() => {
+                showSuggestions(query);
+            }, 300); // Debounce for 300ms
+        });
+
+        // Keyboard navigation for search suggestions [web:230]
+        globalSearch.addEventListener('keydown', function(e) {
+            const suggestions = searchSuggestions.querySelectorAll('.suggestion-item');
+
+            switch (e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    selectedIndex = Math.min(selectedIndex + 1, suggestions.length - 1);
+                    updateSelection(suggestions);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    selectedIndex = Math.max(selectedIndex - 1, -1);
+                    updateSelection(suggestions);
+                    break;
+                case 'Enter':
+                    e.preventDefault();
+                    if (selectedIndex >= 0 && suggestions[selectedIndex]) {
+                        suggestions[selectedIndex].click();
+                    }
+                    break;
+                case 'Escape':
+                    hideSuggestions();
+                    break;
+            }
+        });
+
+        // Hide suggestions when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!globalSearch.contains(e.target) && !searchSuggestions.contains(e.target)) {
+                hideSuggestions();
+            }
+        });
+
+        function showSuggestions(query) {
+            const matches = searchData.filter(item =>
+                item.title.toLowerCase().includes(query) ||
+                item.category.toLowerCase().includes(query) ||
+                item.keywords.some(keyword => keyword.includes(query))
+            ).slice(0, 6); // Limit to 6 suggestions
+
+            if (matches.length === 0) {
+                hideSuggestions();
+                return;
+            }
+
+            searchSuggestions.innerHTML = matches.map((item, index) => `
+                    <div class="suggestion-item" data-url="${item.url}" tabindex="0" role="option">
+                        <span class="suggestion-text">${highlightMatch(item.title, query)}</span>
+                        <span class="suggestion-category">${item.category}</span>
+                    </div>
+                `).join('');
+
+            // Add click handlers for suggestions
+            searchSuggestions.querySelectorAll('.suggestion-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    window.location.href = this.dataset.url;
+                });
+            });
+
+            searchSuggestions.style.display = 'block';
+            selectedIndex = -1;
+        }
+
+        function hideSuggestions() {
+            searchSuggestions.style.display = 'none';
+            selectedIndex = -1;
+        }
+
+        function updateSelection(suggestions) {
+            suggestions.forEach((item, index) => {
+                item.classList.toggle('highlighted', index === selectedIndex);
+            });
+        }
+
+        function highlightMatch(text, query) {
+            const regex = new RegExp(`(${escapeRegex(query)})`, 'gi');
+            return text.replace(regex, '<strong>$1</strong>');
+        }
+
+        function escapeRegex(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Carousel functionality [web:231]
+        const carousel = {
+            slides: document.querySelectorAll('.carousel-slide'),
+            dots: document.querySelectorAll('.carousel-dot'),
+            currentSlide: 0,
+            interval: null,
+
+            init() {
+                this.setupEventListeners();
+                this.startAutoplay();
+            },
+
+            setupEventListeners() {
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        this.goToSlide(index);
+                        this.resetAutoplay();
+                    });
+                });
+
+                // Pause autoplay on hover
+                const heroCarousel = document.querySelector('.hero-carousel');
+                heroCarousel.addEventListener('mouseenter', () => this.pauseAutoplay());
+                heroCarousel.addEventListener('mouseleave', () => this.resumeAutoplay());
+            },
+
+            goToSlide(index) {
+                this.slides[this.currentSlide].classList.remove('active');
+                this.dots[this.currentSlide].classList.remove('active');
+                this.dots[this.currentSlide].setAttribute('aria-selected', 'false');
+
+                this.currentSlide = index;
+
+                this.slides[this.currentSlide].classList.add('active');
+                this.dots[this.currentSlide].classList.add('active');
+                this.dots[this.currentSlide].setAttribute('aria-selected', 'true');
+            },
+
+            nextSlide() {
+                const nextIndex = (this.currentSlide + 1) % this.slides.length;
+                this.goToSlide(nextIndex);
+            },
+
+            startAutoplay() {
+                // Auto-advance every 5 seconds based on research [web:231]
+                this.interval = setInterval(() => this.nextSlide(), 5000);
+            },
+
+            pauseAutoplay() {
+                if (this.interval) {
+                    clearInterval(this.interval);
+                    this.interval = null;
+                }
+            },
+
+            resumeAutoplay() {
+                if (!this.interval) {
+                    this.startAutoplay();
+                }
+            },
+
+            resetAutoplay() {
+                this.pauseAutoplay();
+                this.resumeAutoplay();
+            }
+        };
+
+        carousel.init();
+
+        // Animated stats counter [124]
+        const animateStats = () => {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumber(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            statNumbers.forEach(stat => observer.observe(stat));
+        };
+
+        function animateNumber(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const step = target / (duration / 16); // 60fps
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+
+        animateStats();
+
+        // Feature card interactions and tooltips
+        const setupFeatureCards = () => {
+            const featureCards = document.querySelectorAll('.feature-card');
+
+            featureCards.forEach(card => {
+                // Add hover effects for cards
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+
+                // Track clicks for analytics (would integrate with actual analytics)
+                const buttons = card.querySelectorAll('.feature-button');
+                buttons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        const cardTitle = card.querySelector('.feature-title').textContent;
+                        const buttonText = this.textContent.trim();
+
+                        // Analytics tracking placeholder
+                        console.log('Feature interaction:', { cardTitle, buttonText });
+
+                        // Show loading state for external links
+                        if (this.href && !this.href.includes('#')) {
+                            this.classList.add('loading');
+                            setTimeout(() => {
+                                this.classList.remove('loading');
+                            }, 1000);
+                        }
+                    });
+                });
+            });
+        };
+
+        setupFeatureCards();
+
+        // Accessibility enhancements
+        const setupAccessibility = () => {
+            // Keyboard navigation for interactive elements
+            const interactiveElements = document.querySelectorAll('button, a, [tabindex]');
+
+            interactiveElements.forEach(element => {
+                element.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        if (this.tagName === 'BUTTON' || this.tagName === 'A') {
+                            e.preventDefault();
+                            this.click();
+                        }
+                    }
+                });
+            });
+
+            // Announce dynamic content changes to screen readers
+            const announcer = document.createElement('div');
+            announcer.setAttribute('aria-live', 'polite');
+            announcer.setAttribute('aria-atomic', 'true');
+            announcer.style.position = 'absolute';
+            announcer.style.left = '-10000px';
+            announcer.style.width = '1px';
+            announcer.style.height = '1px';
+            announcer.style.overflow = 'hidden';
+            document.body.appendChild(announcer);
+
+            // Function to announce content changes
+            window.announceToScreenReader = function(message) {
+                announcer.textContent = message;
+            };
+        };
+
+        setupAccessibility();
+
+        // Performance optimization: Lazy load images when they enter viewport
+        const setupLazyLoading = () => {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            imageObserver.unobserve(img);
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        };
+
+        setupLazyLoading();
+
+        // Error handling and fallbacks
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript error:', e.error);
+            // Could integrate with error reporting service
+        });
+
+        // Service Worker registration for PWA capabilities (if available)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('SW registered:', registration);
+                })
+                .catch(error => {
+                    console.log('SW registration failed:', error);
+                });
+        }
+
+        console.log('🎓 NTU Info homepage initialized successfully!');
+    });
+
+    // Critical performance metrics tracking
+    window.addEventListener('load', function() {
+        // Performance API metrics
+        if ('performance' in window) {
+            const perfData = performance.getEntriesByType('navigation')[0];
+            if (perfData) {
+                console.log('Page load metrics:', {
+                    domContentLoaded: perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart,
+                    fullyLoaded: perfData.loadEventEnd - perfData.loadEventStart,
+                    firstPaint: performance.getEntriesByType('paint')?.startTime
+                });
+            }
+        }
+    });
+</script>
+
+<!-- Load Google Fonts asynchronously for performance -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+</body>
+</html>

@@ -1,0 +1,48 @@
+:root {
+  --ntu-blue: #003d7c;
+  --ntu-red: #c7162b;
+  --ntu-red-light: #e4394f;
+  --brand-gradient: linear-gradient(90deg, var(--ntu-blue) 0%, var(--ntu-red) 100%);
+}
+
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+.hero-gradient-text {
+  background-image: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.navbar {
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba(255, 255, 255, 0.75);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.status-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-coming-soon {
+    background-color: #e0e7ff;
+    color: #4338ca;
+    border: 1px solid #c7d2fe;
+}
