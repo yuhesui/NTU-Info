@@ -20,15 +20,32 @@ function clampIndex(idx, length) {
 }
 
 export function initBannerTabs() {
-  const root = document.querySelector('[data-banner-tabs]');
-  if (!root) return;
+  const panelsRoot = document.querySelector('[data-banner-tabs]');
+  if (!panelsRoot) return;
 
-  const tabs = Array.from(root.querySelectorAll('[data-banner-tab]'));
-  const panels = Array.from(document.querySelectorAll('[data-banner-panel]'));
+  // The tablist sits next to the panels root.
+  const navRoot = panelsRoot.closest('nav') || document;
+  const tabs = Array.from(navRoot.querySelectorAll('[data-banner-tab]'));
+  const panels = Array.from(panelsRoot.querySelectorAll('[data-banner-panel]'));
 
   if (tabs.length === 0 || panels.length === 0) return;
 
-  function setActive(tabId, { focusTab = false, persist = true } = {}) {
+  function hideAllPanels() {
+    panels.forEach((p) => {
+      p.hidden = true;
+      p.classList.remove('is-active');
+    });
+  }
+
+  function showPanel(panelId) {
+    panels.forEach((p) => {
+      const isActive = p.id === panelId;
+      p.hidden = !isActive;
+      p.classList.toggle('is-active', isActive);
+    });
+  }
+
+  function setActive(tabId, { focusTab = false, persist = true, openPanel = true } = {}) {
     const tab = tabs.find((t) => t.id === tabId) || tabs[0];
     const panelId = tab.getAttribute('aria-controls');
 
@@ -39,11 +56,11 @@ export function initBannerTabs() {
       t.classList.toggle('is-active', selected);
     });
 
-    panels.forEach((p) => {
-      const isActive = p.id === panelId;
-      p.hidden = !isActive;
-      p.classList.toggle('is-active', isActive);
-    });
+    if (openPanel) {
+      showPanel(panelId);
+    } else {
+      hideAllPanels();
+    }
 
     if (persist) {
       try {
@@ -67,6 +84,13 @@ export function initBannerTabs() {
 
   // Ensure DOM state matches.
   setActive(initialId, { persist: false });
+
+  function focusFirstLink(panelId) {
+    const panel = panels.find((p) => p.id === panelId);
+    if (!panel) return;
+    const firstLink = panel.querySelector('a[href]:not([aria-disabled="true"])');
+    if (firstLink) firstLink.focus();
+  }
 
   // Click/tap
   tabs.forEach((tab) => {
@@ -105,14 +129,27 @@ export function initBannerTabs() {
       }
 
       if (e.key === 'Escape') {
-        // "Close" panel by collapsing content, but keep selected state visible.
-        // Implemented by hiding all panels.
         e.preventDefault();
-        panels.forEach((p) => {
-          p.hidden = true;
-          p.classList.remove('is-active');
-        });
+        // Collapse panel content but keep selected highlight.
+        setActive(tab.id, { persist: false, openPanel: false });
       }
+
+      if (e.key === 'ArrowDown') {
+        // Optional convenience: move into panel.
+        e.preventDefault();
+        const panelId = tab.getAttribute('aria-controls');
+        focusFirstLink(panelId);
+      }
+    });
+  });
+
+  // Let users press Escape while focus is inside the panel to collapse it.
+  panels.forEach((panel) => {
+    panel.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      e.preventDefault();
+      const selectedTab = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+      setActive(selectedTab.id, { persist: false, openPanel: false, focusTab: true });
     });
   });
 }
