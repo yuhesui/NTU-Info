@@ -1,0 +1,34 @@
+/* Airport guide styles */
+
+.step {
+  border-left: 4px solid var(--ntu-red);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+}
+
+.step h2 {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--ntu-red);
+  font-size: var(--text-2xl);
+}
+
+.time-est {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--gray-600);
+  background: var(--white);
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.step ol,
+.step ul {
+  margin-left: 1.25rem;
+}
+
+.step li {
+  margin: 6px 0;
+}

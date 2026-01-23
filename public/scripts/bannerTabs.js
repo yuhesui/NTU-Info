@@ -54,6 +54,8 @@ export function initBannerTabs() {
       t.setAttribute('aria-selected', selected ? 'true' : 'false');
       t.tabIndex = selected ? 0 : -1;
       t.classList.toggle('is-active', selected);
+      // Required by prompt: CSS selector expects `.active`
+      t.classList.toggle('active', selected);
     });
 
     if (openPanel) {
@@ -83,7 +85,16 @@ export function initBannerTabs() {
   }
 
   // Ensure DOM state matches.
-  setActive(initialId, { persist: false });
+  // Start with panels collapsed on initial load so they only expand when the user clicks a tab.
+  setActive(initialId, { persist: false, openPanel: false });
+
+  // Diagnostics required by prompt
+  const activeButton = /** @type {HTMLButtonElement|null} */ (navRoot.querySelector('.banner-tabs button.active'));
+  if (activeButton) {
+    console.log('Active tab on load:', (activeButton.textContent || '').trim());
+    console.log('[BANNER] Active tab:', window.localStorage.getItem(STORAGE_KEY));
+    console.log('[BANNER] Active button styling:', window.getComputedStyle(activeButton).borderBottom);
+  }
 
   function focusFirstLink(panelId) {
     const panel = panels.find((p) => p.id === panelId);
@@ -93,10 +104,52 @@ export function initBannerTabs() {
   }
 
   // Click/tap
+  let hideTimer = null;
+  function clearHideTimer() {
+    if (hideTimer) {
+      clearTimeout(hideTimer);
+      hideTimer = null;
+    }
+  }
+
+  function showPanelForTab(tab) {
+    const panelId = tab.getAttribute('aria-controls');
+    const panel = panels.find((p) => p.id === panelId);
+    if (!panel) return;
+
+    // Size the panel to be similar to the tab width (min-width) so it doesn't appear overly wide.
+    try {
+      const rect = tab.getBoundingClientRect();
+      // Use min-width so content can grow if needed but base width matches the tab.
+      panel.style.minWidth = `${Math.max(160, Math.round(rect.width))}px`;
+    } catch (e) {
+      // ignore in older browsers
+    }
+
+    setActive(tab.id, { persist: false, openPanel: true });
+  }
+
+  function hidePanelForTab(tab) {
+    const tabId = tab.id;
+    setActive(tabId, { persist: false, openPanel: false });
+  }
+
   tabs.forEach((tab) => {
     tab.addEventListener('click', (e) => {
       e.preventDefault();
       setActive(tab.id);
+    });
+
+    // Hover behavior: show when mouse enters, hide shortly after leaving.
+    tab.addEventListener('mouseenter', () => {
+      clearHideTimer();
+      showPanelForTab(tab);
+    });
+
+    tab.addEventListener('mouseleave', () => {
+      // Delay hiding slightly to allow moving into the panel without flicker
+      clearHideTimer();
+      hideTimer = setTimeout(() => hidePanelForTab(tab), 180);
     });
 
     tab.addEventListener('keydown', (e) => {
@@ -150,6 +203,25 @@ export function initBannerTabs() {
       e.preventDefault();
       const selectedTab = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
       setActive(selectedTab.id, { persist: false, openPanel: false, focusTab: true });
+    });
+
+    // Hover support on the panel itself so it remains open when the pointer moves from the tab into the panel
+    panel.addEventListener('mouseenter', () => {
+      clearHideTimer();
+      // Keep the currently selected tab's panel open
+      const selectedTab = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
+      // Ensure the panel width follows the selected tab
+      const tab = tabs.find((t) => t.getAttribute('aria-controls') === panel.id) || selectedTab;
+      showPanelForTab(tab);
+    });
+
+    panel.addEventListener('mouseleave', () => {
+      clearHideTimer();
+      // Find the tab that controls this panel to hide it
+      const tab = tabs.find((t) => t.getAttribute('aria-controls') === panel.id);
+      hideTimer = setTimeout(() => {
+        if (tab) hidePanelForTab(tab);
+      }, 160);
     });
   });
 }

@@ -2,7 +2,8 @@
  * Common styles used across all pages
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* External font import removed to avoid CDN dependency.
+   Font stack still prefers Inter if available locally. */
 
 /* Reset & Base */
 *,
@@ -60,7 +61,7 @@ a:focus {
 
 /* Focus styles for accessibility */
 :focus-visible {
-  outline: 2px solid var(--ntu-blue);
+  outline: 2px solid var(--ntu-red);
   outline-offset: 2px;
 }
 
@@ -69,7 +70,7 @@ a:focus {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--ntu-blue);
+  background: var(--ntu-red);
   color: var(--white);
   padding: var(--spacing-sm) var(--spacing-md);
   z-index: var(--z-modal);
@@ -175,7 +176,9 @@ a:focus {
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.2s ease;
+  position: relative;
+  border-bottom: 3px solid transparent;
 }
 
 .banner-tab:hover {
@@ -185,13 +188,16 @@ a:focus {
 
 .banner-tab.is-active,
 .banner-tab[aria-selected="true"] {
-  border-color: var(--ntu-blue);
-  background: var(--ntu-blue-lighter);
-  color: var(--ntu-blue);
+  border-bottom: 3px solid var(--ntu-red);
+  border-color: var(--gray-200);
+  background: var(--ntu-red-lighter);
+  color: var(--ntu-red);
+  font-weight: 700;
 }
 
 .banner-panels {
-  width: 100%;
+  /* Allow panels to size to their content / the related tab instead of stretching full width */
+  width: auto;
   max-width: 520px;
 }
 
@@ -201,6 +207,7 @@ a:focus {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   padding: var(--spacing-sm);
+  min-width: 180px; /* sensible default when JS sizing isn't available */
 }
 
 .banner-panel[hidden] {
@@ -338,49 +345,39 @@ a.is-disabled,
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--ntu-blue);
+  outline: 2px solid var(--ntu-red);
   outline-offset: 2px;
 }
 
 .btn-primary {
-  background: var(--ntu-blue);
+  background: var(--ntu-red);
   color: var(--white);
 }
 
 .btn-primary:hover {
-  background: var(--ntu-blue-light);
+  background: var(--ntu-red-light);
   color: var(--white);
   text-decoration: none;
 }
 
 .btn-secondary {
-  background: var(--gray-100);
-  color: var(--gray-700);
-  border: 1px solid var(--gray-300);
+  background: var(--ntu-blue);
+  color: var(--white);
+  border: 1px solid var(--ntu-blue);
 }
 
 .btn-secondary:hover {
-  background: var(--gray-200);
-  color: var(--gray-800);
+  background: var(--ntu-blue-light);
+  color: var(--white);
 }
 
 .btn-danger {
-  background: var(--ntu-red);
+  background: #a4161a;
   color: var(--white);
 }
 
 .btn-danger:hover {
-  background: var(--ntu-red-light);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--gray-700);
-  border: 1px solid var(--gray-300);
-}
-
-.btn-ghost:hover {
-  background: var(--gray-100);
+  background: #8b0000;
 }
 
 /* Cards */

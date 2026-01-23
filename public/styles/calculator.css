@@ -187,31 +187,31 @@
 
 .summary-card h2 {
   color: var(--white);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--spacing-md);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .summary-tile {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  padding: var(--spacing-lg);
+  padding: 8px 12px;
   border-radius: var(--radius-lg);
   text-align: center;
 }
 
 .summary-tile .label {
   color: rgba(255, 255, 255, 0.8);
-  font-size: var(--text-sm);
-  margin: 0 0 var(--spacing-xs);
+  font-size: 12px;
+  margin: 0 0 2px;
 }
 
 .summary-tile .value {
-  font-size: var(--text-2xl);
+  font-size: 16px;
   font-weight: 700;
   color: var(--white);
   margin: 0;
@@ -346,6 +346,10 @@
   .calculator-inputs {
     position: static;
   }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -369,6 +373,10 @@
 
   .semester-actions {
     justify-content: flex-end;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -5,14 +5,14 @@
 
 :root {
   /* Primary Colors - NTU Official */
-  --ntu-blue: #003d7c;
-  --ntu-red: #c7162b;
-  --ntu-red-light: #e53e3e;
-  --ntu-blue-light: #2a6496;
+  --ntu-blue: #003366;
+  --ntu-red: #d61d2a;
+  --ntu-red-light: #e63946;
+  --ntu-blue-light: #004a99;
 
   /* Extended Palette */
   --ntu-blue-lighter: #e6f0ff;
-  --ntu-red-lighter: #ffebed;
+  --ntu-red-lighter: rgba(214, 29, 42, 0.05);
   --ntu-gray: #f8fafc;
   --ntu-gray-dark: #64748b;
 

@@ -193,6 +193,7 @@ function persist() {
   saveJSON(getCgpaKey(), state);
 }
 
+/** @returns {boolean} */
 function addSemester() {
   state.semesters.push({ id: uuid(), collapsed: false, courses: [] });
   persist();
@@ -250,6 +251,7 @@ function removeCourse(semesterId, courseId) {
  * @param {any} value
  */
 function updateCourse(semesterId, courseId, field, value) {
+  console.log('[CALC]', 'Input changed (event)', { semesterId, courseId, field, value });
   const s = state.semesters.find((x) => x.id === semesterId);
   if (!s) return;
   const c = s.courses.find((x) => x.id === courseId);
@@ -257,8 +259,12 @@ function updateCourse(semesterId, courseId, field, value) {
   if (field === 'isSU') c.isSU = Boolean(value);
   else if (field === 'credits') c.credits = value;
   else c[field] = String(value);
+
+  console.log('[CALC]', 'State updated', JSON.parse(JSON.stringify(state)));
   persist();
+  console.log('[CALC]', 'State persisted');
   updateSummary();
+  console.log('[CALC]', 'Summary updated');
 }
 
 function updateSummary() {
@@ -375,6 +381,8 @@ async function render() {
   if (!el.semestersContainer) return;
   el.semestersContainer.innerHTML = '';
 
+  let eventsAttached = 0;
+
   for (let i = 0; i < state.semesters.length; i++) {
     const semester = state.semesters[i];
 
@@ -453,11 +461,17 @@ async function render() {
       attachCourseAutocomplete(codeInput, nameInput, { dataUrl: '../data/courses.json' }).catch(() => {});
 
       codeInput.addEventListener('input', (e) => updateCourse(semester.id, course.id, 'code', e.target.value));
+      eventsAttached += 1;
       nameInput.addEventListener('input', (e) => updateCourse(semester.id, course.id, 'name', e.target.value));
+      eventsAttached += 1;
       creditsInput.addEventListener('input', (e) => updateCourse(semester.id, course.id, 'credits', e.target.value));
+      eventsAttached += 1;
       gradeSelect.addEventListener('change', (e) => updateCourse(semester.id, course.id, 'grade', e.target.value));
+      eventsAttached += 1;
       suCheckbox.addEventListener('change', (e) => updateCourse(semester.id, course.id, 'isSU', e.target.checked));
+      eventsAttached += 1;
       removeBtn.addEventListener('click', () => removeCourse(semester.id, course.id));
+      eventsAttached += 1;
 
       coursesContainer.appendChild(row);
     }
@@ -484,13 +498,26 @@ async function render() {
   }
 
   updateSummary();
+  console.log('Events attached to N inputs', eventsAttached);
 }
 
 function init() {
   // Required by prompt
   console.log('PROMPT_VERIFICATION: yhs');
 
-  el.addSemesterBtn?.addEventListener('click', addSemester);
+  // Diagnostics required by prompt
+  console.log('[CALC] All data after add:', JSON.stringify(state, null, 2));
+
+  el.addSemesterBtn?.addEventListener('click', () => {
+    addSemester();
+    console.log('[CALC] All data after add:', JSON.stringify(state, null, 2));
+    console.log('[CALC] Summary:', {
+      totalCredits: calculateTotalCredits(state.semesters),
+      gradedCredits: calculateGradedCredits(state.semesters),
+      cumulativeCGPA: calculateCumulativeCGPA(state.semesters)
+    });
+  });
+
   el.exportPdf?.addEventListener('click', exportToPDF);
   el.exportCsv?.addEventListener('click', exportToCSV);
   el.clearData?.addEventListener('click', clearAllData);

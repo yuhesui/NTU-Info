@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About NTU Info: purpose, features, and how to use the tools." />
+  <title>About NTU Info</title>
+
+  <link rel="stylesheet" href="../styles/variables.css" />
+  <link rel="stylesheet" href="../styles/shared.css" />
+  <link rel="stylesheet" href="../styles/main.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="header" role="banner">
+    <div class="header-container">
+      <div class="logo-section">
+        <a class="logo-title" href="../index.html">NTU Info</a>
+        <p class="logo-subtitle">About</p>
+      </div>
+
+      <nav class="banner-nav" aria-label="Site sections">
+        <div class="banner-tabs" role="tablist" aria-label="Primary">
+          <button id="tab-academics" class="banner-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-academics" data-banner-tab>Academics</button>
+          <button id="tab-tools" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-tools" tabindex="-1" data-banner-tab>Tools</button>
+          <button id="tab-guides" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-guides" tabindex="-1" data-banner-tab>Guides</button>
+          <button id="tab-campus" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-campus" tabindex="-1" data-banner-tab>Campus Life</button>
+          <button id="tab-about" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-about" tabindex="-1" data-banner-tab>About</button>
+        </div>
+
+        <div class="banner-panels" data-banner-tabs>
+          <div id="panel-academics" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-academics" data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="timetable.html">Exam Timetable</a></li>
+              <li><a href="mooc-mapping.html">MOOC Mapping Tools</a></li>
+            </ul>
+          </div>
+
+          <div id="panel-tools" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-tools" hidden data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="calculator.html">CGPA Calculator</a></li>
+              <li><a href="math-notes.html">Math Notes &amp; Past Papers</a></li>
+              <li><a href="clubs.html">Clubs &amp; Societies Explorer</a></li>
+            </ul>
+          </div>
+
+          <div id="panel-guides" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-guides" hidden data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="airport.html">Airport Arrival Guide</a></li>
+            </ul>
+          </div>
+
+          <div id="panel-campus" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-campus" hidden data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="canteens.html">NTU Canteen Food Rating Guide</a></li>
+              <li><a href="clubs.html">Clubs &amp; Societies Explorer</a></li>
+            </ul>
+          </div>
+
+          <div id="panel-about" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-about" hidden data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="about.html" aria-current="page">About NTU Info</a></li>
+              <li><a href="https://github.com/yuhesui/NTU-Info" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-container" role="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a> &gt; About
+    </nav>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="section-header" style="text-align: left; margin-bottom: var(--spacing-xl);">
+        <h1 class="section-title" style="margin-bottom: var(--spacing-sm);">Your Complete NTU Student Companion</h1>
+        <p class="section-description" style="margin: 0;">NTU Info is a student-built portal that brings essential tools and guides into one place.</p>
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top: 0;">What you can do here</h2>
+        <ul>
+          <li><strong>CGPA Calculator:</strong> Track courses by semester and compute your cumulative CGPA.</li>
+          <li><strong>Clubs &amp; Societies Explorer:</strong> Search and filter clubs by category, time commitment, and location.</li>
+          <li><strong>Airport Arrival Guide:</strong> Step-by-step onboarding for international students arriving at Changi.</li>
+          <li><strong>Exam Timetable:</strong> Plan exams and avoid clashes (Academics tab).</li>
+        </ul>
+
+        <h2>How to use</h2>
+        <ol>
+          <li>Use the banner tabs to jump between Academics, Tools, Guides, and Campus Life.</li>
+          <li>On each tool page, use filters and inputs; changes apply instantly.</li>
+          <li>Your calculator data is stored locally in your browser (no server upload).</li>
+        </ol>
+
+        <h2>FAQ</h2>
+        <details>
+          <summary>Does NTU Info collect my data?</summary>
+          <p class="muted">No. Tools like the CGPA calculator store data locally in your browser only.</p>
+        </details>
+        <details>
+          <summary>Is this an official NTU site?</summary>
+          <p class="muted">No. This is a student-led initiative and not officially affiliated with NTU administration.</p>
+        </details>
+
+        <p style="margin-bottom: 0;">
+          <a class="btn btn-secondary" href="https://github.com/yuhesui/NTU-Info" target="_blank" rel="noopener noreferrer">View GitHub Repo</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="../scripts/main.js"></script>
+  <script>
+    console.log('[PAGE] Loaded successfully:', document.title);
+  </script>
+</body>
+</html>
