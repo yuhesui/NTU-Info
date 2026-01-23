@@ -1,585 +1,1234 @@
 [
   {
-    "id": "club-001",
-    "name": "NTU Volleyball Club",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 45,
-    "meetingTimes": "Tue/Thu 5:30pm",
-    "contact": "volleyball@e.ntu.edu.sg"
+    "name": "Archery",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "8-10 hours/week (breakdown: 2 regular weekly training sessions + frequent competitions)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 7,
+      "justification": "A high-precision sport requiring significant upper body strength, core stability, and stamina for repetitive, controlled movements over long sessions."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Extremely high demand for focus, mental discipline, and visualization. Competitive success depends on managing pressure and maintaining consistency."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "No prior experience is required to join. The club provides progressive training for novices, making it highly accessible."
+    },
+    "description": "A precision sport where athletes use a bow to shoot arrows at a target. The team competes in various formats and hosts the NTU Institutional Archery Championship."
   },
   {
-    "id": "club-002",
-    "name": "NTU Basketball Club",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 60,
-    "meetingTimes": "Mon/Wed 6:00pm",
-    "contact": "basketball@e.ntu.edu.sg"
+    "name": "Aquathlon (Men & Women)",
+    "ccaPoints": 5,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 12-15 hours/week (breakdown: regular swimming and running training + transition practice)",
+      "value": 15
+    },
+    "physicalLoad": {
+      "score": 9,
+      "justification": "A highly demanding endurance sport combining swimming and running, requiring exceptional cardiovascular fitness and resilience."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Requires strong mental fortitude for pacing strategy across two different disciplines and pushing through significant physical discomfort."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Entry is likely competitive, requiring demonstrated proficiency and high fitness levels in both swimming and running."
+    },
+    "description": "A multi-sport event involving continuous swimming and running segments. Athletes compete for the fastest overall time across both disciplines."
   },
   {
-    "id": "club-003",
-    "name": "NTU Badminton Club",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 80,
-    "meetingTimes": "Sat 10:00am",
-    "contact": "badminton@e.ntu.edu.sg"
+    "name": "Badminton (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "6-9 hours/week (breakdown: 2-3 weekly training sessions + personal practice)",
+      "value": 9
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "A fast-paced racket sport demanding exceptional agility, explosive power for jumps and smashes, quick reflexes, and high stamina."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Involves complex strategy, rapid decision-making, and the ability to anticipate opponent's shots and control the pace of the game under pressure."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Entry is competitive, requiring multiple years of prior experience and a high level of technical skill to be considered for the varsity team."
+    },
+    "description": "The world's fastest racket sport, where players score points by hitting a shuttlecock over a net into the opponent's half. The team competes in singles, doubles, and mixed doubles formats."
   },
   {
-    "id": "club-004",
-    "name": "NTU Running & Fitness",
-    "category": "Sports",
-    "interest": "Wellness",
-    "time": "Weekly",
-    "location": "Campus",
-    "members": 120,
-    "meetingTimes": "Tue 7:00pm",
-    "contact": "running@e.ntu.edu.sg"
+    "name": "Basketball (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: multiple team practices + gym sessions + game days)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "A high-intensity team sport requiring a combination of sprinting, endurance, jumping ability, and physical strength for both offense and defense."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Highly strategic, requiring players to execute complex offensive plays, adapt defensive formations, and make split-second decisions under pressure."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Very competitive tryouts, as basketball is a popular and established sport. Selection requires a high level of skill, athleticism, and game sense."
+    },
+    "description": "A team sport where two teams of five players each try to score by shooting a ball through the opponent's hoop. The team represents NTU in major university games."
   },
   {
-    "id": "club-005",
-    "name": "NTU Robotics Society",
-    "category": "Academic",
-    "interest": "Engineering",
-    "time": "Weekly",
-    "location": "North Spine",
-    "members": 95,
-    "meetingTimes": "Fri 6:30pm",
-    "contact": "robotics@e.ntu.edu.sg"
+    "name": "Bowling (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "6-10 hours/week (breakdown: team practices + personal training + competitions)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 4,
+      "justification": "A precision sport with moderate physical demands focused on refined, repetitive motion, balance, and coordination rather than cardiovascular exertion."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Requires intense concentration, strategic thinking (adjusting to lane conditions), and psychological resilience to maintain consistency under competitive pressure."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Entry is through competitive tryouts. Selection is based on skill, consistency, and potential, with prior competitive experience being a significant advantage."
+    },
+    "description": "A target sport where players roll a ball down a lane to knock over pins. The team competes in individual and team formats in university leagues."
   },
   {
-    "id": "club-006",
-    "name": "NTU Computing Club",
-    "category": "Academic",
-    "interest": "Coding",
-    "time": "Weekly",
-    "location": "North Spine",
-    "members": 150,
-    "meetingTimes": "Thu 7:00pm",
-    "contact": "computing@e.ntu.edu.sg"
+    "name": "Brazilian Jiu-Jitsu",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: regular training/sparring sessions + strength & conditioning)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "A physically grueling grappling martial art that demands exceptional strength, flexibility, and endurance for ground fighting and submissions."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Often described as 'human chess,' it requires deep strategic thinking, problem-solving, and calmness under pressure to apply and counter techniques."
+    },
+    "entryCriteria": {
+      "score": 6,
+      "justification": "While some experience is beneficial, selection may also focus on athletic potential and coachability. Tryouts are likely competitive."
+    },
+    "description": "A ground-based martial art and combat sport focusing on grappling, control, and submission holds like joint locks and chokeholds."
   },
   {
-    "id": "club-007",
-    "name": "NTU Data Science & AI Society",
-    "category": "Academic",
-    "interest": "Data",
-    "time": "Monthly",
-    "location": "Hive",
-    "members": 110,
-    "meetingTimes": "2nd Wed 7:00pm",
-    "contact": "dsa@e.ntu.edu.sg"
+    "name": "Canoe Polo (Men & Women)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: water sessions + boat handling drills + gym work)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "Combines paddling endurance and boat-handling skills with the physical contact and explosive movements of a ball sport. Demands strong core and upper body strength."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "A fast-paced, strategic team game requiring good communication, spatial awareness, and quick tactical decision-making."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Requires strong swimming ability and paddling skills. Tryouts are likely competitive, favouring athletes with prior water sport experience."
+    },
+    "description": "A ball game played in kayaks on a defined water pitch, often described as a combination of basketball, water polo, and kayaking."
   },
   {
-    "id": "club-008",
-    "name": "NTU Economics Society",
-    "category": "Academic",
-    "interest": "Business",
-    "time": "Monthly",
-    "location": "Business Library",
-    "members": 200,
-    "meetingTimes": "1st Fri 6:00pm",
-    "contact": "econ@e.ntu.edu.sg"
+    "name": "Canoe Sprint (Men & Women)",
+    "ccaPoints": 5,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 12-15 hours/week (breakdown: multiple water sessions + extensive strength and conditioning)",
+      "value": 15
+    },
+    "physicalLoad": {
+      "score": 9,
+      "justification": "An extremely demanding power-endurance sport requiring explosive strength and technique to paddle at maximum speed over set distances."
+    },
+    "mentalLoad": {
+      "score": 6,
+      "justification": "Primarily focused on mental toughness to push through intense pain, maintain perfect technique under fatigue, and execute a race plan."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Requires a very high level of fitness and technical proficiency. Selection is likely based on time trials and physical benchmarks."
+    },
+    "description": "A competitive water sport where athletes race canoes or kayaks over a straight course on calm water for the fastest time."
   },
   {
-    "id": "club-009",
-    "name": "NTU Chinese Cultural Society",
-    "category": "Cultural",
-    "interest": "Culture",
-    "time": "Weekly",
-    "location": "Student Hub",
-    "members": 130,
-    "meetingTimes": "Sat 2:00pm",
-    "contact": "ccs@e.ntu.edu.sg"
+    "name": "Cheerleading",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: multiple practices for stunts, tumbling, and dance + conditioning)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 9,
+      "justification": "A highly athletic discipline combining gymnastics, acrobatics, weightlifting (stunts), and dance. Requires exceptional strength, power, flexibility, and coordination."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Demands immense trust between teammates, precision timing for complex stunts, and the ability to perform high-risk skills under pressure."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Extremely competitive entry, requiring a strong background in gymnastics, dance, or acrobatics. Tryouts test specific stunting and tumbling skills."
+    },
+    "description": "A team-based performance sport that involves stunts, pyramids, tumbling, jumps, and dance to entertain crowds and compete."
   },
   {
-    "id": "club-010",
-    "name": "NTU Japanese Cultural Club",
-    "category": "Cultural",
-    "interest": "Culture",
-    "time": "Monthly",
-    "location": "Student Hub",
-    "members": 90,
-    "meetingTimes": "3rd Sat 3:00pm",
-    "contact": "jcc@e.ntu.edu.sg"
+    "name": "Cricket (Men)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-15 hours/week (breakdown: net practice + fielding drills + long weekend matches)",
+      "value": 15
+    },
+    "physicalLoad": {
+      "score": 6,
+      "justification": "Involves short bursts of explosive action (bowling, batting, sprinting) separated by long periods of low-intensity activity. Endurance is key for long matches."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "A deeply strategic game requiring tactical acumen, patience, and intense concentration over many hours. Captaincy and individual decision-making are crucial."
+    },
+    "entryCriteria": {
+      "score": 6,
+      "justification": "Tryouts are competitive and require solid fundamental skills in batting, bowling, or wicket-keeping. Prior club or school-level experience is expected."
+    },
+    "description": "A bat-and-ball game played between two teams of eleven players on a field with a 22-yard pitch at its center."
   },
   {
-    "id": "club-011",
-    "name": "NTU Malay Cultural Society",
-    "category": "Cultural",
-    "interest": "Culture",
-    "time": "Monthly",
-    "location": "Student Hub",
-    "members": 70,
-    "meetingTimes": "Last Fri 7:00pm",
-    "contact": "mcs@e.ntu.edu.sg"
+    "name": "Cross Country",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 12-15 hours/week (breakdown: daily runs of varying distance and intensity + strength training)",
+      "value": 15
+    },
+    "physicalLoad": {
+      "score": 10,
+      "justification": "One of the most physically demanding sports, requiring elite cardiovascular endurance and the ability to run long distances over varied, natural terrain."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Requires extreme mental toughness to endure prolonged physical discomfort, maintain a strategic pace, and compete tactically within a team framework."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Selection is performance-based, likely determined by time trials and demonstrated running ability. Open to dedicated and resilient athletes."
+    },
+    "description": "A long-distance running sport where individuals and teams compete by running a course over open-country terrain."
   },
   {
-    "id": "club-012",
-    "name": "NTU Photography Society",
-    "category": "Cultural",
-    "interest": "Arts",
-    "time": "Weekly",
-    "location": "South Spine",
-    "members": 160,
-    "meetingTimes": "Wed 7:30pm",
-    "contact": "photo@e.ntu.edu.sg"
+    "name": "Dragon Boat (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: multiple water sessions + extensive gym-based strength training)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 9,
+      "justification": "A demanding power-endurance sport that requires immense upper body and core strength, combined with cardiovascular stamina to paddle in unison."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "The ultimate team sport requiring perfect synchronization, focus, and the mental fortitude to paddle through extreme fatigue as a single unit."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Tryouts are physically rigorous, testing strength and endurance. While technique can be taught, a high level of raw athletic ability is required."
+    },
+    "description": "A team paddling sport where 20 paddlers, a drummer, and a steersperson race a traditional long boat."
   },
   {
-    "id": "club-013",
-    "name": "NTU Music Club",
-    "category": "Cultural",
-    "interest": "Arts",
-    "time": "Weekly",
-    "location": "NIE",
-    "members": 180,
-    "meetingTimes": "Mon 7:00pm",
-    "contact": "music@e.ntu.edu.sg"
+    "name": "Fencing",
+    "ccaPoints": 5,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: drills + sparring (bouting) + conditioning)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 7,
+      "justification": "Requires explosive agility, lightning-fast reflexes, and fine motor control. While bouts are short, tournaments are long and physically draining."
+    },
+    "mentalLoad": {
+      "score": 9,
+      "justification": "A highly strategic 'physical chess' match. Requires analyzing opponents, setting up tactical traps, and making split-second decisions."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "A very technical sport where prior experience is almost essential. Tryouts are competitive and require demonstrated proficiency in footwork and blade work."
+    },
+    "description": "A combat sport where two athletes fight using swords (foil, épée, or sabre). Points are made through contact with an opponent."
   },
   {
-    "id": "club-014",
-    "name": "NTU Drama & Theatre Society",
-    "category": "Cultural",
-    "interest": "Arts",
-    "time": "Weekly",
-    "location": "Student Hub",
-    "members": 75,
-    "meetingTimes": "Thu 7:30pm",
-    "contact": "theatre@e.ntu.edu.sg"
+    "name": "Floorball (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: team practices for tactics and skills + games)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "A fast-paced, high-intensity sport similar to floor hockey, requiring continuous running, quick changes of direction, and stick skills."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "A strategic team game that demands good spatial awareness, quick passing decisions, and an understanding of offensive and defensive systems."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Competitive tryouts requiring strong athletic ability and stick-handling skills. Experience in hockey or similar sports is a major advantage."
+    },
+    "description": "A type of floor hockey with five field players and a goalkeeper on each team. Games are played indoors with lightweight plastic sticks and a ball with holes."
   },
   {
-    "id": "club-015",
-    "name": "NTU Debate Society",
-    "category": "Academic",
-    "interest": "Public Speaking",
-    "time": "Weekly",
-    "location": "North Spine",
-    "members": 65,
-    "meetingTimes": "Tue 7:00pm",
-    "contact": "debate@e.ntu.edu.sg"
+    "name": "Football (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: multiple team practices + conditioning sessions + weekend matches)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 9,
+      "justification": "Demands a high level of fitness, combining endurance for 90 minutes of play with sprinting, agility, and physical strength for challenges."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "A highly tactical sport requiring players to understand formations, read the game, and make intelligent decisions with and without the ball."
+    },
+    "entryCriteria": {
+      "score": 9,
+      "justification": "Extremely competitive entry due to the sport's global popularity. Selection requires a very high level of technical skill, tactical awareness, and athleticism."
+    },
+    "description": "The world's most popular team sport, where two teams of eleven players try to score by getting a ball into the opposing goal."
   },
   {
-    "id": "club-016",
-    "name": "NTU Entrepreneurship Society",
-    "category": "Academic",
-    "interest": "Business",
-    "time": "Monthly",
-    "location": "Innovation Centre",
-    "members": 140,
-    "meetingTimes": "2nd Fri 6:30pm",
-    "contact": "entsoc@e.ntu.edu.sg"
+    "name": "Golf",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 15-20 hours/week (breakdown: range practice + course play + short game drills)",
+      "value": 20
+    },
+    "physicalLoad": {
+      "score": 3,
+      "justification": "Low cardiovascular demand, but requires significant fine motor control, core strength, and flexibility to produce a consistent, powerful swing."
+    },
+    "mentalLoad": {
+      "score": 10,
+      "justification": "A supremely mental game demanding intense focus, strategic course management, emotional control, and resilience to overcome bad shots over a 4-5 hour round."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Requires a low handicap and consistent competitive scores. Entry is highly selective and based on proven ability."
+    },
+    "description": "A precision club-and-ball sport in which players use various clubs to hit balls into a series of holes on a course in as few strokes as possible."
   },
   {
-    "id": "club-017",
-    "name": "NTU Environmental Club",
-    "category": "Academic",
-    "interest": "Sustainability",
-    "time": "Monthly",
-    "location": "Campus",
-    "members": 105,
-    "meetingTimes": "1st Sat 10:00am",
-    "contact": "green@e.ntu.edu.sg"
+    "name": "Handball (Men & Women)",
+    "ccaPoints": 5,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "10-12 hours/week (breakdown: 4-5 team training sessions + 2-3 physical conditioning sessions)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 9,
+      "justification": "A fast-paced, high-intensity contact sport involving frequent sprinting, jumping, throwing, and physical challenges."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Requires rapid tactical decision-making, understanding of complex offensive and defensive plays, and strong team communication under pressure."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Entry is via competitive tryouts. While specific criteria aren't listed, the high physical and tactical demands suggest that athleticism and prior court-sport experience are crucial."
+    },
+    "description": "A team sport where two teams of seven players pass a ball using their hands, aiming to throw it into the goal of the other team."
   },
   {
-    "id": "club-018",
-    "name": "NTU Sailing Club",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Marina",
-    "members": 30,
-    "meetingTimes": "Sun 9:00am",
-    "contact": "sailing@e.ntu.edu.sg"
+    "name": "Judo",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: technical drills + randori (sparring) + conditioning)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "A physically demanding martial art that requires explosive power for throws, as well as significant grip strength and endurance for grappling."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Involves strategic thinking to set up throws, counter opponent's attacks, and apply grappling techniques effectively."
+    },
+    "entryCriteria": {
+      "score": 6,
+      "justification": "Tryouts are competitive, requiring a foundation in grappling or another martial art, though strong athletes may be selected for their potential."
+    },
+    "description": "A modern Japanese martial art and Olympic sport focused on throwing opponents, controlling them on the ground, and using pins or submissions."
   },
   {
-    "id": "club-019",
-    "name": "NTU Table Tennis Club",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 55,
-    "meetingTimes": "Fri 6:00pm",
-    "contact": "tt@e.ntu.edu.sg"
+    "name": "Karate (Shitoryu)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: kata (forms) + kumite (sparring) + kihon (basics) training)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 7,
+      "justification": "Demands explosive power, speed, agility, and precise body control for executing strikes, blocks, and stances."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Requires discipline, focus, and the ability to read an opponent's intentions in sparring, alongside the memorization and perfection of forms."
+    },
+    "entryCriteria": {
+      "score": 6,
+      "justification": "Selection is based on skill, discipline, and athletic ability demonstrated during tryouts. Prior martial arts experience is highly beneficial."
+    },
+    "description": "A striking-based martial art originating from Okinawa. The Shitoryu style is known for its large number of kata and emphasis on both hard and soft techniques."
   },
   {
-    "id": "club-020",
-    "name": "NTU Football Club",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 90,
-    "meetingTimes": "Wed 6:30pm",
-    "contact": "football@e.ntu.edu.sg"
+    "name": "Lifesaving (Mixed)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: pool training + dry-land drills + first aid theory)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "Combines the high physical demands of competitive swimming with the strength and skill needed for rescue simulations, often carrying weight."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Requires intense focus, quick decision-making under simulated pressure, and thorough knowledge of rescue procedures."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Requires excellent swimming ability and a high level of physical fitness. Tryouts likely involve time trials and tests of specific rescue skills."
+    },
+    "description": "A competitive sport that evolves from the work of lifeguards, involving events that test skills in rescue, first aid, and water fitness."
   },
   {
-    "id": "club-021",
-    "name": "NTU BioMed Society",
-    "category": "Academic",
-    "interest": "Science",
-    "time": "Monthly",
-    "location": "School of Biological Sciences",
-    "members": 85,
-    "meetingTimes": "2nd Tue 6:30pm",
-    "contact": "biomed@e.ntu.edu.sg"
+    "name": "Muay Thai",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: technical training + pad work + sparring + intensive conditioning)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 10,
+      "justification": "Known as 'the art of eight limbs,' this is an extremely demanding combat sport requiring elite conditioning, power, and pain tolerance."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Requires immense courage, discipline, and the ability to think strategically while under intense physical assault."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Entry is highly competitive and physically grueling, requiring a high level of fitness and a strong aptitude for combat sports."
+    },
+    "description": "A martial art and combat sport from Thailand that uses stand-up striking along with various clinching techniques."
   },
   {
-    "id": "club-022",
-    "name": "NTU Chemistry Society",
-    "category": "Academic",
-    "interest": "Science",
-    "time": "Monthly",
-    "location": "SPMS",
-    "members": 70,
-    "meetingTimes": "3rd Thu 6:30pm",
-    "contact": "chem@e.ntu.edu.sg"
+    "name": "Netball (Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: team practices + fitness sessions + games)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "A fast-paced court sport demanding high levels of agility, speed, and cardiovascular endurance, with specific movement restrictions requiring precise body control."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Highly tactical, with set positions and rules that require strong team strategy, spatial awareness, and quick decision-making."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Very competitive tryouts, requiring a high degree of skill, fitness, and tactical understanding of the game."
+    },
+    "description": "A ball sport played by two teams of seven, where points are scored by shooting a ball through a high hoop. Players are restricted to certain areas of the court."
   },
   {
-    "id": "club-023",
-    "name": "NTU Physics Society",
-    "category": "Academic",
-    "interest": "Science",
-    "time": "Monthly",
-    "location": "SPMS",
-    "members": 60,
-    "meetingTimes": "Last Wed 6:30pm",
-    "contact": "physics@e.ntu.edu.sg"
+    "name": "Rugby (Men & Women)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: contact drills + tactical sessions + intensive strength & conditioning)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 10,
+      "justification": "A high-impact, full-contact sport requiring a brutal combination of strength, power, speed, and endurance for tackling, scrummaging, and running."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "A complex, strategic game that demands tactical awareness, on-field communication, and immense mental resilience and courage."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Tryouts are physically demanding and competitive. Selection is based on athleticism, skill, and toughness."
+    },
+    "description": "A full-contact team sport where the objective is to run with an oval-shaped ball to score a try or kick it through the opponent's posts."
   },
   {
-    "id": "club-024",
-    "name": "NTU Korean Cultural Club",
-    "category": "Cultural",
-    "interest": "Culture",
-    "time": "Monthly",
-    "location": "Student Hub",
-    "members": 100,
-    "meetingTimes": "2nd Sat 2:00pm",
-    "contact": "kcc@e.ntu.edu.sg"
+    "name": "Sailing (Mixed)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-15 hours/week (breakdown: water training + boat maintenance + theory sessions)",
+      "value": 15
+    },
+    "physicalLoad": {
+      "score": 6,
+      "justification": "Demands significant core and upper body strength to control the boat, especially in strong winds. Balance and agility are also key."
+    },
+    "mentalLoad": {
+      "score": 9,
+      "justification": "A highly strategic sport requiring constant analysis of wind, water currents, and competitor tactics. Decision-making directly impacts race outcomes."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "A technical sport that typically requires significant prior sailing experience and a strong understanding of racing rules and tactics."
+    },
+    "description": "A sport involving propelling a boat (a sailboat) on water. Competitive sailing involves racing against other boats around a course."
   },
   {
-    "id": "club-025",
-    "name": "NTU Indian Cultural Society",
-    "category": "Cultural",
-    "interest": "Culture",
-    "time": "Monthly",
-    "location": "Student Hub",
-    "members": 85,
-    "meetingTimes": "1st Sun 4:00pm",
-    "contact": "ics@e.ntu.edu.sg"
+    "name": "Silat",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: technical training + sparring + form practice)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 7,
+      "justification": "A dynamic martial art that emphasizes fluid movements, strikes, and grappling. It requires agility, speed, and coordination."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Involves learning complex forms and techniques, as well as the tactical application of these movements in a sparring context."
+    },
+    "entryCriteria": {
+      "score": 6,
+      "justification": "Tryouts would test for athletic ability, coordination, and discipline. Prior martial arts experience is an asset."
+    },
+    "description": "An umbrella term for a class of indigenous martial arts from the Malay Archipelago, often featuring artistic forms alongside combat applications."
   },
   {
-    "id": "club-026",
-    "name": "NTU Fencing Club",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 40,
-    "meetingTimes": "Thu 6:30pm",
-    "contact": "fencing@e.ntu.edu.sg"
+    "name": "Snooker & Pool",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-15 hours/week (breakdown: extensive solo practice + drills + match play)",
+      "value": 15
+    },
+    "physicalLoad": {
+      "score": 2,
+      "justification": "Minimal physical exertion, but requires exceptional hand-eye coordination, a stable stance, and endurance for long matches."
+    },
+    "mentalLoad": {
+      "score": 9,
+      "justification": "A game of immense strategic depth, requiring players to think multiple shots ahead, play position, and maintain intense focus under pressure."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Requires a high degree of technical skill and consistency. Selection would be based on demonstrated ability in competitive match-play scenarios."
+    },
+    "description": "Cue sports played on a table where players strike balls with a cue stick. The objective is to pot balls in a specific order or according to set rules."
   },
   {
-    "id": "club-027",
-    "name": "NTU Cycling Club",
-    "category": "Sports",
-    "interest": "Wellness",
-    "time": "Weekly",
-    "location": "Campus",
-    "members": 35,
-    "meetingTimes": "Sat 8:00am",
-    "contact": "cycling@e.ntu.edu.sg"
+    "name": "Sport Climbing",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "20+ hours/week (breakdown: 4-6 training days per week combining climbing and physical training)",
+      "value": 20
+    },
+    "physicalLoad": {
+      "score": 9,
+      "justification": "An intensely physical sport requiring exceptional grip and upper body strength, core power, and flexibility, leading to high risk of over-training injuries."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Demands intense problem-solving to decipher routes ('beta'), as well as strong mental resilience to manage fear of falling and performance pressure."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "A very high barrier to entry for the varsity team. Athletes are expected to perform at an intermediate-to-advanced level in competitive climbing."
+    },
+    "description": "Athletes climb fixed routes on artificial walls, competing in disciplines like bouldering (short, powerful routes) and lead climbing (longer, endurance routes)."
   },
   {
-    "id": "club-028",
-    "name": "NTU Tennis Club",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 50,
-    "meetingTimes": "Mon 6:30pm",
-    "contact": "tennis@e.ntu.edu.sg"
+    "name": "Sport Shooting",
+    "ccaPoints": 5,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: range practice + mental training + equipment maintenance)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 2,
+      "justification": "While not physically strenuous, it requires incredible stability, muscle control, and the ability to hold a still position for extended periods."
+    },
+    "mentalLoad": {
+      "score": 10,
+      "justification": "The ultimate mental sport, demanding supreme concentration, emotional control, and the ability to execute a perfect shot under immense pressure."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "A highly technical sport where selection is based on demonstrated precision, consistency, and safety proficiency."
+    },
+    "description": "A competitive precision sport involving tests of proficiency (accuracy and speed) using various types of firearms, such as pistols and rifles."
   },
   {
-    "id": "club-029",
-    "name": "NTU Chess Club",
-    "category": "Academic",
-    "interest": "Games",
-    "time": "Weekly",
-    "location": "North Spine",
-    "members": 55,
-    "meetingTimes": "Fri 7:00pm",
-    "contact": "chess@e.ntu.edu.sg"
+    "name": "Squash (Men & Women)",
+    "ccaPoints": 5,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: drills + match play + solo practice)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 9,
+      "justification": "An extremely high-intensity sport often cited as one of the 'healthiest,' requiring elite cardiovascular fitness, agility, and explosive lunging movements within a confined space."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "A fast-paced strategic duel that involves dominating the court, anticipating shots, and constructing rallies to outmaneuver the opponent."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Highly competitive entry requiring a high level of technical skill, court fitness, and tactical understanding."
+    },
+    "description": "A racket-and-ball sport played by two players in a four-walled court with a small, hollow rubber ball."
   },
   {
-    "id": "club-030",
-    "name": "NTU Makers Club",
-    "category": "Academic",
-    "interest": "Engineering",
-    "time": "Weekly",
-    "location": "Innovation Centre",
-    "members": 70,
-    "meetingTimes": "Wed 6:30pm",
-    "contact": "makers@e.ntu.edu.sg"
+    "name": "Swimming (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 15-20 hours/week (breakdown: multiple pool sessions + dry-land strength & conditioning)",
+      "value": 20
+    },
+    "physicalLoad": {
+      "score": 10,
+      "justification": "A full-body workout that builds exceptional cardiovascular endurance and muscular strength. Training is notoriously grueling and high-volume."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Requires immense discipline to adhere to demanding training regimens, focus on minute technical details, and push through pain in races."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Highly competitive, with selection based strictly on time trials. Athletes need to meet demanding qualifying times."
+    },
+    "description": "An individual or team racing sport that requires the use of one's entire body to move through water. Competitions involve various strokes and distances."
   },
   {
-    "id": "club-031",
-    "name": "NTU Language Exchange",
-    "category": "Cultural",
-    "interest": "Culture",
-    "time": "Weekly",
-    "location": "Student Hub",
-    "members": 220,
-    "meetingTimes": "Thu 6:30pm",
-    "contact": "langx@e.ntu.edu.sg"
+    "name": "Table Tennis (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: drills + match play + multi-ball practice)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 7,
+      "justification": "Demands lightning-fast reflexes, explosive footwork, and extreme hand-eye coordination. Deceptively high physical load due to constant, rapid movements."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "A game of high-speed chess involving complex spin variations, shot placement, and tactical rallies to create openings."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Competitive entry requiring years of practice to master spin, placement, and speed. Tryouts would test for high levels of consistency and skill."
+    },
+    "description": "A sport in which two or four players hit a lightweight ball, also known as the ping-pong ball, back and forth across a table using small rackets."
   },
   {
-    "id": "club-032",
-    "name": "NTU Volunteer Network",
-    "category": "Academic",
-    "interest": "Community",
-    "time": "Monthly",
-    "location": "Campus",
-    "members": 300,
-    "meetingTimes": "Monthly (varies)",
-    "contact": "volunteer@e.ntu.edu.sg"
+    "name": "Taekwondo",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: sparring + poomsae (forms) + conditioning)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "Characterized by dynamic, acrobatic kicks and fast hand strikes. Requires flexibility, speed, power, and agility."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Demands discipline, respect, and the strategic sense to manage distance and timing effectively in a fast-paced sparring match."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Selection is competitive, based on proficiency in sparring, forms, and overall athletic ability. A coloured belt or higher is likely required."
+    },
+    "description": "A Korean martial art, characterized by its emphasis on head-height kicks, jumping and spinning kicks, and fast kicking techniques."
   },
   {
-    "id": "club-033",
-    "name": "NTU Astronomy Club",
-    "category": "Academic",
-    "interest": "Science",
-    "time": "Monthly",
-    "location": "SPMS",
-    "members": 40,
-    "meetingTimes": "New moon weekends",
-    "contact": "astro@e.ntu.edu.sg"
+    "name": "Tchoukball (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 6-8 hours/week (breakdown: team practices for passing and shooting + games)",
+      "value": 8
+    },
+    "physicalLoad": {
+      "score": 7,
+      "justification": "A fast-paced, non-contact sport that involves a lot of jumping, throwing, and diving. Requires good agility and body control."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "A unique and highly strategic game that requires players to anticipate rebounds and coordinate complex team movements to trick the defense."
+    },
+    "entryCriteria": {
+      "score": 6,
+      "justification": "As a less common sport, entry may be more accessible than others, but it still requires high levels of athleticism and coachability."
+    },
+    "description": "An indoor team sport where players score by throwing a ball at a rebound frame at either end of the court, such that the defending team cannot catch the rebounding ball."
   },
   {
-    "id": "club-034",
-    "name": "NTU Art & Sketching Club",
-    "category": "Cultural",
-    "interest": "Arts",
-    "time": "Weekly",
-    "location": "South Spine",
-    "members": 95,
-    "meetingTimes": "Sat 1:00pm",
-    "contact": "art@e.ntu.edu.sg"
+    "name": "Tennis (Men & Women)",
+    "ccaPoints": 5,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-15 hours/week (breakdown: drills + match play + strength & conditioning)",
+      "value": 15
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "Requires a combination of endurance for long matches, explosive power for serves and groundstrokes, and agility for court coverage."
+    },
+    "mentalLoad": {
+      "score": 9,
+      "justification": "A highly mental sport requiring strategic thinking, problem-solving against different opponent styles, and emotional resilience to handle shifts in momentum."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Very competitive entry. Selection is based on competitive ranking, tournament experience, and a high level of technical and tactical skill."
+    },
+    "description": "A racket sport played individually against a single opponent (singles) or between two teams of two players each (doubles)."
   },
   {
-    "id": "club-035",
-    "name": "NTU Choir",
-    "category": "Cultural",
-    "interest": "Arts",
-    "time": "Weekly",
-    "location": "NIE",
-    "members": 120,
-    "meetingTimes": "Tue/Fri 7:00pm",
-    "contact": "choir@e.ntu.edu.sg"
+    "name": "Touch Football (Men & Women)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 6-8 hours/week (breakdown: team practices + games)",
+      "value": 8
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "A fast-paced game with minimal stoppage, requiring a high level of cardiovascular fitness and sprinting ability for both attack and defense."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Highly strategic, involving set plays and requiring players to read defensive patterns and exploit gaps in the defensive line."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Competitive tryouts requiring speed, agility, and a good understanding of the game's strategies. Rugby or other field sport experience is beneficial."
+    },
+    "description": "A variant of rugby league where tackles are made by touching the opponent with the ball. It is a non-contact sport focused on running and passing skills."
   },
   {
-    "id": "club-036",
-    "name": "NTU Guitar Ensemble",
-    "category": "Cultural",
-    "interest": "Arts",
-    "time": "Weekly",
-    "location": "NIE",
-    "members": 60,
-    "meetingTimes": "Wed 7:00pm",
-    "contact": "guitar@e.ntu.edu.sg"
+    "name": "Track & Field (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 12-15 hours/week (breakdown: event-specific training + extensive strength & conditioning)",
+      "value": 15
+    },
+    "physicalLoad": {
+      "score": 10,
+      "justification": "Encompasses a range of events (sprints, jumps, throws) that all require highly specialized and explosive athleticism at the limits of human performance."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Requires intense focus on technical execution and the mental strength to perform under the pressure of individual competition."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Selection is strictly performance-based, requiring athletes to meet specific standards (times, heights, distances) in their respective events."
+    },
+    "description": "A sport that includes athletic contests established on the skills of running, jumping, and throwing. It is one of the oldest forms of sports."
   },
   {
-    "id": "club-037",
-    "name": "NTU Dance Society",
-    "category": "Cultural",
-    "interest": "Arts",
-    "time": "Weekly",
-    "location": "Student Hub",
-    "members": 140,
-    "meetingTimes": "Mon 7:00pm",
-    "contact": "dance@e.ntu.edu.sg"
+    "name": "Ultimate Frisbee (Mixed)",
+    "ccaPoints": 5,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: team practices for throws and plays + games)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "Involves near-constant running similar to soccer or touch football. Demands high cardiovascular endurance and agility."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "A self-officiated sport that requires strong knowledge of the rules and a 'spirit of the game' ethos, alongside complex offensive strategies."
+    },
+    "entryCriteria": {
+      "score": 6,
+      "justification": "While athletic ability is key, the unique skills can be learned. Tryouts would likely focus on speed, endurance, and coachability."
+    },
+    "description": "A non-contact team sport played with a frisbee. Points are scored by passing the disc to a teammate in the opposing end zone."
   },
   {
-    "id": "club-038",
-    "name": "NTU Swimming Club",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 55,
-    "meetingTimes": "Thu 7:00pm",
-    "contact": "swim@e.ntu.edu.sg"
+    "name": "Volleyball (Men & Women)",
+    "ccaPoints": 7,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 10-12 hours/week (breakdown: team practices + position-specific drills + games)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 8,
+      "justification": "A power-based sport that demands explosive jumping ability, quick lateral movement, and strong overhead arm speed for hitting and serving."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "A game of rapid transitions and complex team systems. Requires constant communication and strategic awareness to run plays and adapt to the opponent."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Very competitive entry. Selection is based on height, athletic ability (especially vertical leap), and a high level of skill in a specific position."
+    },
+    "description": "A team sport in which two teams of six players are separated by a net. Each team tries to score points by grounding a ball on the other team's court."
   },
   {
-    "id": "club-039",
-    "name": "NTU Taekwondo",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 65,
-    "meetingTimes": "Tue 6:30pm",
-    "contact": "tkd@e.ntu.edu.sg"
+    "name": "Wakeboarding (Mixed)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 6-8 hours/week (breakdown: water time + dry-land training for balance and strength)",
+      "value": 8
+    },
+    "physicalLoad": {
+      "score": 7,
+      "justification": "Demands significant core, grip, and upper body strength to handle the pull from the boat and execute tricks. High impact from falls."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Requires overcoming fear to attempt new, high-risk tricks and intense focus to execute them with precision."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "A technical and often expensive sport to access. Entry is competitive and requires a demonstrated ability to perform a range of aerial maneuvers."
+    },
+    "description": "A water sport in which a rider, standing on a wakeboard, is pulled behind a motorboat across its wake and performs aerial maneuvers."
   },
   {
-    "id": "club-040",
-    "name": "NTU Wushu",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Complex",
-    "members": 60,
-    "meetingTimes": "Sat 11:00am",
-    "contact": "wushu@e.ntu.edu.sg"
+    "name": "Water Polo (Men)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 12-15 hours/week (breakdown: extensive swimming/conditioning + tactical drills + scrimmages)",
+      "value": 15
+    },
+    "physicalLoad": {
+      "score": 10,
+      "justification": "Widely considered one of the most physically demanding sports, combining the endurance of swimming with the physicality of wrestling and the skills of handball."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "A complex and aggressive team sport requiring strategic thinking, awareness in a chaotic environment, and extreme mental toughness."
+    },
+    "entryCriteria": {
+      "score": 9,
+      "justification": "Extremely competitive entry, requiring elite swimming ability, physical strength, and a deep understanding of the game."
+    },
+    "description": "A competitive team water sport played between two teams of seven players each. The game consists of swimming, passing, and shooting a ball into the opponent's goal."
   },
   {
-    "id": "club-041",
-    "name": "NTU Hiking & Outdoors",
-    "category": "Sports",
-    "interest": "Outdoors",
-    "time": "Monthly",
-    "location": "Off-campus",
-    "members": 50,
-    "meetingTimes": "Monthly (varies)",
-    "contact": "outdoors@e.ntu.edu.sg"
+    "name": "Windsurfing (Mixed)",
+    "ccaPoints": 3,
+    "category": "Varsity Sports",
+    "timeLoad": {
+      "text": "Estimate: 8-10 hours/week (breakdown: water time dependent on wind conditions + equipment prep)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 7,
+      "justification": "Requires significant full-body strength, particularly in the core, back, and arms, to control the sail and board. Balance and endurance are critical."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "A technical and strategic sport that demands constant reading of wind patterns and water conditions to optimize speed and tactics."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "A technical sport that requires significant prior experience and the ability to handle equipment effectively in various wind conditions."
+    },
+    "description": "A surface water sport that is a combination of surfing and sailing. It consists of a board powered by wind acting on a sail."
   },
   {
-    "id": "club-042",
-    "name": "NTU Red Cross Youth",
-    "category": "Academic",
-    "interest": "Community",
-    "time": "Monthly",
-    "location": "Campus",
-    "members": 85,
-    "meetingTimes": "2nd Sat 10:00am",
-    "contact": "rcy@e.ntu.edu.sg"
+    "name": "Chinese Society",
+    "ccaPoints": 7,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 3-5 hours/week (breakdown: regular meetings 2 hrs + event/activity planning 1-3 hrs)",
+      "value": 5
+    },
+    "physicalLoad": {
+      "score": 2,
+      "justification": "Activities primarily involve cultural workshops, discussions, and event management, which are largely sedentary."
+    },
+    "mentalLoad": {
+      "score": 6,
+      "justification": "Requires effort in event planning, organizing cultural showcases, and learning about Chinese traditions and arts."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "Likely open to all students with an interest in Chinese culture, with no formal auditions or prerequisites."
+    },
+    "description": "This club focuses on promoting Chinese culture through festivals, language exchanges, and art workshops. It provides a platform for students to connect with and appreciate Chinese heritage."
   },
   {
-    "id": "club-043",
-    "name": "NTU IEEE Student Branch",
-    "category": "Academic",
-    "interest": "Engineering",
-    "time": "Monthly",
-    "location": "North Spine",
-    "members": 120,
-    "meetingTimes": "3rd Fri 6:30pm",
-    "contact": "ieee@e.ntu.edu.sg"
+    "name": "Heritage Club",
+    "ccaPoints": 7,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 2-4 hours/week (breakdown: regular meetings 1.5 hrs + projects/outings 1-2.5 hrs)",
+      "value": 4
+    },
+    "physicalLoad": {
+      "score": 3,
+      "justification": "Involves low-intensity activities like museum visits, heritage trail walks, and workshop participation."
+    },
+    "mentalLoad": {
+      "score": 6,
+      "justification": "Involves historical research, content creation for exhibitions, and planning educational events and tours."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "Assumed to be an open-interest group with no specific entry barriers, welcoming all students passionate about local and regional heritage."
+    },
+    "description": "The Heritage Club is dedicated to exploring and preserving the rich cultural heritage of Singapore and the surrounding region. Activities include guided tours, workshops, and collaborative projects with cultural institutions."
   },
   {
-    "id": "club-044",
-    "name": "NTU ACM Student Chapter",
-    "category": "Academic",
-    "interest": "Coding",
-    "time": "Monthly",
-    "location": "North Spine",
-    "members": 90,
-    "meetingTimes": "1st Wed 7:00pm",
-    "contact": "acm@e.ntu.edu.sg"
+    "name": "Japanese Appreciation Club",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 3-5 hours/week (breakdown: regular meetings 2 hrs + event/workshop participation 1-3 hrs)",
+      "value": 5
+    },
+    "physicalLoad": {
+      "score": 2,
+      "justification": "Activities are generally low-intensity, focusing on language, pop culture, and traditional arts workshops."
+    },
+    "mentalLoad": {
+      "score": 5,
+      "justification": "Requires engagement in learning about Japanese language and cultural nuances, planning events, and managing activities."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "Likely open to all students, with membership driven by interest rather than selective criteria."
+    },
+    "description": "This club offers an immersive experience into Japanese culture, from traditional arts like ikebana to modern pop culture like anime and J-pop. It organizes workshops, film screenings, and cultural exchange sessions."
   },
   {
-    "id": "club-045",
-    "name": "NTU Board Games Society",
-    "category": "Cultural",
-    "interest": "Games",
-    "time": "Weekly",
-    "location": "Student Hub",
-    "members": 110,
-    "meetingTimes": "Fri 7:30pm",
-    "contact": "boardgames@e.ntu.edu.sg"
+    "name": "Korean Cultural Society",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 3-5 hours/week (breakdown: regular meetings 2 hrs + event/workshop participation 1-3 hrs)",
+      "value": 5
+    },
+    "physicalLoad": {
+      "score": 3,
+      "justification": "Primarily low-intensity activities, though K-pop dance workshops could temporarily increase physical load."
+    },
+    "mentalLoad": {
+      "score": 5,
+      "justification": "Involves learning about Korean language and traditions, as well as significant effort in organizing events related to K-drama, K-pop, and food."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "Assumed to be an open club for all students interested in Korean culture, without formal entry requirements."
+    },
+    "description": "The society celebrates and promotes Korean culture on campus. Members can participate in language classes, cooking workshops, K-pop dance sessions, and social events."
   },
   {
-    "id": "club-046",
-    "name": "NTU Ultimate Frisbee",
-    "category": "Sports",
-    "interest": "Sports",
-    "time": "Weekly",
-    "location": "Sports Field",
-    "members": 70,
-    "meetingTimes": "Wed 6:30pm",
-    "contact": "frisbee@e.ntu.edu.sg"
+    "name": "Malay Language & Cultural Society",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 3-5 hours/week (breakdown: regular meetings 2 hrs + performance/event prep 1-3 hrs)",
+      "value": 5
+    },
+    "physicalLoad": {
+      "score": 4,
+      "justification": "Primarily sedentary, but can involve moderate physical activity during preparation for cultural performances like traditional dance or silat."
+    },
+    "mentalLoad": {
+      "score": 6,
+      "justification": "Involves learning and practicing language, arts, and traditions, alongside event management and creative planning for performances."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "Likely open to all students interested in Malay language and culture, with no formal entry barriers."
+    },
+    "description": "This club is dedicated to the appreciation and promotion of Malay language, literature, and culture. It organizes cultural nights, workshops, and performances to showcase the richness of Malay heritage."
   },
   {
-    "id": "club-047",
-    "name": "NTU Culinary Club",
-    "category": "Cultural",
-    "interest": "Lifestyle",
-    "time": "Monthly",
-    "location": "Student Hub",
-    "members": 60,
-    "meetingTimes": "Monthly (varies)",
-    "contact": "culinary@e.ntu.edu.sg"
+    "name": "Tamil Literary Society",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 3-4 hours/week (breakdown: regular meetings 2 hrs + discussion/event prep 1-2 hrs)",
+      "value": 4
+    },
+    "physicalLoad": {
+      "score": 1,
+      "justification": "Activities are almost entirely intellectual and sedentary, focusing on literature, debate, and drama."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Demands strong analytical skills for literary discussion, creative effort for writing and drama, and strategic thinking for debates."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "Assumed to be an open forum for anyone with an interest in Tamil literature and arts."
+    },
+    "description": "The society fosters a passion for Tamil literature and performing arts. It serves as a platform for literary discussions, poetry readings, theatrical productions, and debates."
   },
   {
-    "id": "club-048",
-    "name": "NTU Finance Society",
-    "category": "Academic",
-    "interest": "Business",
-    "time": "Monthly",
-    "location": "Business Library",
-    "members": 140,
-    "meetingTimes": "2nd Thu 6:30pm",
-    "contact": "finance@e.ntu.edu.sg"
+    "name": "Nanyang Arts Ensemble",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 6-9 hours/week (breakdown: regular rehearsals 4-6 hrs + sectionals/personal practice 2-3 hrs)",
+      "value": 9
+    },
+    "physicalLoad": {
+      "score": 4,
+      "justification": "Varies by instrument, but generally involves postural endurance and fine motor skills for extended periods. Percussion or large instrument sections may have higher physical demand."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Requires high levels of concentration, technical skill mastery, music interpretation, and synchronous performance with a large group."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Entry is likely selective, requiring auditions to assess musical proficiency, sight-reading ability, and ensemble experience."
+    },
+    "description": "This is a major performing arts group, likely an orchestra or similar large ensemble. It focuses on achieving a high standard of musical performance through rigorous practice, culminating in public concerts."
   },
   {
-    "id": "club-049",
-    "name": "NTU Marketing & Consulting Club",
-    "category": "Academic",
-    "interest": "Business",
-    "time": "Monthly",
-    "location": "Business Library",
-    "members": 130,
-    "meetingTimes": "3rd Tue 6:30pm",
-    "contact": "mcc@e.ntu.edu.sg"
+    "name": "Epiphany (NTU English & Drama Society)",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 6-10 hours/week (breakdown: regular rehearsals 4-6 hrs + line memorization/character work 2-4 hrs, higher pre-production)",
+      "value": 10
+    },
+    "physicalLoad": {
+      "score": 6,
+      "justification": "Involves significant physical activity including stage movement, blocking, vocal projection, and potentially choreographed sequences."
+    },
+    "mentalLoad": {
+      "score": 9,
+      "justification": "Extremely high mental load due to script analysis, character development, line memorization, emotional expression, and intense teamwork under pressure."
+    },
+    "entryCriteria": {
+      "score": 7,
+      "justification": "Entry into productions is almost certainly based on competitive auditions for acting roles. Backstage roles may have an interview or skills-based selection."
+    },
+    "description": "This society is the hub for English-language theatre at NTU. It produces a variety of plays, from classic to contemporary, offering students opportunities in acting, directing, and technical theatre."
   },
   {
-    "id": "club-050",
-    "name": "NTU International Students Association",
-    "category": "Cultural",
-    "interest": "Community",
-    "time": "Monthly",
-    "location": "Student Hub",
-    "members": 260,
-    "meetingTimes": "Monthly (varies)",
-    "contact": "isa@e.ntu.edu.sg"
+    "name": "Photo‑Videographic Society",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 3-6 hours/week (breakdown: workshops/meetings 2 hrs + personal projects/shoots 1-4 hrs)",
+      "value": 6
+    },
+    "physicalLoad": {
+      "score": 3,
+      "justification": "Low physical load, primarily involving carrying equipment and moving around during photo walks or shoots."
+    },
+    "mentalLoad": {
+      "score": 7,
+      "justification": "Requires strong creative and technical skills in composition, lighting, camera settings, and post-production software."
+    },
+    "entryCriteria": {
+      "score": 3,
+      "justification": "Likely open to all skill levels, but may have selective teams for official event coverage. A portfolio might be encouraged for leadership roles."
+    },
+    "description": "This club caters to enthusiasts of photography and videography. It organizes workshops, photo walks, and exhibitions, and often serves as official photographers for university events."
   },
   {
-    "id": "club-051",
-    "name": "NTU Orienteering Club",
-    "category": "Sports",
-    "interest": "Outdoors",
-    "time": "Monthly",
-    "location": "Campus",
-    "members": 35,
-    "meetingTimes": "2nd Sun 8:00am",
-    "contact": "orienteering@e.ntu.edu.sg"
+    "name": "Visual Arts Society",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 3-5 hours/week (breakdown: studio/workshop time 2-3 hrs + personal project work 1-2 hrs)",
+      "value": 5
+    },
+    "physicalLoad": {
+      "score": 3,
+      "justification": "Generally low, but can involve handling materials, standing for long periods while painting, or setting up exhibitions."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "High creative load involving conceptualization, artistic technique, and the development of a personal style. Requires patience and attention to detail."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "Likely open to all students, regardless of prior experience, with a focus on fostering creativity and learning."
+    },
+    "description": "The Visual Arts Society is a community for students interested in drawing, painting, sculpture, and other visual media. It provides resources, workshops, and a platform for members to create and showcase their artwork."
   },
   {
-    "id": "club-052",
-    "name": "NTU Startup Garage",
-    "category": "Academic",
-    "interest": "Business",
-    "time": "Weekly",
-    "location": "Innovation Centre",
-    "members": 80,
-    "meetingTimes": "Wed 7:00pm",
-    "contact": "startup@e.ntu.edu.sg"
+    "name": "Current Affairs Society",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 3-5 hours/week (breakdown: meetings/discussions 2 hrs + research/reading 1-3 hrs)",
+      "value": 5
+    },
+    "physicalLoad": {
+      "score": 1,
+      "justification": "Activities are entirely intellectual and sedentary, involving research, discussion, and writing."
+    },
+    "mentalLoad": {
+      "score": 8,
+      "justification": "Demands rigorous critical thinking, analysis of complex geopolitical and social issues, and the ability to articulate well-reasoned arguments."
+    },
+    "entryCriteria": {
+      "score": 3,
+      "justification": "Likely open to all, but active participation may require a baseline of knowledge and a demonstrated interest during introductory sessions or interviews."
+    },
+    "description": "This society promotes awareness and discussion of current events and global issues. It organizes forums, policy debates, and talks with experts to foster an informed student body."
   },
   {
-    "id": "club-053",
-    "name": "NTU Tabletop RPG Club",
-    "category": "Cultural",
-    "interest": "Games",
-    "time": "Weekly",
-    "location": "Student Hub",
-    "members": 45,
-    "meetingTimes": "Sat 4:00pm",
-    "contact": "rpg@e.ntu.edu.sg"
+    "name": "Debating Society",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 8-12 hours/week (breakdown: training sessions 4-6 hrs + case preparation/research 4-6 hrs)",
+      "value": 12
+    },
+    "physicalLoad": {
+      "score": 2,
+      "justification": "Low physical load, although competitive debating involves controlled posture and vocal projection under pressure."
+    },
+    "mentalLoad": {
+      "score": 10,
+      "justification": "Requires an exceptionally high level of mental agility for rapid research, logical reasoning, strategic case-building, and persuasive public speaking."
+    },
+    "entryCriteria": {
+      "score": 8,
+      "justification": "Highly selective, with rigorous tryouts required to join the competitive team. Assesses argumentation skills, critical thinking, and public speaking ability."
+    },
+    "description": "A competitive and intellectually demanding club focused on parliamentary debate. Members train to compete in national and international tournaments, honing their skills in argumentation and rhetoric."
+  },
+  {
+    "name": "Film Society",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 3-5 hours/week (breakdown: screenings 2-3 hrs + discussion/analysis 1-2 hrs)",
+      "value": 5
+    },
+    "physicalLoad": {
+      "score": 1,
+      "justification": "Primarily sedentary, focused on watching and discussing films."
+    },
+    "mentalLoad": {
+      "score": 6,
+      "justification": "Involves active viewership and critical analysis of cinematic techniques, narrative structures, and thematic content."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "Assumed to be an open club for all film enthusiasts, with no prerequisites for joining."
+    },
+    "description": "This society is for cinephiles who enjoy watching, analyzing, and discussing films from various genres and countries. It organizes regular screenings, reviews, and discussions, and may host filmmaking workshops."
+  },
+  {
+    "name": "Toastmasters Club",
+    "ccaPoints": 5,
+    "category": "Arts & Culture",
+    "timeLoad": {
+      "text": "Estimate: 4-6 hours/week (breakdown: weekly meeting 2 hrs + speech preparation/role fulfillment 2-4 hrs)",
+      "value": 6
+    },
+    "physicalLoad": {
+      "score": 2,
+      "justification": "Low physical load, focused on public speaking, which involves controlled movement and posture."
+    },
+    "mentalLoad": {
+      "score": 9,
+      "justification": "High mental load involving crafting and memorizing speeches, impromptu speaking (Table Topics), providing constructive evaluations, and leadership development."
+    },
+    "entryCriteria": {
+      "score": 4,
+      "justification": "Open to all, but requires a strong commitment to the structured educational program. Not selective, but demands active and consistent participation to progress."
+    },
+    "description": "As a chapter of Toastmasters International, this club provides a structured, supportive environment for developing public speaking and leadership skills. Members progress through a curriculum by delivering speeches and taking on meeting roles."
+  },
+  {
+    "name": "Students’ Accountancy & Business Club",
+    "ccaPoints": 5,
+    "category": "Academic & Professional Development",
+    "timeLoad": {
+      "text": "Estimate: 3-5 hours/week (breakdown: regular meetings 2 hrs + event/welfare planning 1-3 hrs)",
+      "value": 5
+    },
+    "physicalLoad": {
+      "score": 2,
+      "justification": "Primarily involves event setup, booth duty, and distribution of welfare packs."
+    },
+    "mentalLoad": {
+      "score": 4,
+      "justification": "Involves event planning, logistics management, and liaising with the school administration. Executive committee roles require higher commitment."
+    },
+    "entryCriteria": {
+      "score": 2,
+      "justification": "Generally open to all NBS students upon payment of a membership fee. Executive committee positions are filled via internal elections or interviews."
+    },
+    "description": "Acts as the student government for the Nanyang Business School (NBS), organizing academic workshops, career fairs, networking events, and student welfare initiatives."
   }
 ]
