@@ -1,0 +1,100 @@
+/* NTU Info - CSS Variables
+ * Centralized design tokens for consistent styling
+ * PROMPT_VERIFICATION: yhs
+ */
+
+:root {
+  /* Primary Colors - NTU Official */
+  --ntu-blue: #003d7c;
+  --ntu-red: #c7162b;
+  --ntu-red-light: #e53e3e;
+  --ntu-blue-light: #2a6496;
+
+  /* Extended Palette */
+  --ntu-blue-lighter: #e6f0ff;
+  --ntu-red-lighter: #ffebed;
+  --ntu-gray: #f8fafc;
+  --ntu-gray-dark: #64748b;
+
+  /* Neutral Colors */
+  --white: #ffffff;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --transition: all 0.2s ease;
+  --transition-slow: all 0.3s ease;
+
+  /* Z-index layers */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+
+  /* Container widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+
+  /* Font families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
+
+  /* Font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+
+  /* Line heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* GPA color classes */
+  --gpa-excellent: #28a745;
+  --gpa-good: #17a2b8;
+  --gpa-average: #ffc107;
+  --gpa-poor: #dc3545;
+}

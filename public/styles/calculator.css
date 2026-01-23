@@ -1,0 +1,383 @@
+/* NTU Info - Calculator Page Styles
+ * Styles specific to CGPA calculator page
+ */
+
+/* Page Layout */
+.page-container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+.breadcrumb {
+  font-size: var(--text-sm);
+  color: var(--gray-500);
+  margin-bottom: var(--spacing-sm);
+}
+
+.page-title {
+  margin: 0 0 var(--spacing-lg);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+}
+
+/* Two-column layout */
+.calculator-layout {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.calculator-inputs {
+  position: sticky;
+  top: 100px;
+}
+
+.calculator-results {
+  min-height: 100vh;
+}
+
+/* Info Banner */
+.info-banner {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: var(--ntu-blue-lighter);
+  border: 1px solid var(--ntu-blue);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.info-banner.qrs-banner {
+  background: linear-gradient(135deg, var(--ntu-blue-lighter) 0%, #e8f5e9 100%);
+}
+
+.banner-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.banner-text {
+  flex: 1;
+}
+
+.banner-text strong {
+  display: block;
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-xs);
+}
+
+.banner-text p {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: var(--text-sm);
+}
+
+.banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--ntu-blue);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.banner-cta:hover {
+  background: var(--ntu-blue-light);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Semester Cards */
+.semesters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.semester-card {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  background: var(--gray-50);
+}
+
+.semester-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.semester-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+/* Course Rows */
+.courses {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.course-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 100px 100px 120px auto;
+  gap: var(--spacing-sm);
+  align-items: end;
+  padding: var(--spacing-md);
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+}
+
+.course-row .form-field.short {
+  max-width: 100px;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+}
+
+.checkbox-field label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  cursor: pointer;
+  font-size: var(--text-sm);
+}
+
+.checkbox-field input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* GPA Display */
+.gpa-display {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.gpa-excellent { color: var(--gpa-excellent); }
+.gpa-good { color: var(--gpa-good); }
+.gpa-average { color: var(--gpa-average); }
+.gpa-poor { color: var(--gpa-poor); }
+
+/* Summary Section */
+.summary-card {
+  background: linear-gradient(135deg, var(--ntu-blue) 0%, var(--ntu-blue-light) 100%);
+  color: var(--white);
+}
+
+.summary-card h2 {
+  color: var(--white);
+  margin-bottom: var(--spacing-lg);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.summary-tile {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.summary-tile .label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--text-sm);
+  margin: 0 0 var(--spacing-xs);
+}
+
+.summary-tile .value {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--white);
+  margin: 0;
+}
+
+.summary-tile .gpa-display {
+  color: #fbbf24;
+}
+
+.summary-tile.classification .badge {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-xl);
+  font-weight: 700;
+  font-size: var(--text-sm);
+}
+
+/* Target GPA Section */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  align-items: end;
+}
+
+.form-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+#target-result {
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  color: var(--gray-700);
+}
+
+/* Actions Section */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+/* FAQ Section */
+.faq-card {
+  background: var(--gray-50);
+}
+
+.faq-item {
+  padding: var(--spacing-md) 0;
+}
+
+.faq-item + .faq-item {
+  border-top: 1px solid var(--gray-200);
+}
+
+.faq-item h3 {
+  font-size: var(--text-base);
+  margin-bottom: var(--spacing-sm);
+  color: var(--gray-900);
+}
+
+.faq-item p {
+  color: var(--gray-600);
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+/* Autocomplete Styles */
+.autocomplete-wrapper {
+  position: relative;
+}
+
+.autocomplete-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: var(--z-dropdown);
+  display: none;
+}
+
+.autocomplete-dropdown.active {
+  display: block;
+}
+
+.autocomplete-item {
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.autocomplete-item:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-item:hover,
+.autocomplete-item.selected {
+  background: var(--ntu-blue-lighter);
+}
+
+.autocomplete-item .course-code {
+  font-weight: 600;
+  color: var(--ntu-blue);
+}
+
+.autocomplete-item .course-name {
+  color: var(--gray-600);
+  font-size: var(--text-sm);
+}
+
+.autocomplete-item .course-credits {
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .calculator-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-inputs {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: var(--spacing-md);
+  }
+
+  .course-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .semester-card-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .semester-actions {
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-row {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
