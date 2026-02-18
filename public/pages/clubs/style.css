@@ -160,3 +160,26 @@
 .category-badge[data-category="Academic"] { background: var(--ntu-blue); }
 .category-badge[data-category="Cultural"] { background: #dd6b20; }
 
+
+.club-card {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-md);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.club-card.selected {
+  border-color: var(--ntu-red);
+  background: #fff7f7;
+}
+
+.filters-container select,
+.filters-container input {
+  background: var(--white);
+}
+
+#show-selected-btn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}

@@ -23,7 +23,7 @@ body {
   font-family: var(--font-sans);
   line-height: var(--leading-normal);
   color: var(--gray-700);
-  background-color: var(--white);
+  background: linear-gradient(180deg, var(--page-tint) 0%, var(--page-tint-alt) 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -45,6 +45,11 @@ h6 { font-size: var(--text-base); }
 
 p {
   margin-bottom: var(--spacing-md);
+  color: var(--gray-700);
+}
+
+main {
+  padding-bottom: var(--spacing-3xl);
 }
 
 a {
@@ -91,13 +96,14 @@ a:focus {
 
 /* Header */
 .header {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(249, 251, 255, 0.92);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--gray-200);
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
   padding: var(--spacing-md) 0;
+  min-height: 104px;
 }
 
 .header-container {
@@ -157,6 +163,7 @@ a:focus {
   flex-direction: column;
   align-items: flex-end;
   gap: var(--spacing-sm);
+  position: relative;
 }
 
 .banner-tabs {
@@ -179,6 +186,7 @@ a:focus {
   transition: all 0.2s ease;
   position: relative;
   border-bottom: 3px solid transparent;
+  min-height: 42px;
 }
 
 .banner-tab:hover {
@@ -188,24 +196,31 @@ a:focus {
 
 .banner-tab.is-active,
 .banner-tab[aria-selected="true"] {
-  border-bottom: 3px solid var(--ntu-red);
+  border-bottom-color: var(--ntu-red);
   border-color: var(--gray-200);
   background: var(--ntu-red-lighter);
   color: var(--ntu-red);
-  font-weight: 700;
 }
 
 .banner-panels {
-  /* Allow panels to size to their content / the related tab instead of stretching full width */
   width: auto;
   max-width: 520px;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: var(--z-dropdown);
+  pointer-events: none;
+}
+
+.banner-panels.is-open {
+  pointer-events: auto;
 }
 
 .banner-panel {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.98);
   border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   padding: var(--spacing-sm);
   min-width: 180px; /* sensible default when JS sizing isn't available */
 }
@@ -613,5 +628,31 @@ a.is-disabled,
 
   .card {
     padding: var(--spacing-md);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    min-height: 0;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .banner-nav,
+  .banner-tabs {
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .banner-panels {
+    left: 0;
+    right: auto;
+    max-width: min(100vw - 2rem, 420px);
   }
 }

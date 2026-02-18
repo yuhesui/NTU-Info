@@ -13,7 +13,9 @@
   /* Extended Palette */
   --ntu-blue-lighter: #e6f0ff;
   --ntu-red-lighter: rgba(214, 29, 42, 0.05);
-  --ntu-gray: #f8fafc;
+  --ntu-gray: #f4f6fb;
+  --page-tint: #f5f7fc;
+  --page-tint-alt: #eef3fb;
   --ntu-gray-dark: #64748b;
 
   /* Neutral Colors */
@@ -46,10 +48,10 @@
   --radius-2xl: 1.5rem;
 
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 20px -12px rgba(15, 23, 42, 0.25);
+  --shadow-lg: 0 18px 35px -18px rgba(15, 23, 42, 0.32);
+  --shadow-xl: 0 28px 52px -24px rgba(15, 23, 42, 0.38);
 
   /* Transitions */
   --transition: all 0.2s ease;

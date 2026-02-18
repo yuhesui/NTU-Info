@@ -584,3 +584,41 @@
     font-size: 1.75rem;
   }
 }
+
+.section-header.compact {
+  margin-bottom: var(--spacing-lg);
+}
+
+.toolkit-links {
+  display: grid;
+  gap: var(--spacing-md);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.toolkit-link {
+  display: block;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-md);
+  color: var(--gray-800);
+  font-weight: 600;
+}
+
+.toolkit-link:hover,
+.toolkit-link:focus-visible {
+  text-decoration: none;
+  border-color: var(--ntu-blue-light);
+  transform: translateY(-1px);
+}
+
+.featured-tools,
+.section.alternate-bg {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.tool-card {
+  border: 1px solid var(--gray-200);
+}
