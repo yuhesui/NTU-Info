@@ -16,16 +16,27 @@
   <header class="header" role="banner">
     <div class="header-container">
       <div class="logo-section">
-        <a class="logo-title" href="../index.html">ntu info.com</a>
+        <h1 class="logo-title"><a class="logo-home-link" href="../index.html">NTU Info</a></h1>
       </div>
 
+      <!-- Banner tab navigation -->
       <nav class="banner-nav" aria-label="Site sections">
         <div class="banner-tabs" role="tablist" aria-label="Primary">
-          <button id="tab-academics" class="banner-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-academics" data-banner-tab>Academics</button>
-          <button id="tab-tools" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-tools" tabindex="-1" data-banner-tab>Tools</button>
-          <button id="tab-guides" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-guides" tabindex="-1" data-banner-tab>Guides</button>
-          <button id="tab-campus" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-campus" tabindex="-1" data-banner-tab>Campus Life</button>
-          <button id="tab-about" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-about" tabindex="-1" data-banner-tab>About</button>
+          <button id="tab-academics" class="banner-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-academics" data-banner-tab>
+            Academics
+          </button>
+          <button id="tab-tools" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-tools" tabindex="-1" data-banner-tab>
+            Tools
+          </button>
+          <button id="tab-guides" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-guides" tabindex="-1" data-banner-tab>
+            Guides
+          </button>
+          <button id="tab-campus" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-campus" tabindex="-1" data-banner-tab>
+            Campus Life
+          </button>
+          <button id="tab-about" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-about" tabindex="-1" data-banner-tab>
+            About
+          </button>
         </div>
 
         <div class="banner-panels" data-banner-tabs>
@@ -33,6 +44,7 @@
             <ul class="banner-panel-list">
               <li><a href="timetable.html">Exam Timetable</a></li>
               <li><a href="mooc-mapping.html">MOOC Mapping Tools</a></li>
+              <li><a href="#" aria-disabled="true" class="is-disabled" title="Coming soon">STARS / Course Registration (Coming soon)</a></li>
             </ul>
           </div>
 
@@ -60,7 +72,7 @@
 
           <div id="panel-about" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-about" hidden data-banner-panel>
             <ul class="banner-panel-list">
-              <li><a href="about.html" aria-current="page">About NTU Info</a></li>
+              <li><a href="about.html">About NTU Info</a></li>
               <li><a href="https://github.com/yuhesui/NTU-Info" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
             </ul>
           </div>
@@ -113,9 +125,52 @@
     </section>
   </main>
 
-  <script type="module" src="../scripts/main.js"></script>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-branding">
+        <h3>NTU Info</h3>
+        <p class="tagline">Built by students, for students</p>
+        <p class="copyright">© 2026 NTU Info | Developed by <a href="https://qrsntu.org" target="_blank" rel="noopener">QRS@NTU</a></p>
+        <p class="organization">Quantitative Research Society @ Nanyang Technological University</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="calculator.html">CGPA Calculator</a></li>
+            <li><a href="timetable.html">Exam Timetable</a></li>
+            <li><a href="clubs/index.html">Clubs Explorer</a></li>
+            <li><a href="airport/index.html">Airport Guide</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Study Resources</h4>
+          <ul>
+            <li><a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener">📚 Math Notes & Past Papers ↗</a></li>
+            <li><a href="https://qrsntu.org/about" target="_blank" rel="noopener">About QRS ↗</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>More</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="https://github.com/yuhesui/NTU-Info" target="_blank" rel="noopener">GitHub Repository ↗</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p><small>This is a student-led initiative and is not officially affiliated with Nanyang Technological University administration.</small></p>
+    </div>
+  </footer>
+
+
   <script>
     console.log('[PAGE] Loaded successfully:', document.title);
   </script>
+
+  <script type="module" src="../scripts/main.js"></script>
 </body>
 </html>

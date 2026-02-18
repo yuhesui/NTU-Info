@@ -127,6 +127,21 @@ a:focus {
   margin: 0;
 }
 
+.logo-home-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.2rem 0.15rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.logo-home-link:hover,
+.logo-home-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .logo-subtitle {
   display: none;
 }
