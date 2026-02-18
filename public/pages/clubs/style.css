@@ -160,3 +160,29 @@
 .category-badge[data-category="Academic"] { background: var(--ntu-blue); }
 .category-badge[data-category="Cultural"] { background: #dd6b20; }
 
+
+
+.bg-red-50 { background: #fef2f2; }
+.border-2 { border-width: 2px; }
+.border-ntu-red { border-color: var(--ntu-red); }
+.text-lg { font-size: 1.125rem; }
+.h-24 { max-height: 6rem; }
+.overflow-auto { overflow: auto; }
+.p-4 { padding: 1rem; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.rounded-full { border-radius: 999px; }
+.items-start { align-items: flex-start; }
+.mb-3 { margin-bottom: 0.75rem; }
+.block { display: block; }
+
+.score-high { color: var(--ntu-red); }
+.score-medium { color: #d97706; }
+.score-low { color: #16a34a; }
+
+.category-badge[data-category="Varsity Sports"] { background: var(--ntu-red); }
+.category-badge[data-category="Academic & Professional Development"] { background: var(--ntu-blue); }
+.category-badge[data-category="Arts & Culture"] { background: #dd6b20; }
+.category-badge[data-category="Community & Social Impact"] { background: #2f855a; }
+.category-badge[data-category="Student Governance"] { background: #6b46c1; }
+.category-badge[data-category="Special Interest"] { background: #0891b2; }

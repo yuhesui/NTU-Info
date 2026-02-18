@@ -23,7 +23,7 @@ body {
   font-family: var(--font-sans);
   line-height: var(--leading-normal);
   color: var(--gray-700);
-  background-color: var(--white);
+  background: radial-gradient(circle at top, #ffffff 0%, var(--surface-0) 58%, #eef2f9 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -33,6 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   font-weight: 700;
   line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
   color: var(--gray-900);
 }
 
@@ -45,6 +46,7 @@ h6 { font-size: var(--text-base); }
 
 p {
   margin-bottom: var(--spacing-md);
+  color: var(--gray-700);
 }
 
 a {
@@ -91,12 +93,13 @@ a:focus {
 
 /* Header */
 .header {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(251, 252, 255, 0.94);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--gray-200);
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
+  min-height: 126px;
   padding: var(--spacing-md) 0;
 }
 
@@ -157,6 +160,7 @@ a:focus {
   flex-direction: column;
   align-items: flex-end;
   gap: var(--spacing-sm);
+  position: relative;
 }
 
 .banner-tabs {
@@ -169,8 +173,8 @@ a:focus {
 
 .banner-tab {
   appearance: none;
-  border: 1px solid var(--gray-200);
-  background: var(--white);
+  border: 1px solid var(--surface-border);
+  background: var(--surface-2);
   color: var(--gray-700);
   font-weight: 600;
   padding: var(--spacing-sm) var(--spacing-md);
@@ -184,30 +188,33 @@ a:focus {
 .banner-tab:hover {
   border-color: var(--ntu-blue-light);
   background: var(--ntu-blue-lighter);
+  text-decoration: none;
 }
 
 .banner-tab.is-active,
 .banner-tab[aria-selected="true"] {
-  border-bottom: 3px solid var(--ntu-red);
-  border-color: var(--gray-200);
+  border-bottom-color: var(--ntu-red);
+  border-color: var(--surface-border);
   background: var(--ntu-red-lighter);
   color: var(--ntu-red);
-  font-weight: 700;
 }
 
 .banner-panels {
-  /* Allow panels to size to their content / the related tab instead of stretching full width */
   width: auto;
   max-width: 520px;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: var(--z-dropdown);
 }
 
 .banner-panel {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
+  background: var(--surface-2);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
   padding: var(--spacing-sm);
-  min-width: 180px; /* sensible default when JS sizing isn't available */
+  min-width: 180px;
 }
 
 .banner-panel[hidden] {
@@ -254,8 +261,8 @@ a.is-disabled,
   position: absolute;
   top: 100%;
   left: 0;
-  background: var(--white);
-  border: 1px solid var(--gray-200);
+  background: var(--surface-2);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   min-width: 220px;
@@ -284,8 +291,8 @@ a.is-disabled,
   position: fixed;
   top: 100px;
   right: var(--spacing-md);
-  background: var(--white);
-  border: 1px solid var(--gray-200);
+  background: var(--surface-2);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
   padding: var(--spacing-lg);
@@ -382,8 +389,8 @@ a.is-disabled,
 
 /* Cards */
 .card {
-  background: var(--white);
-  border: 1px solid var(--gray-200);
+  background: var(--surface-2);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
   box-shadow: var(--shadow-sm);
@@ -425,7 +432,7 @@ a.is-disabled,
 .form-field select,
 .form-field textarea {
   padding: var(--spacing-sm) var(--spacing-md);
-  border: 1px solid var(--gray-300);
+  border: 1px solid var(--surface-border);
   border-radius: var(--radius-md);
   font-family: var(--font-sans);
   font-size: var(--text-base);
@@ -574,8 +581,13 @@ a.is-disabled,
 }
 
 @media (max-width: 768px) {
+  .header {
+    min-height: auto;
+  }
+
   .header-container {
     flex-direction: column;
+    align-items: stretch;
     gap: var(--spacing-md);
   }
 
@@ -599,10 +611,19 @@ a.is-disabled,
 
   .banner-tabs {
     justify-content: center;
+    gap: var(--spacing-xs);
+  }
+
+  .banner-tab {
+    padding: 0.5rem 0.7rem;
+    font-size: var(--text-sm);
   }
 
   .banner-panels {
     max-width: 100%;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
