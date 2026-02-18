@@ -111,7 +111,7 @@ export function initBannerTabs() {
     tab.addEventListener('focus', handleFocus);
     listeners.push({ target: tab, type: 'focus', handler: handleFocus });
 
-    const handleKeydown = (e) => {
+    const handleTabKeydown = (e) => {
       const currentIndex = tabs.indexOf(tab);
 
       if (isActivationKey(e)) {
@@ -156,19 +156,19 @@ export function initBannerTabs() {
         if (firstLink) firstLink.focus();
       }
     };
-    tab.addEventListener('keydown', handleKeydown);
-    listeners.push({ target: tab, type: 'keydown', handler: handleKeydown });
+    tab.addEventListener('keydown', handleTabKeydown);
+    listeners.push({ target: tab, type: 'keydown', handler: handleTabKeydown });
   });
 
   panels.forEach((panel) => {
-    const handleKeydown = (e) => {
+    const handlePanelKeydown = (e) => {
       if (e.key !== 'Escape') return;
       e.preventDefault();
       const selectedTab = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
       setActive(selectedTab.id, { persist: false, openPanel: false, focusTab: true });
     };
-    panel.addEventListener('keydown', handleKeydown);
-    listeners.push({ target: panel, type: 'keydown', handler: handleKeydown });
+    panel.addEventListener('keydown', handlePanelKeydown);
+    listeners.push({ target: panel, type: 'keydown', handler: handlePanelKeydown });
   });
 
   const handleDocumentClick = (event) => {
