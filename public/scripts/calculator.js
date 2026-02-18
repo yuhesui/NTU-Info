@@ -16,11 +16,20 @@ const GRADE_POINTS = {
 
 const grades = Object.keys(GRADE_POINTS);
 
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function makeRow(course = { name: '', au: '', grade: 'A', eligible: false, apply: false }) {
   const tr = document.createElement('tr');
   tr.innerHTML = `
-    <td><input class="course-name" type="text" value="${course.name}" placeholder="e.g. MH1810"/></td>
-    <td><input class="course-au" type="number" min="0" step="1" value="${course.au}" placeholder="3"/></td>
+    <td><input class="course-name" type="text" value="${escapeHtml(course.name)}" placeholder="e.g. MH1810"/></td>
+    <td><input class="course-au" type="number" min="0" step="1" value="${escapeHtml(course.au)}" placeholder="3"/></td>
     <td><select class="course-grade">${grades.map((g) => `<option value="${g}" ${g === course.grade ? 'selected' : ''}>${g}</option>`).join('')}</select></td>
     <td><input class="course-eligible" type="checkbox" ${course.eligible ? 'checked' : ''} aria-label="Flexible grading allowed"/></td>
     <td><input class="course-apply" type="checkbox" ${course.apply ? 'checked' : ''} aria-label="Apply FGO to this course"/></td>
@@ -133,7 +142,12 @@ function maximizeFgo() {
   const rows = getRows();
 
   const candidates = rows
-    .map((row, i) => ({ ...row, index: i, delta: row.au * (GRADE_POINTS[row.grade] - prevCgpa) }))
+    .map((row, i) => ({ 
+      ...row, 
+      index: i, 
+      au: Math.floor(row.au), // Ensure integer AU for knapsack algorithm
+      delta: Math.floor(row.au) * (GRADE_POINTS[row.grade] - prevCgpa) 
+    }))
     .filter((row) => row.eligible && row.au > 0 && row.delta < 0);
 
   const dp = Array.from({ length: candidates.length + 1 }, () => Array(FGO_AU_CAP + 1).fill(0));

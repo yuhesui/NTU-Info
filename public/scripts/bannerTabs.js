@@ -48,7 +48,7 @@ export function initBannerTabs() {
     tabs.forEach((t) => {
       const selected = t === tab;
       t.setAttribute('aria-selected', selected ? 'true' : 'false');
-      t.tabIndex = 0;
+      t.tabIndex = selected ? 0 : -1;
       t.classList.toggle('is-active', selected);
       t.classList.toggle('active', selected);
     });
