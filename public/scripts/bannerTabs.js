@@ -48,7 +48,7 @@ export function initBannerTabs() {
     tabs.forEach((t) => {
       const selected = t === tab;
       t.setAttribute('aria-selected', selected ? 'true' : 'false');
-      t.tabIndex = selected ? 0 : -1;
+      t.tabIndex = 0;
       t.classList.toggle('is-active', selected);
       t.classList.toggle('active', selected);
     });
@@ -69,6 +69,10 @@ export function initBannerTabs() {
     if (!panel) return;
     const rect = tab.getBoundingClientRect();
     panel.style.minWidth = `${Math.max(180, Math.round(rect.width) + 40)}px`;
+    const navRect = navRoot.getBoundingClientRect();
+    const panelOffset = Math.max(0, rect.left - navRect.left);
+    panelsRoot.style.left = `${Math.round(panelOffset)}px`;
+    panelsRoot.style.top = `${Math.round(rect.bottom - navRect.top + 8)}px`;
     setActive(tab.id, { persist: false, openPanel: true });
   }
 

@@ -119,3 +119,21 @@ select {
     align-items: flex-start;
   }
 }
+
+.course-table td:nth-child(4),
+.course-table td:nth-child(5),
+.course-table th:nth-child(4),
+.course-table th:nth-child(5) {
+  text-align: center;
+  width: 140px;
+}
+
+#course-rows input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+#course-rows tr.fgo-highlight {
+  background: #fff3f4;
+  outline: 1px solid rgba(214, 29, 42, 0.35);
+}

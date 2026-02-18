@@ -1,4 +1,4 @@
-const DATA_URL = '/data/clubs.json';
+const DATA_URL = '../../data/clubs.json';
 
 const categoryColors = {
   'Varsity Sports': '#c7162b',

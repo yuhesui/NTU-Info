@@ -13,8 +13,7 @@
   <header class="header" role="banner">
     <div class="header-container">
       <div class="logo-section">
-        <h1 class="logo-title">NTU Info</h1>
-        <p class="logo-subtitle">Tools</p>
+        <h1 class="logo-title">ntu info.com</h1>
       </div>
       <nav class="banner-nav" aria-label="Site sections">
         <div class="banner-tabs" role="tablist" aria-label="Primary">
@@ -32,7 +31,8 @@
             <ul class="banner-panel-list"><li><a href="calculator.html" aria-current="page">CGPA Calculator</a></li><li><a href="math-notes.html">Math Notes &amp; Past Papers</a></li><li><a href="clubs/index.html">Clubs &amp; Societies Explorer</a></li></ul>
           </div>
           <div id="panel-guides" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-guides" hidden data-banner-panel>
-            <ul class="banner-panel-list"><li><a href="airport/index.html">Airport Arrival Guide</a></li></ul>
+            <ul class="banner-panel-list"><li><a href="airport/index.html">Airport Arrival Guide</a></li>
+              <li><a href="student-links.html">Student Links</a></li></ul>
           </div>
           <div id="panel-campus" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-campus" hidden data-banner-panel>
             <ul class="banner-panel-list"><li><a href="canteens.html">NTU Canteen Food Rating Guide</a></li><li><a href="clubs/index.html">Clubs &amp; Societies Explorer</a></li></ul>
@@ -69,7 +69,7 @@
       <div class="table-wrap">
         <table class="course-table">
           <thead>
-            <tr><th>Course code/name</th><th>AUs</th><th>Grade</th><th></th></tr>
+            <tr><th>Course code/name</th><th>AUs</th><th>Grade</th><th>Flexible grading allowed</th><th>Apply FGO</th><th></th></tr>
           </thead>
           <tbody id="course-rows"></tbody>
         </table>
@@ -77,6 +77,8 @@
       <p id="form-error" class="form-error" role="alert" aria-live="polite"></p>
       <div class="actions">
         <button id="calculate" class="btn btn-primary" type="button">Calculate</button>
+        <button id="maximize-fgo" class="btn btn-secondary" type="button">Maximize CGPA (up to 12 AU)</button>
+        <button id="clear-fgo" class="btn btn-secondary" type="button">Clear FGO selections</button>
         <button id="reset" class="btn btn-secondary" type="button">Reset</button>
       </div>
     </section>
@@ -87,6 +89,7 @@
         <div><p class="kicker">Semester GPA</p><p id="semester-gpa" class="value">-</p></div>
         <div><p class="kicker">Projected new CGPA</p><p id="projected-cgpa" class="value">-</p></div>
       </div>
+      <p id="fgo-summary" class="formula">FGO selected: 0 AU / 12 AU</p>
       <p class="formula">New CGPA = ((PrevCGPA × PrevAUs) + Σ(gradePoints × AU)) / (PrevAUs + ΣAU)</p>
     </section>
   </main>
