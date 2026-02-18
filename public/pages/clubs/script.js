@@ -1,12 +1,13 @@
 const DATA_URL = '../../data/clubs.json';
 
-const categoryColors = {
-  'Varsity Sports': '#c7162b',
-  'Recreational Sports': '#ea580c',
-  'Arts & Culture': '#7c3aed',
-  'Academic & Professional': '#003d7c',
-  'Community Service': '#0f766e',
-  Others: '#334155',
+const categoryStyles = {
+  'Varsity Sports': 'tag tag--varsity',
+  'Special Interest': 'tag tag--special',
+  'Community & Social Impact': 'tag tag--community',
+  'Recreational Sports': 'tag tag--recreation',
+  'Arts & Culture': 'tag tag--arts',
+  'Academic & Professional': 'tag tag--academic',
+  'Community Service': 'tag tag--community',
 };
 
 async function loadData() {
@@ -101,10 +102,6 @@ document.addEventListener('DOMContentLoaded', async () => {
           aValue = a.entryCriteria?.score || 0;
           bValue = b.entryCriteria?.score || 0;
           break;
-        case 'ccaPoints':
-          aValue = a.ccaPoints || 0;
-          bValue = b.ccaPoints || 0;
-          break;
         default:
           aValue = a.name;
           bValue = b.name;
@@ -128,7 +125,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const avgPhysical = (clubs.reduce((sum, c) => sum + (c.physicalLoad?.score || 0), 0) / total).toFixed(1);
     const avgMental = (clubs.reduce((sum, c) => sum + (c.mentalLoad?.score || 0), 0) / total).toFixed(1);
     const avgEntry = (clubs.reduce((sum, c) => sum + (c.entryCriteria?.score || 0), 0) / total).toFixed(1);
-    const avgPoints = (clubs.reduce((sum, c) => sum + (c.ccaPoints || 0), 0) / total).toFixed(1);
 
     summaryStats.innerHTML = `
       <div class="summary-item"><p class="text-sm text-gray-500">Total Clubs</p><p class="text-2xl font-bold text-ntu-blue">${total}</p></div>
@@ -136,7 +132,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       <div class="summary-item"><p class="text-sm text-gray-500">Avg Physical</p><p class="text-2xl font-bold text-ntu-blue">${avgPhysical}/10</p></div>
       <div class="summary-item"><p class="text-sm text-gray-500">Avg Mental</p><p class="text-2xl font-bold text-ntu-blue">${avgMental}/10</p></div>
       <div class="summary-item"><p class="text-sm text-gray-500">Avg Entry</p><p class="text-2xl font-bold text-ntu-red">${avgEntry}/10</p></div>
-      <div class="summary-item"><p class="text-sm text-gray-500">Avg CCA Points</p><p class="text-2xl font-bold text-ntu-red">${avgPoints}</p></div>
     `;
 
     const topCategory = Object.entries(clubs.reduce((acc, c) => ({ ...acc, [c.category]: (acc[c.category] || 0) + 1 }), {}))
@@ -163,23 +158,22 @@ document.addEventListener('DOMContentLoaded', async () => {
     noResultsMessage.classList.add('hidden');
     clubGrid.innerHTML = clubs.map((club) => {
       const selected = selectedClubs.has(club.name);
-      const catColor = categoryColors[club.category] || categoryColors.Others;
+      const tagClass = categoryStyles[club.category] || 'tag tag--default';
       return `
-        <div class="club-card border rounded-lg shadow-sm bg-white p-4 ${selected ? 'selected' : ''}">
-          <div class="flex justify-between items-center mb-4">
-            <h3 class="text-xl font-bold text-ntu-blue">${club.name}</h3>
-            <label class="club-checkbox-container"><input type="checkbox" ${selected ? 'checked' : ''} class="club-checkbox" data-club-name="${club.name}"></label>
+        <article class="club-card ${selected ? 'selected' : ''}">
+          <div class="club-card-head">
+            <h3 class="club-title">${club.name}</h3>
+            <label class="club-checkbox-container"><input type="checkbox" ${selected ? 'checked' : ''} class="club-checkbox" data-club-name="${club.name}" aria-label="Select ${club.name}"></label>
           </div>
-          <div class="mb-4"><span class="category-badge" style="background:${catColor}">${club.category}</span></div>
-          <p class="text-gray-600 mb-4">${club.description}</p>
-          <div class="grid grid-cols-2 gap-4 text-sm">
-            <div><strong>Time:</strong> ${club.timeLoad?.text || 'N/A'}</div>
-            <div><strong>CCA Points:</strong> ${club.ccaPoints ?? 'N/A'}</div>
-            <div class="metric-value-wrapper"><strong>Physical:</strong> ${club.physicalLoad?.score ?? 0}/10<div class="metric-justification">${club.physicalLoad?.justification || ''}</div></div>
-            <div class="metric-value-wrapper"><strong>Mental:</strong> ${club.mentalLoad?.score ?? 0}/10<div class="metric-justification">${club.mentalLoad?.justification || ''}</div></div>
-            <div class="metric-value-wrapper"><strong>Entry:</strong> ${club.entryCriteria?.score ?? 0}/10<div class="metric-justification">${club.entryCriteria?.justification || ''}</div></div>
+          <div class="club-card-tag-row"><span class="${tagClass}">${club.category}</span></div>
+          <p class="club-description">${club.description}</p>
+          <div class="club-metrics-grid">
+            <div class="club-metric"><strong>Time</strong><span>${club.timeLoad?.text || 'N/A'}</span></div>
+            <div class="club-metric metric-value-wrapper"><strong>Physical</strong><span>${club.physicalLoad?.score ?? 0}/10</span><div class="metric-justification">${club.physicalLoad?.justification || ''}</div></div>
+            <div class="club-metric metric-value-wrapper"><strong>Mental</strong><span>${club.mentalLoad?.score ?? 0}/10</span><div class="metric-justification">${club.mentalLoad?.justification || ''}</div></div>
+            <div class="club-metric metric-value-wrapper"><strong>Entry</strong><span>${club.entryCriteria?.score ?? 0}/10</span><div class="metric-justification">${club.entryCriteria?.justification || ''}</div></div>
           </div>
-        </div>
+        </article>
       `;
     }).join('');
 
