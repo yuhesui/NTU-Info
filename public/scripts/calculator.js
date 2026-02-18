@@ -101,6 +101,10 @@ function validateRows(prevCgpa, prevAus) {
       error.textContent = 'Every course row needs name, valid AU (> 0), and grade.';
       return null;
     }
+    if (!Number.isInteger(row.au)) {
+      error.textContent = 'AU values must be whole numbers (integers). Please check your course AUs.';
+      return null;
+    }
   }
 
   const selectedAu = rows.reduce((sum, row) => sum + (row.eligible && row.apply ? row.au : 0), 0);
@@ -145,8 +149,7 @@ function maximizeFgo() {
     .map((row, i) => ({ 
       ...row, 
       index: i, 
-      au: Math.floor(row.au), // Ensure integer AU for knapsack algorithm
-      delta: Math.floor(row.au) * (GRADE_POINTS[row.grade] - prevCgpa) 
+      delta: row.au * (GRADE_POINTS[row.grade] - prevCgpa) 
     }))
     .filter((row) => row.eligible && row.au > 0 && row.delta < 0);
 
