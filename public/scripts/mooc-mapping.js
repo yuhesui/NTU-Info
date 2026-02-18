@@ -96,6 +96,56 @@ function bindControls() {
     el.showSelectedBtn.textContent = state.showSelectedOnly ? 'Showing selected' : 'Show selected';
     render();
   });
+
+  el.tbody.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!target.matches('button')) return;
+
+    const tr = target.closest('tr');
+    if (!tr) return;
+
+    if (target.classList.contains('select-btn')) {
+      const titleCell = tr.querySelector('td:first-child');
+      if (!titleCell) return;
+      const title = titleCell.textContent.trim();
+      const isSelected = state.selectedTitles.has(title);
+      if (isSelected) state.selectedTitles.delete(title);
+      else state.selectedTitles.add(title);
+      render();
+    } else if (target.hasAttribute('aria-expanded')) {
+      const detailTr = tr.nextElementSibling;
+      if (!detailTr || !detailTr.classList.contains('details-row')) return;
+      const nextState = detailTr.hidden;
+      detailTr.hidden = !nextState;
+      target.setAttribute('aria-expanded', String(nextState));
+      target.textContent = nextState ? 'Hide' : 'Details';
+    }
+  });
+
+  el.cards.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!target.matches('button')) return;
+
+    const card = target.closest('.result-card');
+    if (!card) return;
+
+    if (target.classList.contains('select-btn')) {
+      const titleEl = card.querySelector('h3');
+      if (!titleEl) return;
+      const title = titleEl.textContent.trim();
+      const isSelected = state.selectedTitles.has(title);
+      if (isSelected) state.selectedTitles.delete(title);
+      else state.selectedTitles.add(title);
+      render();
+    } else if (target.hasAttribute('aria-expanded')) {
+      const panel = card.querySelector('.card-detail');
+      if (!panel) return;
+      const nextState = panel.hidden;
+      panel.hidden = !nextState;
+      target.setAttribute('aria-expanded', String(nextState));
+      target.textContent = nextState ? 'Hide' : 'Details';
+    }
+  });
 }
 
 function clearFilters() {
@@ -200,23 +250,6 @@ function renderTable(rows) {
     detailTr.hidden = true;
     detailTr.innerHTML = `<td colspan="8"><strong>Full Course Type:</strong> ${escapeHtml(row.courseType || 'Not stated')}<br /><strong>Enrolment Date:</strong> ${escapeHtml(row.enrolDate || 'Not stated')}</td>`;
 
-    const detailsBtn = tr.querySelector('button[aria-expanded]');
-    const selectBtn = tr.querySelector('.select-btn');
-
-    selectBtn?.addEventListener('click', () => {
-      const isSelected = state.selectedTitles.has(row.title);
-      if (isSelected) state.selectedTitles.delete(row.title);
-      else state.selectedTitles.add(row.title);
-      render();
-    });
-
-    detailsBtn?.addEventListener('click', () => {
-      const nextState = detailTr.hidden;
-      detailTr.hidden = !nextState;
-      detailsBtn.setAttribute('aria-expanded', String(nextState));
-      detailsBtn.textContent = nextState ? 'Hide' : 'Details';
-    });
-
     fragment.appendChild(tr);
     fragment.appendChild(detailTr);
   });
@@ -245,24 +278,6 @@ function renderCards(rows) {
       <button type="button" class="btn-link" aria-expanded="false">Details</button>
       <div class="card-detail" hidden><strong>Full Course Type:</strong> ${escapeHtml(row.courseType || 'Not stated')}<br /><strong>Enrolment Date:</strong> ${escapeHtml(row.enrolDate || 'Not stated')}</div>
     `;
-
-    const selectBtn = card.querySelector('.select-btn');
-    const btn = card.querySelector('button[aria-expanded]');
-    const panel = card.querySelector('.card-detail');
-
-    selectBtn?.addEventListener('click', () => {
-      const isSelected = state.selectedTitles.has(row.title);
-      if (isSelected) state.selectedTitles.delete(row.title);
-      else state.selectedTitles.add(row.title);
-      render();
-    });
-
-    btn?.addEventListener('click', () => {
-      const nextState = panel.hidden;
-      panel.hidden = !nextState;
-      btn.setAttribute('aria-expanded', String(nextState));
-      btn.textContent = nextState ? 'Hide' : 'Details';
-    });
 
     fragment.appendChild(card);
   });
@@ -316,7 +331,13 @@ function parseDate(value) {
     Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
   };
 
-  const year = Number(yy) + 2000;
+  const yyTrimmed = String(yy).trim();
+  let year;
+  if (yyTrimmed.length === 4 && !Number.isNaN(Number(yyTrimmed))) {
+    year = Number(yyTrimmed);
+  } else {
+    year = Number(yyTrimmed) + 2000;
+  }
   const month = months[mon] ?? 0;
   const date = Number(day) || 1;
   return new Date(year, month, date);
@@ -387,9 +408,9 @@ function parseCsv(csvText) {
 
 function escapeHtml(value) {
   return String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
