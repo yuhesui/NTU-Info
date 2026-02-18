@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MOOC mapping tools for NTU students" />
-  <title>MOOC Mapping Tools | NTU Info</title>
+  <meta name="description" content="MOOC mapping guide and browser for NTU students" />
+  <title>MOOC Mapping Guide | NTU Info</title>
 
   <link rel="stylesheet" href="../styles/variables.css" />
   <link rel="stylesheet" href="../styles/shared.css" />
   <link rel="stylesheet" href="../styles/clubs-legacy.css" />
+  <link rel="stylesheet" href="../styles/mooc-mapping.css" />
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -80,17 +81,147 @@
     </div>
   </header>
 
-  <main id="main-content" class="container" role="main" style="padding: var(--spacing-3xl) var(--spacing-md);">
-    <h1 style="margin-bottom: var(--spacing-lg);">MOOC Mapping Tools</h1>
+  <main id="main-content" class="container mooc-page" role="main">
+    <section class="mooc-hero card" aria-labelledby="mooc-heading">
+      <h1 id="mooc-heading">MOOC Mapping Guide</h1>
+      <p>
+        Massive Open Online Courses (MOOCs) are flexible online classes offered by universities and industry partners worldwide.
+        For NTU students, they are a practical way to build skills outside your core timetable, and selected pre-approved MOOCs can be used for credit transfer.
+      </p>
+      <p>
+        Depending on course type and eligibility, transferred MOOCs may count toward Major PE, GER PE, or UE/BDE requirements.
+      </p>
+    </section>
 
-    <section class="card" aria-labelledby="coming-soon-heading">
-      <div class="card-header">
-        <div>
-          <p class="card-kicker">Coming soon</p>
-          <h2 id="coming-soon-heading">Map MOOCs to NTU requirements</h2>
+    <section class="mooc-steps-grid" aria-label="MOOC process steps">
+      <article class="card" aria-labelledby="enrolment-heading">
+        <h2 id="enrolment-heading">1) Enrolling in a MOOC</h2>
+        <ul>
+          <li>Use your NTU email when creating your MOOC platform account where applicable.</li>
+          <li>Platforms in this guide: Coursera, edX, and FutureLearn.</li>
+          <li>
+            Campus collections:
+            <a href="https://www.coursera.org/programs/coursera-for-ntu-students-iasyo" target="_blank" rel="noopener noreferrer">Coursera Campus</a>
+            and
+            <a href="https://www.futurelearn.com/courses/collections/nanyang" target="_blank" rel="noopener noreferrer">FutureLearn Collection</a>.
+          </li>
+        </ul>
+      </article>
+
+      <article class="card" aria-labelledby="transfer-heading">
+        <h2 id="transfer-heading">2) Applying for credit transfer</h2>
+        <ul>
+          <li>Prepare your eCertificate, welcome email showing enrolment date, and a reflection report.</li>
+          <li>Applications by Teaching Week 11 are typically posted in the same semester; later applications are recorded in the following semester.</li>
+          <li>The maximum transferable total is 12 AUs over your NTU candidature.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card official-links" aria-labelledby="official-links-heading">
+      <h2 id="official-links-heading">Official NTU references</h2>
+      <p>Use these official resources for the latest policy details and application instructions.</p>
+      <ul>
+        <li><a href="https://www.ntu.edu.sg/docs/librariesprovider123/office-of-academic-services/mooc-credit-transfer-policy-(effective-8-aug-2022).pdf" target="_blank" rel="noopener noreferrer">Policy change PDF (effective 8 Aug 2022)</a></li>
+        <li><a href="https://www.ntu.edu.sg/admissions/matriculation/mooc/school-mooc-coordinators" target="_blank" rel="noopener noreferrer">MOOC school coordinators list</a></li>
+        <li><a href="https://www.ntu.edu.sg/docs/librariesprovider123/office-of-academic-services/pre-approved-moocs-for-credit-transfer.pdf" target="_blank" rel="noopener noreferrer">Pre-approved MOOCs list (latest PDF)</a></li>
+        <li><a href="https://www.ntu.edu.sg/docs/librariesprovider123/office-of-academic-services/mooc-faq.pdf" target="_blank" rel="noopener noreferrer">FAQ PDF</a></li>
+        <li><a href="https://wish.wis.ntu.edu.sg/webexe/owa/aus_schedule.main" target="_blank" rel="noopener noreferrer">Intranet portal link for application</a></li>
+      </ul>
+    </section>
+
+    <section class="card mooc-browser" aria-labelledby="browser-heading">
+      <h2 id="browser-heading">Browse pre-approved MOOCs</h2>
+
+      <div class="filters" aria-label="MOOC filters">
+        <div class="filters-row filters-row-primary">
+          <div class="filter-field">
+            <label for="search-input">Search courses or providers</label>
+            <input id="search-input" type="search" placeholder="Try: data analytics, Yale, AI..." />
+          </div>
+
+        <div class="filter-field">
+          <span id="au-filter-label" class="field-label">Equivalent AU</span>
+          <div class="checkbox-row" role="group" aria-labelledby="au-filter-label">
+            <label><input type="checkbox" value="1" name="au-filter" /> 1 AU</label>
+            <label><input type="checkbox" value="2" name="au-filter" /> 2 AU</label>
+            <label><input type="checkbox" value="3" name="au-filter" /> 3 AU</label>
+          </div>
+        </div>
+
+        <div class="filter-field">
+          <label for="free-filter">Free?</label>
+          <select id="free-filter">
+            <option value="all">Any</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="filter-actions filter-field">
+          <span class="field-label">Selected</span>
+          <button type="button" id="show-selected-btn" class="btn btn-danger" aria-pressed="false">Show selected</button>
         </div>
       </div>
-      <p>This page will help you check whether external courses (MOOCs) can be mapped to NTU credit / requirements. In this run, only navigation + placeholder are implemented.</p>
+
+      <div class="filters-row filters-row-secondary" aria-label="Advanced filters">
+        <div class="filter-field">
+          <label for="platform-filter">Platform</label>
+          <select id="platform-filter">
+            <option value="all">All platforms</option>
+          </select>
+        </div>
+
+        <div class="filter-field">
+          <label for="course-type-filter">Course Type</label>
+          <select id="course-type-filter">
+            <option value="all">All course types</option>
+          </select>
+        </div>
+
+        <div class="filter-field">
+          <label for="sort-filter">Sort Result</label>
+          <select id="sort-filter">
+            <option value="title">Alphabetical</option>
+            <option value="au-desc">AU (desc)</option>
+            <option value="au-asc">AU (asc)</option>
+            <option value="date-newest">Enrolment Date (newest first)</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="results-count" class="results-count" aria-live="polite"></p>
+
+      <div id="error-state" class="status-card status-error" hidden>
+        <h3>Could not load MOOC dataset.</h3>
+        <p>Please check that <code>/public/data/MOOC-Mapping.csv</code> exists and is accessible on your static host.</p>
+      </div>
+
+      <div id="empty-state" class="status-card" hidden>
+        <h3>No courses match your current filters</h3>
+        <p>Try broadening your search or reset all filters.</p>
+        <button type="button" class="btn btn-secondary" id="clear-filters-btn">Clear filters</button>
+      </div>
+
+      <div class="results-table-wrap" id="results-table-wrap">
+        <table class="results-table" aria-label="MOOC mapping results table">
+          <thead>
+            <tr>
+              <th scope="col">Course Title</th>
+              <th scope="col">Platform</th>
+              <th scope="col">Provider</th>
+              <th scope="col">AU</th>
+              <th scope="col">Tags</th>
+              <th scope="col">Free?</th>
+              <th scope="col">Select</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody id="results-tbody"></tbody>
+        </table>
+      </div>
+
+      <div id="results-cards" class="results-cards" aria-label="MOOC mapping mobile cards"></div>
     </section>
 
     <p class="mt-4"><a class="btn btn-secondary" href="../index.html">Back to Home</a></p>
@@ -110,5 +241,6 @@
   </footer>
 
   <script type="module" src="../scripts/main.js"></script>
+  <script type="module" src="../scripts/mooc-mapping.js"></script>
 </body>
 </html>
