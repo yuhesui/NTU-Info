@@ -29,47 +29,20 @@ jobs:
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      
-      - name: Build unified site structure
+
+      - name: Verify public folder exists
         run: |
-          mkdir -p public
-          
-          # Copy main page files
-          cp v1/index.html public/
-          cp v1/main-style.css public/
-          
-          # Copy Room Layout PowerPoint
-          cp "v1/Room Layout.pptx" public/ || echo "Room Layout.pptx not found, skipping..."
-          
-          # Copy Clubs & Societies Explorer
-          mkdir -p public/ntu-clubs
-          cp -r "v1/NTU Clubs & Societies Explorer"/* public/ntu-clubs/
-          
-          # Copy Airport Guide with updated styling
-          mkdir -p public/airport-guide
-          cp -r "v1/Airport Guide/v2"/* public/airport-guide/
-          
-          # Update airport guide to use consistent styling
-          if [ -f public/airport-guide/2-style.css ]; then
-            mv public/airport-guide/2-style.css public/airport-guide/style.css
+          if [ ! -d public ]; then
+            echo "Error: 'public/' folder not found at repo root. Commit it or add a build step to generate it."
+            exit 1
           fi
-          if [ -f public/airport-guide/2-script.js ]; then
-            mv public/airport-guide/2-script.js public/airport-guide/script.js
+          if [ ! -f public/index.html ]; then
+            echo "Error: 'public/index.html' not found. GitHub Pages needs an entrypoint."
+            echo "Found in public/:"
+            ls -la public || true
+            exit 1
           fi
-          if [ -f public/airport-guide/2-index.html ]; then
-            mv public/airport-guide/2-index.html public/airport-guide/index.html
-          fi
-          
-          # Add navigation link back to main page in airport guide
-          if [ -f public/airport-guide/index.html ]; then
-            sed -i '/<body>/a <a href="../index.html" class="main-nav-link"><i data-lucide="arrow-left"></i><span>Back to Hub</span></a>' public/airport-guide/index.html
-          fi
-          
-          # Add navigation link back to main page in clubs page  
-          if [ -f public/ntu-clubs/index.html ]; then
-            sed -i '/<body>/a <a href="../index.html" class="main-nav-link"><i data-lucide="arrow-left"></i><span>Back to Hub</span></a>' public/ntu-clubs/index.html
-          fi
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
