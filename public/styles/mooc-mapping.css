@@ -1,0 +1,241 @@
+.mooc-page {
+  padding: var(--spacing-3xl) var(--spacing-md);
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.mooc-page .card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-lg);
+}
+
+.mooc-hero p:last-child,
+.official-links p {
+  margin-bottom: 0;
+}
+
+.mooc-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-md);
+}
+
+.mooc-page ul {
+  padding-left: 1.1rem;
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.filters {
+  display: grid;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.filters-row {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.filters-row-primary {
+  grid-template-columns: 2fr 1.2fr 1fr 0.9fr;
+}
+
+.filters-row-secondary {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: var(--spacing-sm);
+}
+
+.filter-field {
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.field-label,
+.filter-field label {
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.filter-field input[type="search"],
+.filter-field select {
+  width: 100%;
+  padding: 0.58rem 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  color: var(--gray-800);
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-pill,
+.meta-pill {
+  border: 1px solid var(--gray-300);
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.82rem;
+  background: var(--gray-100);
+  color: var(--gray-800);
+}
+
+.filter-pill {
+  cursor: pointer;
+}
+
+.filter-pill.is-active {
+  background: var(--ntu-blue-lighter);
+  border-color: var(--ntu-blue);
+  color: var(--ntu-blue);
+  font-weight: 600;
+}
+
+.meta-pill.platform { background: #eaf2ff; color: #0e3f91; border-color: #bfd6ff; }
+.meta-pill.au { background: #f4f2ff; color: #4c2ea5; border-color: #d8d2ff; }
+.meta-pill.type { background: #fff5e9; color: #8a4a00; border-color: #ffd7a4; }
+.meta-pill.free-yes { background: #e9f9f0; color: #08673b; border-color: #b7eecd; }
+.meta-pill.free-no { background: #fdeeee; color: #8e2323; border-color: #f8b6b6; }
+
+.checkbox-row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+#free-filter {
+  background: #e9f9f0;
+  border-color: #6bc88d;
+  color: #08673b;
+  font-weight: 700;
+}
+
+.filter-actions {
+  margin-top: 0;
+  align-content: end;
+}
+
+#show-selected-btn {
+  background: #c51d34;
+  border-color: #9f1327;
+  color: #fff;
+}
+
+#show-selected-btn[aria-pressed="true"] {
+  background: #8e1324;
+}
+
+.select-btn[aria-pressed="true"] {
+  background: #c51d34;
+  border-color: #9f1327;
+  color: #fff;
+}
+
+.results-count {
+  margin: var(--spacing-sm) 0;
+  font-weight: 600;
+}
+
+.status-card {
+  border: 1px solid var(--gray-300);
+  background: #f8fafc;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+}
+
+.status-error {
+  border-color: #f3b5b5;
+  background: #fff5f5;
+}
+
+.results-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+}
+
+.results-table th,
+.results-table td {
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0.65rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.results-table .details-row td {
+  background: var(--gray-50);
+  font-size: 0.95rem;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.btn-link {
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.55rem;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.results-cards {
+  display: none;
+  gap: var(--spacing-md);
+}
+
+.result-card {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  background: var(--white);
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.result-card h3 {
+  font-size: 1.05rem;
+}
+
+.card-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.45rem;
+  font-size: 0.92rem;
+}
+
+.card-detail {
+  border-top: 1px dashed var(--gray-300);
+  margin-top: 0.2rem;
+  padding-top: 0.55rem;
+}
+
+@media (max-width: 768px) {
+  .mooc-steps-grid,
+  .filters-row-primary,
+  .filters-row-secondary {
+    grid-template-columns: 1fr;
+  }
+
+  .results-table-wrap {
+    display: none;
+  }
+
+  .results-cards {
+    display: grid;
+  }
+}
