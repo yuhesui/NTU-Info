@@ -1,0 +1,139 @@
+.page-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.page-title {
+  margin: 0;
+  font-size: var(--text-4xl);
+}
+
+.intro {
+  margin: 0;
+  color: var(--gray-600);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-lg);
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.form-grid.two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-md);
+}
+
+.form-field {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  padding: 10px 12px;
+  font: inherit;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.course-table th,
+.course-table td {
+  padding: 10px;
+  border-bottom: 1px solid var(--gray-200);
+  text-align: left;
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.form-error {
+  color: #b42318;
+  min-height: 1.2rem;
+  margin-top: var(--spacing-sm);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-md);
+}
+
+.kicker {
+  margin: 0;
+  color: var(--gray-500);
+  font-size: var(--text-sm);
+}
+
+.value {
+  margin: 4px 0 0;
+  color: var(--ntu-blue);
+  font-size: var(--text-4xl);
+  font-weight: 800;
+}
+
+.formula {
+  margin-top: var(--spacing-md);
+  color: var(--gray-600);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 768px) {
+  .form-grid.two,
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.course-table td:nth-child(4),
+.course-table td:nth-child(5),
+.course-table th:nth-child(4),
+.course-table th:nth-child(5) {
+  text-align: center;
+  width: 140px;
+}
+
+#course-rows input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+#course-rows tr.fgo-highlight {
+  background: #fff3f4;
+  outline: 1px solid rgba(214, 29, 42, 0.35);
+}

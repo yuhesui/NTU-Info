@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MOOC mapping tools for NTU students" />
+  <title>MOOC Mapping Tools | NTU Info</title>
+
+  <link rel="stylesheet" href="../styles/variables.css" />
+  <link rel="stylesheet" href="../styles/shared.css" />
+  <link rel="stylesheet" href="../styles/clubs-legacy.css" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="header" role="banner">
+    <div class="header-container">
+      <div class="logo-section">
+        <h1 class="logo-title">ntu info.com</h1>
+      </div>
+
+      <nav class="banner-nav" aria-label="Site sections">
+        <div class="banner-tabs" role="tablist" aria-label="Primary">
+          <button id="tab-academics" class="banner-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-academics" data-banner-tab>
+            Academics
+          </button>
+          <button id="tab-tools" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-tools" tabindex="-1" data-banner-tab>
+            Tools
+          </button>
+          <button id="tab-guides" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-guides" tabindex="-1" data-banner-tab>
+            Guides
+          </button>
+          <button id="tab-campus" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-campus" tabindex="-1" data-banner-tab>
+            Campus Life
+          </button>
+          <button id="tab-about" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-about" tabindex="-1" data-banner-tab>
+            About
+          </button>
+        </div>
+
+        <div class="banner-panels" data-banner-tabs>
+          <div id="panel-academics" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-academics" data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="timetable.html">Exam Timetable</a></li>
+              <li><a href="mooc-mapping.html" aria-current="page">MOOC Mapping Tools</a></li>
+              <li><a href="#" aria-disabled="true" class="is-disabled" title="Coming soon">STARS / Course Registration (Coming soon)</a></li>
+            </ul>
+          </div>
+
+          <div id="panel-tools" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-tools" hidden data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="calculator.html">CGPA Calculator</a></li>
+              <li><a href="math-notes.html">Math Notes &amp; Past Papers</a></li>
+              <li><a href="clubs/index.html">Clubs &amp; Societies Explorer</a></li>
+            </ul>
+          </div>
+
+          <div id="panel-guides" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-guides" hidden data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="airport/index.html">Airport Arrival Guide</a></li>
+              <li><a href="student-links.html">Student Links</a></li>
+            </ul>
+          </div>
+
+          <div id="panel-campus" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-campus" hidden data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="canteens.html">NTU Canteen Food Rating Guide</a></li>
+              <li><a href="clubs/index.html">Clubs &amp; Societies Explorer</a></li>
+            </ul>
+          </div>
+
+          <div id="panel-about" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-about" hidden data-banner-panel>
+            <ul class="banner-panel-list">
+              <li><a href="about.html">About NTU Info</a></li>
+              <li><a href="https://github.com/yuhesui/NTU-Info" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="container" role="main" style="padding: var(--spacing-3xl) var(--spacing-md);">
+    <h1 style="margin-bottom: var(--spacing-lg);">MOOC Mapping Tools</h1>
+
+    <section class="card" aria-labelledby="coming-soon-heading">
+      <div class="card-header">
+        <div>
+          <p class="card-kicker">Coming soon</p>
+          <h2 id="coming-soon-heading">Map MOOCs to NTU requirements</h2>
+        </div>
+      </div>
+      <p>This page will help you check whether external courses (MOOCs) can be mapped to NTU credit / requirements. In this run, only navigation + placeholder are implemented.</p>
+    </section>
+
+    <p class="mt-4"><a class="btn btn-secondary" href="../index.html">Back to Home</a></p>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-branding">
+        <h3>NTU Info</h3>
+        <p class="tagline">Built by students, for students</p>
+        <p class="copyright">© 2026 NTU Info</p>
+      </div>
+    </div>
+    <div class="footer-disclaimer">
+      <p><small>This is a student-led initiative and is not officially affiliated with Nanyang Technological University administration.</small></p>
+    </div>
+  </footer>
+
+  <script type="module" src="../scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* NTU Info - Timetable Page Styles
+ * Styles specific to exam timetable page
+ */
+
+/* Import Area */
+.import-area {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--gray-200);
+}
+
+.import-area label {
+  display: block;
+  font-weight: 500;
+  color: var(--gray-700);
+  margin-bottom: var(--spacing-sm);
+}
+
+.import-area textarea {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  resize: vertical;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Exams List */
+.exams-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.exam-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 140px 100px 100px 1fr auto;
+  gap: var(--spacing-sm);
+  align-items: end;
+  padding: var(--spacing-md);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gray-200);
+}
+
+/* Timetable Table */
+.table-wrapper {
+  overflow-x: auto;
+  margin-bottom: var(--spacing-lg);
+}
+
+.timetable-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.timetable-table th,
+.timetable-table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.timetable-table th {
+  background: var(--gray-100);
+  font-weight: 600;
+  color: var(--gray-700);
+  white-space: nowrap;
+}
+
+.timetable-table tr:hover {
+  background: var(--gray-50);
+}
+
+.timetable-table .conflict-row {
+  background: var(--ntu-red-lighter);
+}
+
+.timetable-table .study-days {
+  font-weight: 600;
+}
+
+.timetable-table .study-days.urgent {
+  color: var(--ntu-red);
+}
+
+/* Conflict Alert */
+.conflict-container {
+  margin-top: var(--spacing-lg);
+}
+
+.conflict-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--ntu-red-lighter);
+  border: 1px solid var(--ntu-red);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.conflict-alert .icon {
+  font-size: 1.5rem;
+  color: var(--ntu-red);
+  flex-shrink: 0;
+}
+
+.conflict-alert .content {
+  flex: 1;
+}
+
+.conflict-alert h4 {
+  color: var(--ntu-red);
+  margin-bottom: var(--spacing-xs);
+}
+
+.conflict-alert p {
+  color: var(--gray-700);
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+/* Contextual Banner */
+.contextual-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-xl) var(--spacing-md) var(--spacing-lg);
+  background: linear-gradient(135deg, #e8f5e9 0%, var(--ntu-blue-lighter) 100%);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.contextual-banner p {
+  margin: 0;
+  flex: 1;
+}
+
+.contextual-banner a {
+  color: var(--ntu-blue);
+  font-weight: 600;
+}
+
+.banner-close {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-500);
+  font-size: 1.25rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.banner-close:hover {
+  background: var(--gray-200);
+  color: var(--gray-700);
+}
+
+/* Study Planner */
+.planner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.planner-tile {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.planner-tile .label {
+  color: var(--gray-500);
+  font-size: var(--text-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.planner-tile .value {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.planner-tile.highlight {
+  background: var(--ntu-blue-lighter);
+  border-color: var(--ntu-blue);
+}
+
+.planner-tile.highlight .value {
+  color: var(--ntu-blue);
+}
+
+/* Calendar Export */
+.calendar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .exam-row {
+    grid-template-columns: 1fr 1fr 1fr auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .exam-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .timetable-table {
+    font-size: var(--text-xs);
+  }
+
+  .timetable-table th,
+  .timetable-table td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .exam-row {
+    grid-template-columns: 1fr;
+  }
+}

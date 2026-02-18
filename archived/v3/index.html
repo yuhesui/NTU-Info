@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTU Info</title>
+    <meta name="description" content="Comprehensive resource hub for NTU students featuring the Clubs & Societies Explorer and Singapore Airport Entry Guide">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="main-style.css">
+    <link rel="stylesheet" href="css/qrs-integration.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <h1 class="logo-title">NTU Info</h1>
+                <p class="logo-subtitle">Your comprehensive guide to university life</p>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+              <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" aria-haspopup="true" aria-expanded="false">Academic Tools ▾</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="cgpa-calculator.html">CGPA Calculator</a></li>
+                    <li><a href="exam-timetable.html">Exam Timetable</a></li>
+                    <li><a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener">📚 Math Notes &amp; Past Papers ↗</a></li>
+                  </ul>
+                </li>
+                <li><a href="ntu-clubs/index.html">Campus Life</a></li>
+                <li><a href="about.html">About</a></li>
+              </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                
+                <h1 class="hero-title">
+                    Everything You Need for 
+                    <span class="gradient-text">University Success</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Access comprehensive tools and guides designed specifically for NTU students. 
+                    From discovering the perfect clubs and societies to navigating your arrival in Singapore.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">113</div>
+                        <div class="stat-label">Clubs Analyzed</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Essential Tools</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Student Focused</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="featured-tools">
+          <div class="section-container">
+            <h2>Essential Student Tools</h2>
+            <div class="tool-grid">
+              <div class="tool-card">
+                <h3>🧮 CGPA Calculator</h3>
+                <p>Track your semester grades and cumulative GPA with NTU's official grading scale</p>
+                <a href="cgpa-calculator.html" class="btn btn-primary">Calculate GPA →</a>
+              </div>
+              <div class="tool-card">
+                <h3>📅 Exam Timetable</h3>
+                <p>Build your exam schedule, detect conflicts, and export to calendar</p>
+                <a href="exam-timetable.html" class="btn btn-primary">Create Timetable →</a>
+              </div>
+              <div class="tool-card featured-card">
+                <div class="badge">By QRS@NTU</div>
+                <h3>📚 Math Notes &amp; Exam Resources</h3>
+                <p>Access comprehensive revision materials for Math, Economics, and Finance courses:</p>
+                <ul class="feature-list">
+                  <li>✓ Curated study notes &amp; cheatsheets</li>
+                  <li>✓ Past year papers with solutions</li>
+                  <li>✓ Quick reference guides</li>
+                </ul>
+                <a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener noreferrer" class="btn-accent">Browse Math Notes ↗</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Tools Section -->
+        <section class="section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Your Student Journey Toolkit</h2>
+                    <p class="section-description">
+                        Two powerful resources designed to make your NTU experience smoother and more enriching
+                    </p>
+                </div>
+
+                <div class="tools-grid">
+                    <!-- Clubs & Societies Explorer -->
+                    <div class="tool-card featured">
+                        <div class="tool-header">
+                            <div class="tool-icon bg-ntu-blue">
+                                <i data-lucide="users"></i>
+                            </div>
+                            <div class="tool-meta">
+                                <span class="tool-category">Campus Life</span>
+                                <h3 class="tool-title">Clubs & Societies Explorer</h3>
+                            </div>
+                        </div>
+                        
+                        <p class="tool-description">
+                            Discover your perfect extracurricular match from 113+ NTU clubs and societies. 
+                            Filter by time commitment, physical demands, and entry requirements to find activities that align with your interests and schedule.
+                        </p>
+                        
+                        <div class="tool-features">
+                            <div class="feature-item">
+                                <i data-lucide="filter" class="feature-icon"></i>
+                                <span>Smart filtering system</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="bar-chart-3" class="feature-icon"></i>
+                                <span>Detailed analytics & insights</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="bookmark" class="feature-icon"></i>
+                                <span>Save favorite clubs</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-stats">
+                            <div class="stat">
+                                <span class="stat-value">113</span>
+                                <span class="stat-label">Clubs</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">8.4</span>
+                                <span class="stat-label">Avg Hours/Week</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">6</span>
+                                <span class="stat-label">Categories</span>
+                            </div>
+                        </div>
+                        
+                        <a href="ntu-clubs/index.html" class="tool-button primary">
+                            <span>Explore Clubs</span>
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Singapore Airport Guide -->
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-icon bg-ntu-red">
+                                <i data-lucide="plane-landing"></i>
+                            </div>
+                            <div class="tool-meta">
+                                <span class="tool-category">Travel Guide</span>
+                                <h3 class="tool-title">Singapore Airport Entry Guide</h3>
+                            </div>
+                        </div>
+                        
+                        <p class="tool-description">
+                            Complete step-by-step guide for international students arriving at Singapore Changi Airport. 
+                            Navigate immigration, transportation, and reach your destination with confidence.
+                        </p>
+                        
+                        <div class="tool-features">
+                            <div class="feature-item">
+                                <i data-lucide="map" class="feature-icon"></i>
+                                <span>Interactive terminal maps</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="navigation" class="feature-icon"></i>
+                                <span>Step-by-step navigation</span>
+                            </div>
+                            <div class="feature-item">
+                                <i data-lucide="car" class="feature-icon"></i>
+                                <span>Transportation options</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-stats">
+                            <div class="stat">
+                                <span class="stat-value">4</span>
+                                <span class="stat-label">Terminals</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Main Steps</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">Multiple</span>
+                                <span class="stat-label">Transport</span>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-actions">
+                            <a href="Airport%20Guide/v2/index.html" class="tool-button secondary">
+                                <span>View Guide</span>
+                                <i data-lucide="arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section class="section alternate-bg">
+          <div class="section-container">
+            <div class="resource-card">
+              <div class="resource-icon bg-ntu-red"><i data-lucide="download"></i></div>
+              <div class="resource-body">
+                <h3 class="resource-title">Hall Room Layouts (PPTX)</h3>
+                <p class="resource-desc">
+                  High-resolution floor plans for every NTU hall. Perfect for planning furniture
+                  and luggage before arrival.
+                </p>
+                <a class="resource-btn" href="Room%20Layout.pptx" download>
+                  <span>Download (2 MB)</span><i data-lucide="arrow-down"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Access Section -->
+        <section class="section alternate-bg">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-badge">
+                        <i data-lucide="zap" class="badge-icon"></i>
+                        Quick Access
+                    </div>
+                    <h2 class="section-title">Popular Actions</h2>
+                </div>
+
+                <div class="quick-access-grid">
+                    <a href="NTU%20Clubs%20%26%20Societies%20Explorer/index.html?filter=low-commitment" class="quick-action-card">
+                        <div class="quick-action-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <h3 class="quick-action-title">Low Time Commitment Clubs</h3>
+                        <p class="quick-action-desc">Find clubs requiring ≤5 hours per week</p>
+                    </a>
+
+                    <a href="NTU%20Clubs%20%26%20Societies%20Explorer/index.html?filter=varsity-sports" class="quick-action-card">
+                        <div class="quick-action-icon">
+                            <i data-lucide="trophy"></i>
+                        </div>
+                        <h3 class="quick-action-title">Varsity Sports</h3>
+                        <p class="quick-action-desc">Explore competitive athletic teams</p>
+                    </a>
+
+                    <a href="Airport%20Guide/v2/index.html#prep" class="quick-action-card">
+                        <div class="quick-action-icon">
+                            <i data-lucide="check-circle"></i>
+                        </div>
+                        <h3 class="quick-action-title">Pre-Arrival Checklist</h3>
+                        <p class="quick-action-desc">Essential documents & preparation</p>
+                    </a>
+
+                    <a href="Airport%20Guide/v2/index.html#transfer" class="quick-action-card">
+                        <div class="quick-action-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3 class="quick-action-title">Airport to NTU</h3>
+                        <p class="quick-action-desc">Transportation options to campus</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-branding">
+      <h3>NTU Info</h3>
+      <p class="tagline">Built by students, for students</p>
+      <p class="copyright">© 2025 NTU Info | Developed by <a href="https://qrsntu.org" target="_blank" rel="noopener">QRS@NTU</a></p>
+      <p class="organization">Quantitative Research Society @ Nanyang Technological University</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="cgpa-calculator.html">CGPA Calculator</a></li>
+          <li><a href="exam-timetable.html">Exam Timetable</a></li>
+          <li><a href="ntu-clubs/index.html">Clubs Explorer</a></li>
+        </ul>
+      </div>
+      <div class="footer-column featured-links">
+        <h4>Study Resources</h4>
+        <ul>
+          <li><a href="https://qrsntu.org/math_notes" target="_blank" rel="noopener" class="featured-link">📚 <strong>Math Notes &amp; Past Papers</strong> ↗</a></li>
+          <li><a href="https://qrsntu.org/about" target="_blank" rel="noopener">About QRS ↗</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>More</h4>
+        <ul>
+            <li><a href="about.html">Privacy Policy</a></li>
+          <li><a href="https://github.com/yuhesui/NTU-Info" target="_blank" rel="noopener">GitHub Repository ↗</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    <p><small>This is a student-led initiative and is not officially affiliated with Nanyang Technological University administration.</small></p>
+  </div>
+</footer>
+
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add aria-labels to external links for accessibility
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            if (!link.getAttribute('aria-label')) {
+                const text = link.textContent.trim() || 'External link';
+                link.setAttribute('aria-label', `${text} (opens in new tab)`);
+            }
+        });
+    </script>
+</body>
+</html>

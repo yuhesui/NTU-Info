@@ -1,0 +1,298 @@
+/* Clubs Explorer (page-local) - mirrors archived structure but without Tailwind */
+
+:root {
+  --container: 80rem;
+}
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+.min-h-screen { min-height: 100vh; }
+.max-w-7xl { max-width: var(--container); }
+
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.pb-12 { padding-bottom: 3rem; }
+.py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-12 { margin-top: 3rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+.bg-white { background: #fff; }
+.bg-gray-50 { background: var(--gray-50); }
+.bg-gray-600 { background: #4b5563; }
+.bg-orange-600 { background: #ea580c; }
+.text-white { color: #fff; }
+.text-gray-500 { color: var(--gray-500); }
+.text-gray-600 { color: var(--gray-600); }
+.text-gray-700 { color: var(--gray-700); }
+.text-blue-100 { color: #dbeafe; }
+
+.rounded-md { border-radius: 0.375rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.border { border: 1px solid var(--gray-200); }
+.border-gray-200 { border-color: var(--gray-200); }
+.border-gray-300 { border-color: var(--gray-300); }
+.border-t { border-top: 1px solid var(--gray-200); }
+
+.text-center { text-align: center; }
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+.text-sm { font-size: 0.875rem; }
+.text-xl { font-size: 1.25rem; }
+.text-2xl { font-size: 1.5rem; }
+.text-4xl { font-size: 2.25rem; }
+.text-5xl { font-size: 3rem; }
+
+.container { max-width: var(--container); }
+
+/* Layout utilities used by the legacy markup */
+.grid { display: grid; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+
+.w-full { width: 100%; }
+.hidden { display: none; }
+.overflow-x-auto { overflow-x: auto; }
+
+/* Responsive grid mapping */
+.grid-cols-1 { grid-template-columns: 1fr; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:text-5xl { font-size: 3rem; }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .lg\:col-span-2 { grid-column: span 2 / span 2; }
+  .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+/* Club card specifics (legacy feel) */
+.club-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.club-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Metric tooltip behavior ported from legacy CSS */
+.metric-value-wrapper { position: relative; cursor: help; }
+.metric-justification {
+  visibility: hidden;
+  width: 240px;
+  background-color: #262626;
+  color: #fff;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.4;
+  border-radius: 6px;
+  padding: 8px 12px;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -120px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.metric-justification::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #262626 transparent transparent transparent;
+}
+
+.metric-value-wrapper:hover .metric-justification { visibility: visible; opacity: 1; }
+
+/* Checkbox styling */
+.club-checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.club-checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid var(--gray-300);
+  border-radius: 4px;
+  accent-color: var(--ntu-red);
+}
+
+.club-checkbox:hover { border-color: var(--ntu-red); transform: scale(1.05); }
+
+/* Category badge */
+.category-badge {
+  display: inline-block;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.category-badge[data-category="Sports"] { background: var(--ntu-red); }
+.category-badge[data-category="Academic"] { background: var(--ntu-blue); }
+.category-badge[data-category="Cultural"] { background: #dd6b20; }
+
+
+.club-card {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow-md);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.club-card.selected {
+  border-color: var(--ntu-red);
+  background: #fff7f7;
+}
+
+.filters-container select,
+.filters-container input {
+  background: var(--white);
+}
+
+#show-selected-btn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+
+.p-4 { padding: 1rem; }
+.p-6 { padding: 1.5rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.text-left { text-align: left; }
+.border-collapse { border-collapse: collapse; }
+.bg-ntu-red { background: var(--ntu-red); }
+.text-ntu-blue { color: var(--ntu-blue); }
+.text-blue-100 { color: #dbeafe; }
+.rounded-md { border-radius: var(--radius-md); }
+.summary-item { background: rgba(255,255,255,.92); border:1px solid var(--gray-200); border-radius: var(--radius-md); padding: .75rem; box-shadow: var(--shadow-sm); }
+
+#club-grid {
+  gap: 1.4rem;
+}
+
+.club-card {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 100%;
+}
+
+.club-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.club-title {
+  margin: 0;
+  color: var(--ntu-blue);
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.club-card-tag-row {
+  margin-top: -0.2rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.22rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.tag--varsity { background: #fde8ea; color: #9f1239; }
+.tag--special { background: #def7f1; color: #0f766e; }
+.tag--community { background: #fff4df; color: #9a3412; }
+.tag--recreation { background: #e5eefc; color: #1d4ed8; }
+.tag--arts { background: #f3e8ff; color: #7e22ce; }
+.tag--academic { background: #e0ecff; color: #1e3a8a; }
+.tag--default { background: #e2e8f0; color: #334155; }
+
+.club-description {
+  margin: 0;
+  color: var(--gray-600);
+  line-height: 1.55;
+}
+
+.club-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.club-metric {
+  position: relative;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: var(--radius-md);
+  background: rgba(241, 245, 249, 0.8);
+  border: 1px solid var(--gray-200);
+  font-size: 0.82rem;
+}
+
+.club-metric strong { color: var(--gray-700); }
+.club-metric span { color: var(--gray-600); }
+
+.club-checkbox-container {
+  margin-top: 0.1rem;
+}
+
+.club-checkbox {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.filters-container button {
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+  #club-grid { gap: 1rem; }
+  .club-card { padding: 1rem; }
+  .club-metrics-grid { grid-template-columns: 1fr; }
+}
