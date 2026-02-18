@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Links | NTU Info</title>
+  <link rel="stylesheet" href="../styles/variables.css">
+  <link rel="stylesheet" href="../styles/shared.css">
+  <style>
+    .links-page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+    .links-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }
+    .link-card { background: rgba(255,255,255,.94); border:1px solid var(--gray-200); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding:1rem; }
+    .link-card h3 { margin-bottom:.5rem; }
+    .link-card ul { margin:0; padding-left:1.1rem; display:grid; gap:.45rem; }
+    .feedback { margin-top:1rem; }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="header" role="banner">
+  <div class="header-container">
+    <div class="logo-section"><h1 class="logo-title">ntu info.com</h1></div>
+    <nav class="banner-nav" aria-label="Site sections">
+      <div class="banner-tabs" role="tablist" aria-label="Primary">
+        <button id="tab-academics" class="banner-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-academics" data-banner-tab>Academics</button>
+        <button id="tab-tools" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-tools" tabindex="-1" data-banner-tab>Tools</button>
+        <button id="tab-guides" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-guides" tabindex="-1" data-banner-tab>Guides</button>
+        <button id="tab-campus" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-campus" tabindex="-1" data-banner-tab>Campus Life</button>
+        <button id="tab-about" class="banner-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-about" tabindex="-1" data-banner-tab>About</button>
+      </div>
+      <div class="banner-panels" data-banner-tabs>
+        <div id="panel-academics" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-academics" data-banner-panel><ul class="banner-panel-list"><li><a href="timetable.html">Exam Timetable</a></li><li><a href="mooc-mapping.html">MOOC Mapping Tools</a></li></ul></div>
+        <div id="panel-tools" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-tools" hidden data-banner-panel><ul class="banner-panel-list"><li><a href="calculator.html">CGPA Calculator</a></li><li><a href="math-notes.html">Math Notes &amp; Past Papers</a></li><li><a href="clubs/index.html">Clubs &amp; Societies Explorer</a></li></ul></div>
+        <div id="panel-guides" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-guides" hidden data-banner-panel><ul class="banner-panel-list"><li><a href="airport/index.html">Airport Arrival Guide</a></li><li><a href="student-links.html" aria-current="page">Student Links</a></li></ul></div>
+        <div id="panel-campus" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-campus" hidden data-banner-panel><ul class="banner-panel-list"><li><a href="canteens.html">NTU Canteen Food Rating Guide</a></li><li><a href="clubs/index.html">Clubs &amp; Societies Explorer</a></li></ul></div>
+        <div id="panel-about" class="banner-panel" role="tabpanel" tabindex="0" aria-labelledby="tab-about" hidden data-banner-panel><ul class="banner-panel-list"><li><a href="about.html">About NTU Info</a></li></ul></div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content" class="links-page">
+  <h1>Student Links</h1>
+  <p>Quick access to common portals and useful school resources.</p>
+  <div class="links-grid">
+    <section class="link-card">
+      <h3>Important Links</h3>
+      <ul>
+        <li><a href="https://www.ntu.edu.sg" target="_blank" rel="noopener">NTU Main Website</a></li>
+        <li><a href="https://wish.wis.ntu.edu.sg" target="_blank" rel="noopener">WIS / STARS</a></li>
+        <li><a href="https://ntulearn.ntu.edu.sg" target="_blank" rel="noopener">NTULearn</a></li>
+        <li><a href="https://www.ntu.edu.sg/admissions/undergraduate" target="_blank" rel="noopener">Admissions</a></li>
+      </ul>
+    </section>
+    <section class="link-card">
+      <h3>Other Useful Links</h3>
+      <ul>
+        <li><a href="https://ts.ntu.edu.sg/sites/lib-repository" target="_blank" rel="noopener">Library Resources</a></li>
+        <li><a href="https://www.ntu.edu.sg/life-at-ntu/student-life" target="_blank" rel="noopener">Student Life</a></li>
+        <li><a href="https://www.ntu.edu.sg/education/academic-services" target="_blank" rel="noopener">Academic Services</a></li>
+        <li><a href="https://www.ntu.edu.sg/it/services" target="_blank" rel="noopener">IT Services</a></li>
+      </ul>
+    </section>
+  </div>
+  <section class="link-card feedback">
+    <h3>Feedback / Contact</h3>
+    <p>Spotted an outdated link? Send a note via our repository issues page.</p>
+    <a class="btn btn-primary" href="https://github.com/yuhesui/NTU-Info/issues" target="_blank" rel="noopener">Submit feedback</a>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-content"><div class="footer-branding"><h3>NTU Info</h3><p class="copyright">© 2026 NTU Info</p></div></div>
+</footer>
+<script type="module" src="../scripts/main.js"></script>
+</body>
+</html>
