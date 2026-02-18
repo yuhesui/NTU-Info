@@ -96,16 +96,22 @@ export function initBannerTabs() {
 
   setActive(initialId, { persist: false, openPanel: false });
 
+  const listeners = [];
+
   tabs.forEach((tab) => {
-    tab.addEventListener('click', (e) => {
+    const handleClick = (e) => {
       e.preventDefault();
       showPanelForTab(tab);
       setActive(tab.id);
-    });
+    };
+    tab.addEventListener('click', handleClick);
+    listeners.push({ target: tab, type: 'click', handler: handleClick });
 
-    tab.addEventListener('focus', () => showPanelForTab(tab));
+    const handleFocus = () => showPanelForTab(tab);
+    tab.addEventListener('focus', handleFocus);
+    listeners.push({ target: tab, type: 'focus', handler: handleFocus });
 
-    tab.addEventListener('keydown', (e) => {
+    const handleTabKeydown = (e) => {
       const currentIndex = tabs.indexOf(tab);
 
       if (isActivationKey(e)) {
@@ -149,32 +155,45 @@ export function initBannerTabs() {
         const firstLink = panel?.querySelector('a[href]:not([aria-disabled="true"])');
         if (firstLink) firstLink.focus();
       }
-    });
+    };
+    tab.addEventListener('keydown', handleTabKeydown);
+    listeners.push({ target: tab, type: 'keydown', handler: handleTabKeydown });
   });
 
   panels.forEach((panel) => {
-    panel.addEventListener('keydown', (e) => {
+    const handlePanelKeydown = (e) => {
       if (e.key !== 'Escape') return;
       e.preventDefault();
       const selectedTab = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
       setActive(selectedTab.id, { persist: false, openPanel: false, focusTab: true });
-    });
+    };
+    panel.addEventListener('keydown', handlePanelKeydown);
+    listeners.push({ target: panel, type: 'keydown', handler: handlePanelKeydown });
   });
 
-  document.addEventListener('click', (event) => {
+  const handleDocumentClick = (event) => {
     if (!navRoot.contains(event.target)) {
       const selectedTab = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
       setActive(selectedTab.id, { persist: false, openPanel: false });
     }
-  });
+  };
+  document.addEventListener('click', handleDocumentClick);
+  listeners.push({ target: document, type: 'click', handler: handleDocumentClick });
 
-  navRoot.addEventListener('focusout', (event) => {
+  const handleFocusOut = (event) => {
     const next = event.relatedTarget;
     if (!next || !navRoot.contains(next)) {
       const selectedTab = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
       setActive(selectedTab.id, { persist: false, openPanel: false });
     }
-  });
+  };
+  navRoot.addEventListener('focusout', handleFocusOut);
+  listeners.push({ target: navRoot, type: 'focusout', handler: handleFocusOut });
 
-  return () => helpers.forEach((helper) => helper?.destroy());
+  return () => {
+    helpers.forEach((helper) => helper?.destroy());
+    listeners.forEach(({ target, type, handler }) => {
+      target.removeEventListener(type, handler);
+    });
+  };
 }
