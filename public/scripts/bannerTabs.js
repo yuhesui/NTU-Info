@@ -19,6 +19,13 @@ export function initBannerTabs() {
   const tabs = Array.from(navRoot.querySelectorAll('[data-banner-tab]'));
   const panels = Array.from(panelsRoot.querySelectorAll('[data-banner-panel]'));
   if (!tabs.length || !panels.length) return;
+  let openedAt = 0;
+
+  const markOpened = () => {
+    openedAt = Date.now();
+  };
+
+  const recentlyOpened = () => Date.now() - openedAt < 180;
 
   function setPanelsOpen(isOpen) {
     panelsRoot.classList.toggle('is-open', isOpen);
@@ -39,6 +46,7 @@ export function initBannerTabs() {
       p.classList.toggle('is-active', isActive);
     });
     setPanelsOpen(true);
+    markOpened();
   }
 
   function setActive(tabId, { focusTab = false, persist = true, openPanel = true } = {}) {
@@ -172,6 +180,11 @@ export function initBannerTabs() {
   });
 
   const handleDocumentClick = (event) => {
+    // Root cause note:
+    // Some browsers emit a transient focusout with relatedTarget=null while users click a tab.
+    // That focusout raced our close logic, causing an open panel to immediately collapse.
+    // We guard closes for a short window after opening so same-interaction events cannot undo it.
+    if (recentlyOpened()) return;
     if (!navRoot.contains(event.target)) {
       const selectedTab = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
       setActive(selectedTab.id, { persist: false, openPanel: false });
@@ -181,7 +194,8 @@ export function initBannerTabs() {
   listeners.push({ target: document, type: 'click', handler: handleDocumentClick });
 
   const handleFocusOut = (event) => {
-    const next = event.relatedTarget;
+    if (recentlyOpened()) return;
+    const next = event.relatedTarget || document.activeElement;
     if (!next || !navRoot.contains(next)) {
       const selectedTab = tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0];
       setActive(selectedTab.id, { persist: false, openPanel: false });
