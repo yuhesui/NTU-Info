@@ -75,27 +75,45 @@ main {
   max-width: 70ch;
 }
 
-.promo-banner {
-  margin-top: var(--spacing-2xl);
+/* Fixed bottom promo banner */
+:root {
+  --floating-promo-height: 72px;
 }
 
-.promo-banner-link {
+.has-floating-promo {
+  /* Keep scrollable content clear of the fixed banner so bottom cards/footer stay readable. */
+  padding-bottom: calc(var(--floating-promo-height) + env(safe-area-inset-bottom, 0px) + var(--spacing-lg));
+}
+
+.floating-promo {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 250;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  pointer-events: none;
+}
+
+.floating-promo-link {
   display: block;
-  border-radius: var(--radius-lg);
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 -12px 24px rgba(15, 23, 42, 0.24);
+  pointer-events: auto;
 }
 
-.promo-banner-link:hover,
-.promo-banner-link:focus-visible {
+.floating-promo-link:hover,
+.floating-promo-link:focus-visible {
   text-decoration: none;
 }
 
-.promo-banner-image {
+.floating-promo-image {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1200 / 360;
+  height: var(--floating-promo-height);
   object-fit: cover;
 }
 
@@ -688,6 +706,10 @@ a.is-disabled,
   .page-hero {
     margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
+  }
+
+  :root {
+    --floating-promo-height: 64px;
   }
 
   h1 { font-size: var(--text-3xl); }

@@ -1,10 +1,12 @@
 /** Main JS for homepage interactions (small + deterministic). */
 
 import { initBannerTabs } from './bannerTabs.js';
+import { initFloatingPromoBanner } from './floatingPromoBanner.js';
 
 // Ensure external links have accessible labels
 document.addEventListener('DOMContentLoaded', () => {
   initBannerTabs();
+  initFloatingPromoBanner();
 
   document.querySelectorAll('a[target="_blank"]').forEach((link) => {
     if (link.getAttribute('aria-label')) return;
