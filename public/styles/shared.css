@@ -76,10 +76,6 @@ main {
 }
 
 /* Fixed bottom promo banner */
-:root {
-  --floating-promo-height: 72px;
-}
-
 .has-floating-promo {
   /* Keep scrollable content clear of the fixed banner so bottom cards/footer stay readable. */
   padding-bottom: calc(var(--floating-promo-height) + env(safe-area-inset-bottom, 0px) + var(--spacing-lg));
@@ -90,7 +86,7 @@ main {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 250;
+  z-index: var(--z-fixed);
   padding-bottom: env(safe-area-inset-bottom, 0px);
   pointer-events: none;
 }

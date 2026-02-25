@@ -64,6 +64,9 @@
   --z-modal: 400;
   --z-tooltip: 500;
 
+  /* Floating promo banner */
+  --floating-promo-height: 72px;
+
   /* Container widths */
   --container-sm: 640px;
   --container-md: 768px;
