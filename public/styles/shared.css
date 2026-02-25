@@ -52,6 +52,67 @@ main {
   padding-bottom: var(--spacing-3xl);
 }
 
+.page-hero {
+  margin: var(--spacing-xl) 0 var(--spacing-xl);
+  padding: clamp(1rem, 2.4vw, 1.65rem);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(0, 54, 134, 0.2);
+  background: linear-gradient(120deg, #003a8f 0%, #0d56ba 60%, #3175d1 100%);
+  color: var(--white);
+  box-shadow: 0 16px 36px rgba(0, 50, 130, 0.16);
+}
+
+.page-hero-title {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.55rem, 3.3vw, 2.1rem);
+}
+
+.page-hero-description,
+.page-hero p {
+  margin: var(--spacing-sm) 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 70ch;
+}
+
+/* Fixed bottom promo banner */
+.has-floating-promo {
+  /* Keep scrollable content clear of the fixed banner so bottom cards/footer stay readable. */
+  padding-bottom: calc(var(--floating-promo-height) + env(safe-area-inset-bottom, 0px) + var(--spacing-lg));
+}
+
+.floating-promo {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-fixed);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  pointer-events: none;
+}
+
+.floating-promo-link {
+  display: block;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  overflow: hidden;
+  box-shadow: 0 -12px 24px rgba(15, 23, 42, 0.24);
+  pointer-events: auto;
+}
+
+.floating-promo-link:hover,
+.floating-promo-link:focus-visible {
+  text-decoration: none;
+}
+
+.floating-promo-image {
+  display: block;
+  width: 100%;
+  height: var(--floating-promo-height);
+  object-fit: cover;
+}
+
 a {
   color: var(--ntu-blue);
   text-decoration: none;
@@ -636,6 +697,15 @@ a.is-disabled,
 
   .footer-links {
     grid-template-columns: 1fr;
+  }
+
+  .page-hero {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  :root {
+    --floating-promo-height: 64px;
   }
 
   h1 { font-size: var(--text-3xl); }
