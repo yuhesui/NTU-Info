@@ -1,6 +1,6 @@
 const DEFAULT_BANNER_ALT = 'Register for the upcoming NTU student event';
-const DEFAULT_BANNER_LINK = 'https://luma.com/tqx5xvcy';
-const DEFAULT_BANNER_IMAGE = new URL('../data/Banner-Low.png', import.meta.url).toString();
+const DEFAULT_BANNER_LINK = ''; // no default link
+const DEFAULT_BANNER_IMAGE = new URL('', import.meta.url).toString(); // no default image
 
 function resolvePromoImageSrc(rawSrc) {
   if (!rawSrc) return DEFAULT_BANNER_IMAGE;
